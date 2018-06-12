@@ -2,13 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
+using UnityEngine.UI;
 
-
-[Serializable]
 public class PhraseEvent : DialogueEvent
 {
-    public PhraseEvent()
+    public override DialogueEventType Type
     {
-        this.Type = DialogueEventType.TYPE_PHRASE;
-    }   
+        get { return DialogueEventType.TYPE_PHRASE; }
+    }
+
+    public String text;
+    public String speakerName;
+    public int nextEventId;
+
 }

@@ -2,13 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
-
-[Serializable]
 public class DialogueChoiceEvent : DialogueEvent
 {
-    public DialogueChoiceEvent()
+    public override DialogueEventType Type
     {
-        this.Type = DialogueEventType.TYPE_CHOICE;
+        get { return DialogueEventType.TYPE_CHOICE; }
     }
+
+    public bool canUseDefender;
+    public int defenderCost;
+
+    public class ChoiceData
+    {
+        public String choiceText;
+        public String defenderText;
+        public int resultId;
+    }
+
+    public ChoiceData[] choices;
+
 }

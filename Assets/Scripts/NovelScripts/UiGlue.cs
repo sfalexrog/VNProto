@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using Newtonsoft.Json;
+
 public class UiGlue : MonoBehaviour
 {
 
@@ -16,12 +18,6 @@ public class UiGlue : MonoBehaviour
 
 	private GameState gameState;
 
-	[Serializable]
-	class Wrapper<T>
-	{
-		public T[] Items;
-	}
-	
 	// Use this for initialization
 	void Start ()
 	{
@@ -33,11 +29,16 @@ public class UiGlue : MonoBehaviour
 		{
 			new PhraseEvent(), 
 			new DialogueChoiceEvent(), 
-			new DialogueEvent() 
+			new FinalDialogueEvent() 
 		};
-		Wrapper<DialogueEvent> w = new Wrapper<DialogueEvent>();
-		w.Items = events;
-		Debug.Log(JsonUtility.ToJson(w, true));
+
+		String serialized = JsonConvert.SerializeObject(events, Formatting.Indented);
+		Debug.Log(serialized); //JsonConvert.SerializeObject(events, Formatting.Indented /*, new JsonConverter[]{new EventConverter()}*/));
+		var deserializedEvents = JsonConvert.DeserializeObject<List<DialogueEvent>>(serialized, new EventConverter());
+		foreach (var ev in deserializedEvents)
+		{
+			Debug.Log("event has type " + ev.GetType());
+		}
 	}
 	
 	// Update is called once per frame

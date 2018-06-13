@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Алиса",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/1"
+    }
+  },
+  {
+    "name": "Максим",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/2"
+    }
+  },
+  {
+    "name": "Эрик",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/3"
+    }
+  },
+  {
+    "name": "Костя",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/4"
+    }
+  },
+  {
+    "name": "Марина",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/5"
+    }
+  }
+]

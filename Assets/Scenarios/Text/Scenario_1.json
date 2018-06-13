@@ -1,7 +1,7 @@
 [
   {
     "text": "Привет! Сегодня мы поговорим о создании визуальных новелл!",
-    "speakerName": "Alexey",
+    "speakerName": "Алиса",
     "nextEventId": 2,
     "Id": 1,
     "Type": 0
@@ -32,21 +32,21 @@
   },
   {
     "text": "Ты сейчас на неё смотришь!",
-    "speakerName": "Alexey",
+    "speakerName": "Максим",
     "nextEventId": 2,
     "Id": 3,
     "Type": 0
   },
   {
     "text": "Просто отредактируй соответствующий json-файл!",
-    "speakerName": "Alexey",
+    "speakerName": "Эрик",
     "nextEventId": 2,
     "Id": 4,
     "Type": 0
   },
   {
     "text": "Тогда вперёд!",
-    "speakerName": "Alexey",
+    "speakerName": "Марина",
     "nextEventId": 10,
     "Id": 5,
     "Type": 0

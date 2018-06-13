@@ -22,6 +22,7 @@ public class UiGlue : MonoBehaviour
 	private GameState gameState;
 	
 	// Phrase UI
+	private Image _actorImage;
 	private Text _actorNameText;
 	private Text _dialogText;
 	
@@ -34,12 +35,18 @@ public class UiGlue : MonoBehaviour
 	// Ending UI
 	private Text _endingText;
 
+	private Dictionary<string, Sprite> _actorSprites;
+
 	// Use this for initialization
 	void Awake ()
 	{
 		gameState = Toolbox.RegisterComponent<GameState>();
 
 		// Populate Phrase UI
+		Image[] phraseUiImages = PhraseUi.GetComponentsInChildren<Image>();
+		_actorImage = phraseUiImages[0];
+		_actorImage.preserveAspect = true;
+		
 		Text[] phraseUiTexts = PhraseUi.GetComponentsInChildren<Text>();
 
 		_actorNameText = phraseUiTexts[0];
@@ -63,11 +70,23 @@ public class UiGlue : MonoBehaviour
 		// Populate Ending UI
 		Text[] endingUiTexts = EndingUi.GetComponentsInChildren<Text>();
 		_endingText = endingUiTexts[0];
-	}
-	
-	// Update is called once per frame
-	void Update () {
 		
+		
+	}
+
+	// We need to have Model initialized here
+	void Start()
+	{
+		if (_actorSprites == null)
+		{
+			// Preload actor images
+			var actorImages = model.GetUsedActorImages();
+			_actorSprites = new Dictionary<string, Sprite>();
+			foreach (var image in actorImages)
+			{
+				_actorSprites[image] = Resources.Load<Sprite>(image);
+			}	
+		}
 	}
 
 	public void returnToHub()
@@ -79,11 +98,26 @@ public class UiGlue : MonoBehaviour
 
 	public void ShowPhraseUi(PhraseEvent pev)
 	{
+		if (_actorSprites == null)
+		{
+			Start();
+		}
 		EndingUi.SetActive(false);
 		ChoiceUi.SetActive(false);
 		PhraseUi.SetActive(true);
 		_actorNameText.text = pev.speakerName;
 		_dialogText.text = pev.text;
+
+		Sprite actorSprite;
+		if (_actorSprites.TryGetValue(model.GetCurrentActorImage(), out actorSprite))
+		{
+			_actorImage.gameObject.SetActive(true);
+			_actorImage.sprite = actorSprite;
+		}
+		else
+		{
+			_actorImage.gameObject.SetActive(false);
+		}
 	}
 
 	public void ShowChoiceUi(DialogueChoiceEvent cev, bool showAlternateText = false)

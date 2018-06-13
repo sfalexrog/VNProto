@@ -20,10 +20,11 @@ public class UiGlue : MonoBehaviour
 	private GameState gameState;
 	
 	// Background image
-	public Image BackgdroundImage;
+	public Image BackgroundImage;
 	
 	// Phrase UI
 	private Image _actorImage;
+	private Image _actorNameBox;
 	private Text _actorNameText;
 	private Text _dialogText;
 	
@@ -50,6 +51,7 @@ public class UiGlue : MonoBehaviour
 		// Populate Phrase UI
 		Image[] phraseUiImages = PhraseUi.GetComponentsInChildren<Image>();
 		_actorImage = phraseUiImages[0];
+		_actorNameBox = phraseUiImages[1];
 		_actorImage.preserveAspect = true;
 		
 		Text[] phraseUiTexts = PhraseUi.GetComponentsInChildren<Text>();
@@ -120,11 +122,23 @@ public class UiGlue : MonoBehaviour
 		EndingUi.SetActive(false);
 		ChoiceUi.SetActive(false);
 		PhraseUi.SetActive(true);
-		_actorNameText.text = pev.speakerName;
+		if (pev.speakerName != null)
+		{
+			_actorNameBox.gameObject.SetActive(true);
+			_actorNameText.gameObject.SetActive(true);
+			_actorNameText.text = pev.speakerName;	
+		}
+		else
+		{
+			_actorNameBox.gameObject.SetActive(false);
+			_actorNameText.gameObject.SetActive(false);
+		}
+		
 		_dialogText.text = pev.text;
 
 		Sprite actorSprite;
-		if (_actorSprites.TryGetValue(model.GetCurrentActorImage(), out actorSprite))
+		var actorImage = model.GetCurrentActorImage();
+		if (actorImage != null && _actorSprites.TryGetValue(actorImage, out actorSprite))
 		{
 			_actorImage.gameObject.SetActive(true);
 			_actorImage.sprite = actorSprite;
@@ -196,6 +210,6 @@ public class UiGlue : MonoBehaviour
 	public void ChangeBackground(BackgroundChangeEvent bev)
 	{
 		var backgroundImageName = model.GetBackgroundImageByName(bev.backgroundName);
-		BackgdroundImage.sprite = _backgroundSprites[backgroundImageName];
+		BackgroundImage.sprite = _backgroundSprites[backgroundImageName];
 	}
 }

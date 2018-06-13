@@ -693,7 +693,7 @@ MonoBehaviour:
   PhraseUi: {fileID: 1938495405}
   EndingUi: {fileID: 1840336003}
   ChoiceUi: {fileID: 210215892}
-  characterImages: []
+  BackgroundImage: {fileID: 940375122}
 --- !u!4 &413821329
 Transform:
   m_ObjectHideFlags: 0

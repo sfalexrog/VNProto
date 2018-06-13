@@ -139,7 +139,12 @@ public class DialogueTree : MonoBehaviour
             if (ev.GetType() == typeof(PhraseEvent))
             {
                 var pev = (PhraseEvent) ev;
-                actors.Add(pev.speakerName);
+                // Some phrases may have no speakers,
+                // they obviously don't have an actor image
+                if (pev.speakerName != null)
+                {
+                    actors.Add(pev.speakerName);    
+                }
             }
         }
 
@@ -205,7 +210,7 @@ public class DialogueTree : MonoBehaviour
         // TODO: store emotions as event data
         var actorEmotion = "default";
         DialogueActor currentActor;
-        if (_actors.TryGetValue(currentActorName, out currentActor))
+        if (currentActorName != null && _actors.TryGetValue(currentActorName, out currentActor))
         {
             string emotionValue;
             if (currentActor.emotions.TryGetValue(actorEmotion, out emotionValue))

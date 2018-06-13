@@ -124,7 +124,15 @@ public class DialogueTree : MonoBehaviour
     public void OnDefender()
     {
         var currentEvent = (DialogueChoiceEvent) getEventById(currentId);
-        glue.ShowChoiceUi(currentEvent, true);
+        if (_gameState.currentPower >= currentEvent.defenderCost)
+        {
+            _gameState.currentPower -= currentEvent.defenderCost;
+            glue.ShowChoiceUi(currentEvent, true);
+        }
+        else
+        {
+            Debug.LogError("This button should have been hidden! Oh well, never trust what you didn't write yourself.");
+        }
     }
 
     /**

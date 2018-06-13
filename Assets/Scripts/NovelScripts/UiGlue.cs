@@ -155,7 +155,10 @@ public class UiGlue : MonoBehaviour
 		ChoiceUi.SetActive(true);
 		PhraseUi.SetActive(false);
 		_choiceHeader.text = cev.header;
-		_choiceDefenderButton.gameObject.SetActive(!showAlternateText);
+		
+		// Should only show defender button if energy is high enough
+		var shouldShowDefender = !showAlternateText && (gameState.currentPower >= cev.defenderCost);
+		_choiceDefenderButton.gameObject.SetActive(shouldShowDefender);
 		
 		for (int i = 0; i < _choicesTexts.Length; ++i)
 		{
@@ -165,10 +168,12 @@ public class UiGlue : MonoBehaviour
 				_choicesButtons[i].gameObject.SetActive(true);
 				if (!showAlternateText)
 				{
+					_choicesTexts[i].color = Color.black;
 					_choicesTexts[i].text = cev.choices[i].choiceText;
 				}
 				else
 				{
+					_choicesTexts[i].color = Color.green;
 					_choicesTexts[i].text = cev.choices[i].defenderText;
 				}
 			}

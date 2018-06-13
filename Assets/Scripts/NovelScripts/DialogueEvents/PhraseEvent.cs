@@ -12,8 +12,8 @@ public class PhraseEvent : DialogueEvent
         get { return DialogueEventType.TYPE_PHRASE; }
     }
 
-    public String text;
-    public String speakerName;
+    public string text;
+    public string speakerName;
     public int nextEventId;
 
 }

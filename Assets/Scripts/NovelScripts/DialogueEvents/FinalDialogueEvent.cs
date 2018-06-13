@@ -9,5 +9,5 @@ public class FinalDialogueEvent : DialogueEvent {
         get { return DialogueEventType.TYPE_END; }
     }
 
-    public String text;
+    public string text;
 }

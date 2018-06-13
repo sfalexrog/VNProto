@@ -9,6 +9,7 @@ public enum DialogueEventType
 {
     TYPE_PHRASE = 0,
     TYPE_CHOICE = 1,
+    TYPE_BG_CHANGE = 2,
     TYPE_END = 999
 }
 
@@ -56,6 +57,8 @@ public class EventConverter : JsonCreationConverter<DialogueEvent>
                     return new PhraseEvent();
                 case (int)DialogueEventType.TYPE_CHOICE:
                     return new DialogueChoiceEvent();
+                case (int)DialogueEventType.TYPE_BG_CHANGE:
+                    return new BackgroundChangeEvent();
                 case (int)DialogueEventType.TYPE_END:
                     return new FinalDialogueEvent();
                 default:

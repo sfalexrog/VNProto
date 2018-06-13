@@ -11,15 +11,15 @@ public class DialogueChoiceEvent : DialogueEvent
         get { return DialogueEventType.TYPE_CHOICE; }
     }
 
-    public String header;
+    public string header;
 
     public bool canUseDefender;
     public int defenderCost;
 
     public class ChoiceData
     {
-        public String choiceText;
-        public String defenderText;
+        public string choiceText;
+        public string defenderText;
         public int resultId;
     }
 

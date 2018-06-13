@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class DialogueTree : MonoBehaviour
     
     private Dictionary<int, DialogueEvent> _events;
     private Dictionary<string, DialogueActor> _actors;
+    private Dictionary<string, string> _backgrounds;
 
     public UiGlue glue;
 
@@ -51,6 +53,15 @@ public class DialogueTree : MonoBehaviour
         {
             _actors[actor.name] = actor;
         }
+        
+        _backgrounds = new Dictionary<string, string>();
+        // Load background data
+        var backgroundsJson = Resources.Load<TextAsset>("Backgrounds/manifest");
+        var backgrounds = JsonConvert.DeserializeObject<List<DialogueBackground>>(backgroundsJson.text);
+        foreach (var background in backgrounds)
+        {
+            _backgrounds[background.name] = background.image;
+        }
     }
 
     void Start()
@@ -78,6 +89,13 @@ public class DialogueTree : MonoBehaviour
         else if (ev.GetType() == typeof(DialogueChoiceEvent))
         {
             glue.ShowChoiceUi((DialogueChoiceEvent)ev);
+        }
+        else if (ev.GetType() == typeof(BackgroundChangeEvent))
+        {
+            var bev = (BackgroundChangeEvent) getEventById(currentId);
+            currentId = bev.nextEventId;
+            glue.ChangeBackground(bev);
+            SetUiForEvent(getEventById(currentId));
         }
         else if (ev.GetType() == typeof(FinalDialogueEvent))
         {
@@ -144,6 +162,40 @@ public class DialogueTree : MonoBehaviour
     }
     
     /**
+     * Get a list of images that will be used for backgrounds
+     */
+    public string[] GetUsedBackgroundImages()
+    {
+        var backgrounds = new HashSet<string>();
+        // Look through all events to see which actors are used
+        foreach (var ev in _events.Values)
+        {
+            if (ev.GetType() == typeof(BackgroundChangeEvent))
+            {
+                var bev = (BackgroundChangeEvent) ev;
+                backgrounds.Add(bev.backgroundName);
+            }
+        }
+
+        var backgroundSpriteList = new List<string>();
+        foreach (var bg in backgrounds)
+        {
+            string backImg;
+            if (_backgrounds.TryGetValue(bg, out backImg))
+            {
+                backgroundSpriteList.Add(backImg);
+            }
+            else
+            {
+                Debug.LogWarning("Unable to find background " + bg + " in manifest");
+            }
+        }
+
+        return backgroundSpriteList.ToArray();
+    }
+    
+    
+    /**
      * Get the appropriate image for the on-screen actor
      */
     public string GetCurrentActorImage()
@@ -165,5 +217,13 @@ public class DialogueTree : MonoBehaviour
         }
 
         return null;
+    }
+    
+    /**
+     * Get the background image by its name
+     */
+    public string GetBackgroundImageByName(string backgroundName)
+    {
+        return _backgrounds[backgroundName];
     }
 }

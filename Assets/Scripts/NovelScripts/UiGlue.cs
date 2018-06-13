@@ -17,9 +17,10 @@ public class UiGlue : MonoBehaviour
 	public GameObject EndingUi;
 	public GameObject ChoiceUi;
 
-	public Image[] characterImages;
-
 	private GameState gameState;
+	
+	// Background image
+	public Image BackgdroundImage;
 	
 	// Phrase UI
 	private Image _actorImage;
@@ -35,8 +36,12 @@ public class UiGlue : MonoBehaviour
 	// Ending UI
 	private Text _endingText;
 
+	// Loaded and cached actor sprites
 	private Dictionary<string, Sprite> _actorSprites;
 
+	// Loaded and cached background sprites
+	private Dictionary<string, Sprite> _backgroundSprites;
+	
 	// Use this for initialization
 	void Awake ()
 	{
@@ -79,13 +84,23 @@ public class UiGlue : MonoBehaviour
 	{
 		if (_actorSprites == null)
 		{
+			_actorSprites = new Dictionary<string, Sprite>();
 			// Preload actor images
 			var actorImages = model.GetUsedActorImages();
-			_actorSprites = new Dictionary<string, Sprite>();
 			foreach (var image in actorImages)
 			{
 				_actorSprites[image] = Resources.Load<Sprite>(image);
 			}	
+		}
+
+		if (_backgroundSprites == null)
+		{
+			_backgroundSprites = new Dictionary<string, Sprite>();
+			var backgroundImages = model.GetUsedBackgroundImages();
+			foreach (var image in backgroundImages)
+			{
+				_backgroundSprites[image] = Resources.Load<Sprite>(image);
+			}
 		}
 	}
 
@@ -175,5 +190,12 @@ public class UiGlue : MonoBehaviour
 	public void OnDefender()
 	{
 		model.OnDefender();
+	}
+	
+	// Change background as requested
+	public void ChangeBackground(BackgroundChangeEvent bev)
+	{
+		var backgroundImageName = model.GetBackgroundImageByName(bev.backgroundName);
+		BackgdroundImage.sprite = _backgroundSprites[backgroundImageName];
 	}
 }

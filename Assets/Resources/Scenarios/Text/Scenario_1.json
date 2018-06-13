@@ -1,54 +1,60 @@
 [
   {
+    "Id": 1,
+    "Type": 2,
+    "backgroundName": "Школа",
+    "nextEventId": 2
+  },
+  {
     "text": "Привет! Сегодня мы поговорим о создании визуальных новелл!",
     "speakerName": "Алиса",
-    "nextEventId": 2,
-    "Id": 1,
+    "nextEventId": 3,
+    "Id": 2,
     "Type": 0
   },
   {
     "header": "У меня есть вопрос!",
     "canUseDefender": true,
-    "defenderCost": 0,
+    "defenderCost": 20,
     "choices": [
       {
         "choiceText": "Что за визуальные новеллы?",
         "defenderText": "Защити меня от новелл!",
-        "resultId": 3
+        "resultId": 4
       },
       {
         "choiceText": "Как составлять сценарии?",
         "defenderText": "Защити меня от сценариев!",
-        "resultId": 4
+        "resultId": 5
       },
       {
         "choiceText": "Нет, поехали дальше!",
         "defenderText": "Да, поехали дальше!",
-        "resultId": 5
+        "resultId": 6
       }
     ],
-    "Id": 2,
+    "Id": 3,
     "Type": 1
   },
   {
     "text": "Ты сейчас на неё смотришь!",
     "speakerName": "Максим",
-    "nextEventId": 2,
-    "Id": 3,
+    "nextEventId": 3,
+    "Id": 4,
     "Type": 0
   },
   {
     "text": "Просто отредактируй соответствующий json-файл!",
     "speakerName": "Эрик",
-    "nextEventId": 2,
-    "Id": 4,
+    "nextEventId": 3,
+    "Id": 5,
     "Type": 0
   },
   {
     "text": "Тогда вперёд!",
     "speakerName": "Марина",
     "nextEventId": 10,
-    "Id": 5,
+    "Id": 6,
     "Type": 0
   },
   {

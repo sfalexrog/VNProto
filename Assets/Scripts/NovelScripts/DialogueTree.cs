@@ -25,12 +25,12 @@ public class DialogueTree : MonoBehaviour
         }
         _gameState = Toolbox.RegisterComponent<GameState>();
         int sceneId = _gameState.currentScene;
-        String sceneFilename = "Assets/Scenarios/Text/Scenario_" + sceneId + ".json";
+        String sceneFilename = "Scenarios/Text/Scenario_" + sceneId;
         Debug.Log("Loading scene data from " + sceneFilename);
-        
-        StreamReader input = new StreamReader(sceneFilename);
 
-        var eventsList = JsonConvert.DeserializeObject<List<DialogueEvent>>(input.ReadToEnd(), new EventConverter());
+        var sceneJson = Resources.Load<TextAsset>(sceneFilename);
+
+        var eventsList = JsonConvert.DeserializeObject<List<DialogueEvent>>(sceneJson.text, new EventConverter());
 
         foreach (var ev in eventsList)
         {
@@ -45,8 +45,8 @@ public class DialogueTree : MonoBehaviour
         _actors = new Dictionary<string, DialogueActor>();
         
         // Load actor data
-        var actorStream = new StreamReader("Assets/Scenarios/Resources/Actors/manifest.json");
-        var actors = JsonConvert.DeserializeObject<List<DialogueActor>>(actorStream.ReadToEnd());
+        var actorJson = Resources.Load<TextAsset>("Actors/manifest");
+        var actors = JsonConvert.DeserializeObject<List<DialogueActor>>(actorJson.text);
         foreach (var actor in actors)
         {
             _actors[actor.name] = actor;

@@ -11,6 +11,8 @@ public class DialogueChoiceEvent : DialogueEvent
         get { return DialogueEventType.TYPE_CHOICE; }
     }
 
+    public String header;
+
     public bool canUseDefender;
     public int defenderCost;
 

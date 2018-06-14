@@ -108,8 +108,7 @@ public class UiGlue : MonoBehaviour
 
 	public void returnToHub()
 	{
-		gameState.currentScene += 1;
-		SceneManager.LoadScene(0);
+		model.FinalizeChapter();
 	}
 
 

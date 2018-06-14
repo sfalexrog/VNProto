@@ -10,4 +10,5 @@ public class FinalDialogueEvent : DialogueEvent {
     }
 
     public string text;
+    public bool isChapterCompleted;
 }

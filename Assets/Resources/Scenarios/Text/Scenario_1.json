@@ -52,7 +52,7 @@
   },
   {
     "text": "Тогда вперёд!",
-    "speakerName": "Марина",
+    "speakerName": null,
     "nextEventId": 10,
     "Id": 6,
     "Type": 0
@@ -60,6 +60,7 @@
   {
     "text": "Теперь иди и твори!",
     "Id": 10,
-    "Type": 999
+    "Type": 999,
+    "isChapterCompleted": true
   }
 ]

@@ -5,6 +5,7 @@ using System.IO;
 using Newtonsoft.Json;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueTree : MonoBehaviour
@@ -239,4 +240,23 @@ public class DialogueTree : MonoBehaviour
     {
         return _backgrounds[backgroundName];
     }
+
+    /**
+     * Return to the main hub, conditionally incrementing scene counter
+     */
+    public void FinalizeChapter()
+    {
+        var ev = getEventById(currentId);
+        if (ev.GetType() == typeof(FinalDialogueEvent))
+        {
+            var fev = (FinalDialogueEvent) ev;
+            if (fev.isChapterCompleted)
+            {
+                _gameState.currentScene += 1;
+            }
+        }
+        
+        SceneManager.LoadScene(0);
+    }
+    
 }

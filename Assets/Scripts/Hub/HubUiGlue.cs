@@ -25,9 +25,13 @@ public class HubUiGlue : MonoBehaviour
 	{
 		SceneManager.LoadScene("Scenes/VNScene");
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void StartCardGame()
+    {
+        SceneManager.LoadScene("Scenes/CardGame");
+    }
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

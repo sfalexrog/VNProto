@@ -13,9 +13,4 @@ public class GameState : MonoBehaviour
 		currentPower = 500;
 		currentScene = 1;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

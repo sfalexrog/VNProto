@@ -755,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerMeter: {fileID: 779982406}
   levelText: {fileID: 941070457}
+  storyModeButton: {fileID: 1967614546}
 --- !u!1 &1760646712
 GameObject:
   m_ObjectHideFlags: 0

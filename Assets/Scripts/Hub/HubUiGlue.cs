@@ -9,6 +9,7 @@ public class HubUiGlue : MonoBehaviour
 
 	public Text powerMeter;
 	public Text levelText;
+	public Button storyModeButton;
 
 	private GameState gameState;
 	
@@ -30,8 +31,4 @@ public class HubUiGlue : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/CardGame");
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

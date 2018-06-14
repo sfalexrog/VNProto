@@ -25,8 +25,12 @@ public class UiGlue : MonoBehaviour
 	// Phrase UI
 	private Image _actorImage;
 	private Image _actorNameBox;
+	private Image _dialogBox;
+	private Image _monologueBox;
 	private Text _actorNameText;
 	private Text _dialogText;
+	private Text _monologueText;
+	
 	
 	// Choice UI
 	private Text _choiceHeader;
@@ -53,11 +57,14 @@ public class UiGlue : MonoBehaviour
 		_actorImage = phraseUiImages[0];
 		_actorNameBox = phraseUiImages[1];
 		_actorImage.preserveAspect = true;
+		_dialogBox = phraseUiImages[2];
+		_monologueBox = phraseUiImages[3];
 		
 		Text[] phraseUiTexts = PhraseUi.GetComponentsInChildren<Text>();
 
 		_actorNameText = phraseUiTexts[0];
 		_dialogText = phraseUiTexts[1];
+		_monologueText = phraseUiTexts[2];
 
 		// Populate Choice UI
 		Text[] choiceUiTexts = ChoiceUi.GetComponentsInChildren<Text>();
@@ -125,16 +132,20 @@ public class UiGlue : MonoBehaviour
 		{
 			_actorNameBox.gameObject.SetActive(true);
 			_actorNameText.gameObject.SetActive(true);
-			_actorNameText.text = pev.speakerName;	
+			_actorNameText.text = pev.speakerName;
+			_dialogBox.gameObject.SetActive(true);
+			_monologueBox.gameObject.SetActive(false);
+			_dialogText.text = pev.text;
 		}
 		else
 		{
 			_actorNameBox.gameObject.SetActive(false);
 			_actorNameText.gameObject.SetActive(false);
+			_dialogBox.gameObject.SetActive(false);
+			_monologueBox.gameObject.SetActive(true);
+			_monologueText.text = pev.text;
 		}
 		
-		_dialogText.text = pev.text;
-
 		Sprite actorSprite;
 		var actorImage = model.GetCurrentActorImage();
 		if (actorImage != null && _actorSprites.TryGetValue(actorImage, out actorSprite))

@@ -256,7 +256,7 @@ public class DialogueTree : MonoBehaviour
             }
         }
         
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Scenes/HubScene");
     }
     
 }

@@ -23,7 +23,7 @@ public class HubUiGlue : MonoBehaviour
 
 	public void StartNextLevel()
 	{
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene("Scenes/VNScene");
 	}
 	
 	// Update is called once per frame

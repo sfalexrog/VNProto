@@ -164,7 +164,8 @@ artifacts/
 *_p.c
 *_i.h
 *.ilk
-*.meta
+# Interferes with Unity
+# *.meta
 *.obj
 *.pch
 *.pgc

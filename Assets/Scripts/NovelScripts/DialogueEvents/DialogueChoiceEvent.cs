@@ -21,6 +21,7 @@ public class DialogueChoiceEvent : DialogueEvent
         public string choiceText;
         public string defenderText;
         public int resultId;
+        public string defenderColor;
     }
 
     public ChoiceData[] choices;

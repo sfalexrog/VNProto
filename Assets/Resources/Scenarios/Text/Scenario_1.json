@@ -20,16 +20,19 @@
       {
         "choiceText": "Что за визуальные новеллы?",
         "defenderText": "Защити меня от новелл!",
+        "defenderColor": "#00f0a0",
         "resultId": 4
       },
       {
         "choiceText": "Как составлять сценарии?",
         "defenderText": "Защити меня от сценариев!",
+        "defenderColor": "#a0ffa0",
         "resultId": 5
       },
       {
         "choiceText": "Нет, поехали дальше!",
         "defenderText": "Да, поехали дальше!",
+        "defenderColor": "#50f0a0",
         "resultId": 6
       }
     ],

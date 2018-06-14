@@ -172,8 +172,29 @@ public class UiGlue : MonoBehaviour
 				}
 				else
 				{
-					_choicesTexts[i].color = Color.green;
-					_choicesTexts[i].text = cev.choices[i].defenderText;
+					if (cev.choices[i].defenderColor != null)
+					{
+						Color color;
+						if (ColorUtility.TryParseHtmlString(cev.choices[i].defenderColor, out color))
+						{
+							_choicesTexts[i].color = color;	
+						}
+						else
+						{
+							_choicesTexts[i].color = Color.green;
+						}
+							
+					}
+					
+					if (cev.choices[i].defenderText != null)
+					{
+						_choicesTexts[i].text = cev.choices[i].defenderText;
+					}
+					else
+					{
+						_choicesTexts[i].text = cev.choices[i].choiceText;
+					}
+					
 				}
 			}
 			else

@@ -35,12 +35,12 @@
     "choices": [
       {
         "choiceText": "Что за части? Что за концовки?",
-        "defenderText": "Я хочу повторить эту часть",
+        "defenderColor": "#ff0000",
         "resultId": 6
       },
       {
         "choiceText": "Хорошо, я понял. Я не ошибусь!",
-        "defenderText": "Я хочу пройти эту часть",
+        "defenderColor": "#00ff00",
         "resultId": 7
       },
       {

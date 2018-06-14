@@ -295,21 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2505688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,21 +656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 1
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &16992082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,21 +1011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &50399132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,21 +1287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &63729649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,21 +1785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &72552746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,21 +2063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &80786169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,21 +2341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &86972760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,21 +2556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &87391434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3264,21 +3144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &132818605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,21 +3359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &133561970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,21 +3563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -2
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &139879444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4609,21 +4444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &183089731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4913,21 +4733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &189384427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5356,21 +5161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &216441918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6102,21 +5892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 2
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &239866163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6479,7 +6254,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f872c4f5cd512f74fadf3bac640e8923, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 676bb2a89939b7e4e944fc2c7be9f9fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6841,21 +6616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -3
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &293328311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7248,21 +7008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &307991369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7914,21 +7659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &369939529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8133,21 +7863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: -2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &372054449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8653,35 +8368,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 398374454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c4f9f351a83f5e4f87f73886fec2c71, type: 3}
+  m_Script: {fileID: 11500000, guid: 72ea895fcf1b8de48965ca8c2da7d89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - {fileID: 1757623309}
-  - {fileID: 1549347272}
-  - {fileID: 162378748}
-  - {fileID: 705132935}
-  - {fileID: 1890789607}
-  - {fileID: 1924461227}
-  - {fileID: 1384001277}
-  - {fileID: 228577442}
-  - {fileID: 1883012700}
-  - {fileID: 1544365294}
-  - {fileID: 712129174}
-  - {fileID: 1394545923}
-  - {fileID: 762690378}
-  - {fileID: 1983412926}
-  - {fileID: 857252404}
-  - {fileID: 232687943}
-  - {fileID: 770338760}
-  - {fileID: 500200545}
-  - {fileID: 1517060762}
-  - {fileID: 1458491221}
-  - {fileID: 63656247}
-  - {fileID: 1683655185}
-  - {fileID: 927864480}
-  - {fileID: 142639563}
-  - {fileID: 1848468254}
+  cards: []
   familyFutureCircle: {fileID: 1794087865}
   friendFutureCircle: {fileID: 1784277390}
   girlFutureCircle: {fileID: 1571399319}
@@ -9018,21 +8708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 1
-  girl_change: -2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &406938120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9318,21 +8993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: -1
-  girl_change: 2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &421803062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9561,8 +9221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -67}
-  m_SizeDelta: {x: -531.4, y: -379.7}
+  m_AnchoredPosition: {x: 0, y: -67}
+  m_SizeDelta: {x: -625.6, y: -468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434913291
 MonoBehaviour:
@@ -10068,21 +9728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &471841944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10298,21 +9943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &472700401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10528,21 +10158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -3
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &473766786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10747,21 +10362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &487341848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10977,21 +10577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 2
-  girl_change: 0
-  classmatess_change: -3
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &490870982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11281,21 +10866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -2
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &497175868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11905,21 +11475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &533226536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12283,21 +11838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &545094871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12661,21 +12201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &563889137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13393,21 +12918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: -2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &609137729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13686,21 +13196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 1
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &622510749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14573,21 +14068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: -2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &690351949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15132,21 +14612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &707176429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15583,21 +15048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &734211920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15907,21 +15357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &741538395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16769,21 +16204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &779589427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17622,21 +17042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &817253641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17852,21 +17257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &818497755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18479,21 +17869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 2
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &848323046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18709,21 +18084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &849250952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19000,21 +18360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 0}
-  losePopUp: {fileID: 0}
 --- !u!114 &857963468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19361,21 +18706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &874328700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19801,21 +19131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -3
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &902542947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20097,21 +19412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &905956530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20327,21 +19627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: -2
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &909178396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20840,21 +20125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -3
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &931104503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21210,21 +20480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: 1
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &938482948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21814,21 +21069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &961129112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22416,21 +21656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 2
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &992271826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22709,21 +21934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1004502545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22928,21 +22138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 0}
-  losePopUp: {fileID: 0}
 --- !u!114 &1013534678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23158,21 +22353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1019164807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23460,21 +22640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1024841103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23690,21 +22855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1029188174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24055,21 +23205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1045700362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24494,21 +23629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -3
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1068283652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25118,21 +24238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -3
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1117469407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25866,21 +24971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1179084005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26272,21 +25362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: -1
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1201636615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26576,21 +25651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1210325399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26730,7 +25790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -138.64746, y: -15}
+  m_AnchoredPosition: {x: -137, y: -14}
   m_SizeDelta: {x: 306.1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223374023
@@ -27167,21 +26227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1245884002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27471,21 +26516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1253036588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27913,21 +26943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1263731761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28143,21 +27158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1268213277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28843,21 +27843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1343089666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29136,21 +28121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -3
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1352173610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29503,21 +28473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1378535594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30014,21 +28969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: 1
-  girl_change: 1
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1394943305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30318,21 +29258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -3
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1403112764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30719,21 +29644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1433158527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31078,21 +29988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1452797186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31443,21 +30338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1472392452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31736,21 +30616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1501764882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32101,21 +30966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1512567665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32405,21 +31255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -2
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1516808966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32707,21 +31542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1533423248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33160,21 +31980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 2
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1544161130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33626,7 +32431,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f872c4f5cd512f74fadf3bac640e8923, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 676bb2a89939b7e4e944fc2c7be9f9fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34551,21 +33356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: 1
-  girl_change: 1
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1607332438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35604,21 +34394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1673907966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36299,21 +35074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1730847663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36529,21 +35289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1731923805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36818,7 +35563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1757623310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36959,7 +35704,7 @@ GameObject:
   - component: {fileID: 1784277392}
   - component: {fileID: 1784277391}
   m_Layer: 5
-  m_Name: FriengImage
+  m_Name: FriendImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36984,7 +35729,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f872c4f5cd512f74fadf3bac640e8923, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 676bb2a89939b7e4e944fc2c7be9f9fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37218,7 +35963,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f872c4f5cd512f74fadf3bac640e8923, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 676bb2a89939b7e4e944fc2c7be9f9fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37403,21 +36148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 2
-  girl_change: 0
-  classmatess_change: -2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1806687804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37696,21 +36426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1815224223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37915,21 +36630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1819188103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38208,21 +36908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1830254628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38586,21 +37271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 1
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1847763631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39030,21 +37700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: 1
-  girl_change: 1
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1854454634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39260,21 +37915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1867905860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39995,21 +38635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1893566806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40845,21 +39470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -3
-  girl_change: 0
-  classmatess_change: 2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1938544288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41075,21 +39685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 1
-  classmatess_change: 1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1942587169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41379,21 +39974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1957219614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41670,21 +40250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: -1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1968629972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41963,21 +40528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &1973774517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42487,21 +41037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2014314848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42717,21 +41252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -2
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2018186282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43010,21 +41530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 2
-  friend_change: 0
-  girl_change: 0
-  classmatess_change: -1
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2028627684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43390,8 +41895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 207.15}
-  m_SizeDelta: {x: -526.2, y: -477}
+  m_AnchoredPosition: {x: 0, y: 206}
+  m_SizeDelta: {x: -643.4, y: -570.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046640954
 MonoBehaviour:
@@ -43671,21 +42176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: 0
-  girl_change: -2
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2055300721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44126,21 +42616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 0
-  friend_change: -1
-  girl_change: 1
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2069867209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44419,21 +42894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: -1
-  friend_change: 1
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2084702857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44860,21 +43320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50429ccc43103d43a1731f1a96a3bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps: {fileID: 1403043848}
-  family: {fileID: 1144203910}
-  friend: {fileID: 1569413671}
-  girl: {fileID: 179004067}
-  classmatess: {fileID: 344194115}
-  family_change: 1
-  friend_change: -2
-  girl_change: 0
-  classmatess_change: 0
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
-  winPopUp: {fileID: 417113262}
-  losePopUp: {fileID: 1592355526}
 --- !u!114 &2091283023
 MonoBehaviour:
   m_ObjectHideFlags: 0

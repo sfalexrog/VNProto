@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/HubScene.unity
+    guid: b29865fa50285194cb9da81e49264257
+  - enabled: 1
+    path: Assets/Scenes/VNScene.unity
+    guid: 7b4677e308b583949b61c41cfc697d51
+  - enabled: 1
+    path: Assets/Scenes/CardGame.unity
+    guid: 0117d3c1db5618c499f9ddb2935eecfd
   m_configObjects: {}

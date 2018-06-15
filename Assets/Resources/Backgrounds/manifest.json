@@ -2,5 +2,9 @@
   {
     "name": "Школа",
     "image": "Backgrounds/BackgroundImages/1"
+  },
+  {
+    "name": "Замок",
+    "image": "Backgrounds/BackgroundImages/2"
   }
 ]

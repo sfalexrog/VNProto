@@ -33,5 +33,12 @@
     {
       "default": "Actors/ActorImages/5"
     }
+  },
+  {
+    "name": "Я",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/7"
+    }
   }
 ]

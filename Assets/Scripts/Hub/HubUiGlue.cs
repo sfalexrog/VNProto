@@ -19,7 +19,7 @@ public class HubUiGlue : MonoBehaviour
 	{
 		gameState = Toolbox.RegisterComponent<GameState>();
 		powerMeter.text = "Current power: " + gameState.currentPower;
-		levelText.text = "Следующий уровень: " + gameState.currentScene;
+		levelText.text = "Глава  " + gameState.currentScene;
 	}
 
 	public void StartNextLevel()

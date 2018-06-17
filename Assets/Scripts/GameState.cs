@@ -7,10 +7,12 @@ public class GameState : MonoBehaviour
 
 	public int currentPower;
 	public int currentScene;
+	public int maxPower;
 
 	void Awake()
 	{
-		currentPower = 500;
+		currentPower = 75;
+		maxPower = 150;
 		currentScene = 1;
 	}
 }

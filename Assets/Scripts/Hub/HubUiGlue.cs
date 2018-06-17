@@ -6,20 +6,22 @@ using UnityEngine.UI;
 
 public class HubUiGlue : MonoBehaviour
 {
+	public Slider PowerSlider;
+	public Text PowerMeter;
+	public Text LevelText;
+	public Button StoryModeButton;
 
-	public Text powerMeter;
-	public Text levelText;
-	public Button storyModeButton;
-
-	private GameState gameState;
+	private GameState _gameState;
 	
 
 	// Use this for initialization
 	void Start ()
 	{
-		gameState = Toolbox.RegisterComponent<GameState>();
-		powerMeter.text = "Current power: " + gameState.currentPower;
-		levelText.text = "Глава  " + gameState.currentScene;
+		_gameState = Toolbox.RegisterComponent<GameState>();
+		PowerMeter.text = "Current power: " + _gameState.currentPower;
+		LevelText.text = "Глава  " + _gameState.currentScene;
+		PowerSlider.maxValue = _gameState.maxPower;
+		PowerSlider.value = _gameState.currentPower;
 	}
 
 	public void StartNextLevel()

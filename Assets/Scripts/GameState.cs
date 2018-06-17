@@ -9,10 +9,19 @@ public class GameState : MonoBehaviour
 	public int currentScene;
 	public int maxPower;
 
+	public int currentExperience;
+
+	public string PlayerName;
+	public string PlayerAppearance;
+	
 	void Awake()
 	{
 		currentPower = 75;
 		maxPower = 150;
 		currentScene = 1;
+		currentExperience = 0;
+
+		PlayerName = "Player";
+		PlayerAppearance = "";
 	}
 }

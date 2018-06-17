@@ -7,23 +7,11 @@ using UnityEngine.UI;
 public class HubUiGlue : MonoBehaviour
 {
 	public Slider PowerSlider;
-	public Text PowerMeter;
 	public Text LevelText;
 	public Button StoryModeButton;
-
-	private GameState _gameState;
+	public Button CardGameButton;
+	public Image StoryModeLockedImage;
 	
-
-	// Use this for initialization
-	void Start ()
-	{
-		_gameState = Toolbox.RegisterComponent<GameState>();
-		PowerMeter.text = "Current power: " + _gameState.currentPower;
-		LevelText.text = "Глава  " + _gameState.currentScene;
-		PowerSlider.maxValue = _gameState.maxPower;
-		PowerSlider.value = _gameState.currentPower;
-	}
-
 	public void StartNextLevel()
 	{
 		SceneManager.LoadScene("Scenes/VNScene");
@@ -33,4 +21,65 @@ public class HubUiGlue : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/CardGame");
     }
+
+	public void ShowStoryModeDisabledPopup()
+	{
+		// TODO
+		Debug.LogWarning("Story mode is disabled at the moment");
+	}
+
+	public void ShowCardGameDisabledPopup()
+	{
+		// TODO
+		Debug.LogWarning("Card game is disabled at the moment");
+	}
+
+	public void DisableAllButtons()
+	{
+		StoryModeButton.onClick.RemoveAllListeners();
+		CardGameButton.onClick.RemoveAllListeners();
+	}
+
+	public void SetStoryButtonEnabled()
+	{
+		StoryModeButton.onClick.RemoveAllListeners();
+		StoryModeButton.onClick.AddListener(delegate { StartNextLevel(); });
+		StoryModeButton.image.color = Color.white;
+		StoryModeLockedImage.gameObject.SetActive(false);
+	}
+
+	public void SetStoryButtonDisabled()
+	{
+		StoryModeButton.onClick.RemoveAllListeners();
+		StoryModeButton.onClick.AddListener(delegate { ShowStoryModeDisabledPopup(); });
+		StoryModeButton.image.color = Color.gray;
+		StoryModeLockedImage.gameObject.SetActive(true);
+	}
+
+	public void SetCardButtonEnabled()
+	{
+		CardGameButton.onClick.RemoveAllListeners();
+		CardGameButton.onClick.AddListener(delegate { StartCardGame(); });
+	}
+
+	public void SetCardButtonDisabled()
+	{
+		CardGameButton.onClick.RemoveAllListeners();
+		CardGameButton.onClick.AddListener(delegate { ShowCardGameDisabledPopup(); });
+	}
+
+	public void SetPowerMeterMaxValue(int maxValue)
+	{
+		PowerSlider.maxValue = maxValue;
+	}
+
+	public void SetPowerMeterValue(int value)
+	{
+		PowerSlider.value = value;
+	}
+
+	public void SetStoryModeText(string text)
+	{
+		LevelText.text = text;
+	}
 }

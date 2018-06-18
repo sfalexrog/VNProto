@@ -16,6 +16,7 @@ public class UiGlue : MonoBehaviour
 	public GameObject PhraseUi;
 	public GameObject EndingUi;
 	public GameObject ChoiceUi;
+	public Slider DefenderPowerMeter;
 
 	private GameState gameState;
 	
@@ -73,7 +74,9 @@ public class UiGlue : MonoBehaviour
 		_choiceHeader = choiceUiTexts[1];
 		_choiceDefenderButton = choiceUiButtons[0];
 		// The rest of the texts should be our buttons
-		_choicesTexts = new Text[choiceUiTexts.Length - 2];
+		// FIXME: hardcoded to 3 buttons for now
+		//_choicesTexts = new Text[choiceUiTexts.Length - 2];
+		_choicesTexts = new Text[3];
 		_choicesButtons = new Button[choiceUiButtons.Length - 1];
 		for (int i = 0; i < _choicesTexts.Length; ++i)
 		{
@@ -84,8 +87,6 @@ public class UiGlue : MonoBehaviour
 		// Populate Ending UI
 		Text[] endingUiTexts = EndingUi.GetComponentsInChildren<Text>();
 		_endingText = endingUiTexts[0];
-		
-		
 	}
 
 	// We need to have Model initialized here
@@ -118,6 +119,13 @@ public class UiGlue : MonoBehaviour
 		model.FinalizeChapter();
 	}
 
+	private void HideAllUi()
+	{
+		EndingUi.SetActive(false);
+		ChoiceUi.SetActive(false);
+		PhraseUi.SetActive(false);
+	}
+
 
 	public void ShowPhraseUi(PhraseEvent pev)
 	{
@@ -125,8 +133,7 @@ public class UiGlue : MonoBehaviour
 		{
 			Start();
 		}
-		EndingUi.SetActive(false);
-		ChoiceUi.SetActive(false);
+		HideAllUi();
 		PhraseUi.SetActive(true);
 		if (pev.speakerName != null)
 		{
@@ -161,10 +168,12 @@ public class UiGlue : MonoBehaviour
 
 	public void ShowChoiceUi(DialogueChoiceEvent cev, bool showAlternateText = false)
 	{
-		EndingUi.SetActive(false);
+		HideAllUi();
 		ChoiceUi.SetActive(true);
-		PhraseUi.SetActive(false);
 		_choiceHeader.text = cev.header;
+
+		DefenderPowerMeter.maxValue = gameState.maxPower;
+		DefenderPowerMeter.value = gameState.currentPower;
 		
 		// Should only show defender button if energy is high enough
 		var shouldShowDefender = !showAlternateText && (gameState.currentPower >= cev.defenderCost);
@@ -188,13 +197,8 @@ public class UiGlue : MonoBehaviour
 						Color color;
 						if (ColorUtility.TryParseHtmlString(cev.choices[i].defenderColor, out color))
 						{
-							_choicesTexts[i].color = color;	
-						}
-						else
-						{
-							_choicesTexts[i].color = Color.green;
-						}
-							
+							_choicesButtons[i].image.color = color;
+						}	
 					}
 					
 					if (cev.choices[i].defenderText != null)
@@ -217,10 +221,8 @@ public class UiGlue : MonoBehaviour
 
 	public void ShowEndingUi(FinalDialogueEvent fev)
 	{
+		HideAllUi();
 		EndingUi.SetActive(true);
-		ChoiceUi.SetActive(false);
-		PhraseUi.SetActive(false);
-
 		_endingText.text = fev.text;
 	}
 

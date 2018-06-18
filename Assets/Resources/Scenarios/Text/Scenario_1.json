@@ -142,12 +142,12 @@
     "choices": [
       {
         "choiceText": "Да, как раз есть в задумке",
-        "defenderColor": "#ff0000",
+        "defenderColor": "#B22222",
         "resultId": 100011000
       },
       {
         "choiceText": "Спасибо, что беспокоишься",
-        "defenderColor": "#00ff00",
+        "defenderColor": "#006400",
         "resultId": 100012000
       }
 	],

@@ -143,8 +143,17 @@ public class DialogueTree : MonoBehaviour
 
     public void OnForward()
     {
-        var currentEvent = (PhraseEvent) getEventById(currentId);
-        currentId = currentEvent.nextEventId;
+        var currentEvent = getEventById(currentId);
+        if (currentEvent.GetType() == typeof(PhraseEvent))
+        {
+            var phraseEvent = (PhraseEvent) getEventById(currentId);
+            currentId = phraseEvent.nextEventId;
+        }
+        else if (currentEvent.GetType() == typeof(PlayerPhraseEvent))
+        {
+            var playerEvent = (PlayerPhraseEvent) getEventById(currentId);
+            currentId = playerEvent.nextEventId;
+        }
         SetUiForEvent(getEventById(currentId));
     }
 
@@ -178,6 +187,9 @@ public class DialogueTree : MonoBehaviour
                 }
             }
         }
+        // Add player characters to the sprite list
+        actors.Add("Player Boy");
+        actors.Add("Player Girl");
 
         var actorSpriteList = new List<string>();
         foreach (var actor in actors)
@@ -292,5 +304,37 @@ public class DialogueTree : MonoBehaviour
         }
 
         SceneManager.LoadScene("Scenes/HubScene");
+    }
+    
+    /**
+     * Get the appropriate image for the player character
+     */
+    public string GetPlayerImage()
+    {
+        var currentEvent = (PlayerPhraseEvent) getEventById(currentId);
+        string actorName = null;
+        if (_gameState.PlayerGender == PlayerGender.Boy)
+        {
+            actorName = "Player Boy";
+        }
+        else
+        {
+            actorName = "Player Girl";
+        }
+        // TODO: store emotions as event data
+        var actorEmotion = "default";
+        DialogueActor playerActor;
+        if (_actors.TryGetValue(actorName, out playerActor))
+        {
+            string emotionValue;
+            if (playerActor.emotions.TryGetValue(actorEmotion, out emotionValue))
+            {
+                return emotionValue;
+            }
+
+            return playerActor.emotions["default"];
+        }
+
+        return null;
     }
 }

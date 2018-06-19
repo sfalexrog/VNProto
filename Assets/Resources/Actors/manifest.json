@@ -40,5 +40,19 @@
     {
       "default": "Actors/ActorImages/7"
     }
+  },
+  {
+    "name": "Player Boy",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/6"
+    }
+  },
+  {
+    "name": "Player Girl",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/5_flip"
+    }
   }
 ]

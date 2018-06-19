@@ -18,6 +18,7 @@ public class UiGlue : MonoBehaviour
 	public GameObject EndingUi;
 	public GameObject ChoiceUi;
 	public GameObject GenderChoiceUi;
+	public GameObject PlayerPhraseUi;
 	public Slider DefenderPowerMeter;
 
 	private GameState gameState;
@@ -43,6 +44,11 @@ public class UiGlue : MonoBehaviour
 	
 	// Ending UI
 	private Text _endingText;
+	
+	// Player Phrase UI
+	private Image _playerImage;
+	private Text _playerNameBox;
+	private Text _playerText;
 
 	// Loaded and cached actor sprites
 	private Dictionary<string, Sprite> _actorSprites;
@@ -89,6 +95,14 @@ public class UiGlue : MonoBehaviour
 		// Populate Ending UI
 		Text[] endingUiTexts = EndingUi.GetComponentsInChildren<Text>();
 		_endingText = endingUiTexts[0];
+		
+		// Populate Player Phrase UI
+		Image[] playerImages = PlayerPhraseUi.GetComponentsInChildren<Image>();
+		Text[] playerTexts = PlayerPhraseUi.GetComponentsInChildren<Text>();
+
+		_playerImage = playerImages[0];
+		_playerNameBox = playerTexts[0];
+		_playerText = playerTexts[1];
 	}
 
 	// We need to have Model initialized here
@@ -132,6 +146,7 @@ public class UiGlue : MonoBehaviour
 		ChoiceUi.SetActive(false);
 		PhraseUi.SetActive(false);
 		GenderChoiceUi.SetActive(false);
+		PlayerPhraseUi.SetActive(false);
 	}
 
 	private string GetGenderText(PhraseEvent pev)
@@ -313,9 +328,34 @@ public class UiGlue : MonoBehaviour
 		GenderChoiceUi.SetActive(true);
 	}
 
+	// Get gender-specific player phrase
+	private string GetGenderPhrase(PlayerPhraseEvent pev)
+	{
+		string text = null;
+		if (gameState.PlayerGender == PlayerGender.Boy)
+		{
+			text = pev.boyPhrase;
+		}
+		else
+		{
+			text = pev.girlPhrase;
+		}
+
+		if (text == null)
+		{
+			text = pev.phrase;
+		}
+
+		return text;
+	}
+
 	public void ShowPlayerUi(PlayerPhraseEvent pev)
 	{
-		// TODO
+		HideAllUi();
+		PlayerPhraseUi.SetActive(true);
+		_playerNameBox.text = gameState.PlayerName;
+		_playerText.text = GetGenderPhrase(pev);
+		_playerImage.sprite = _actorSprites[model.GetPlayerImage()];
 	}
 	
 }

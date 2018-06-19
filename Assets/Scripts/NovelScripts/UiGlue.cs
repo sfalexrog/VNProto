@@ -94,6 +94,7 @@ public class UiGlue : MonoBehaviour
 	{
 		// Workaround for "clever" slider implementation
 		DefenderPowerMeter.minValue = -1;
+		DefenderPowerMeter.maxValue = gameState.maxPower;
 		DefenderPowerMeter.value = -1;
 		
 		if (_actorSprites == null)

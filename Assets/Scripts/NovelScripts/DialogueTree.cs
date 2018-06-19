@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Remoting.Channels;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -101,6 +102,14 @@ public class DialogueTree : MonoBehaviour
         {
             glue.ShowEndingUi((FinalDialogueEvent)ev);
         }
+        else if (ev.GetType() == typeof(ChooseGenderEvent))
+        {
+            glue.ShowGenderUi();
+        }
+        else if (ev.GetType() == typeof(PlayerPhraseEvent))
+        {
+            glue.ShowPlayerUi((PlayerPhraseEvent) ev);
+        }
         else
         {
             Debug.LogError("Unhandled event type " + ev.GetType());
@@ -109,8 +118,24 @@ public class DialogueTree : MonoBehaviour
 
     public void OnChoice(int choice)
     {
-        var currentEvent = (DialogueChoiceEvent) getEventById(currentId);
-        currentId = currentEvent.choices[choice].resultId;
+        var currentEvent = getEventById(currentId);
+        if (currentEvent.GetType() == typeof(DialogueChoiceEvent))
+        {
+            var choiceEvent = (DialogueChoiceEvent) currentEvent;
+            currentId = choiceEvent.choices[choice].resultId;
+            
+        }
+        else if (currentEvent.GetType() == typeof(ChooseGenderEvent))
+        {
+            if (choice == 0)
+            {
+                _gameState.PlayerGender = PlayerGender.Boy;
+            }
+            else
+            {
+                _gameState.PlayerGender = PlayerGender.Girl;
+            }
+        }
         SetUiForEvent(getEventById(currentId));
     }
 
@@ -254,8 +279,7 @@ public class DialogueTree : MonoBehaviour
                 _gameState.currentScene += 1;
             }
         }
-        
+
         SceneManager.LoadScene("Scenes/HubScene");
     }
-    
 }

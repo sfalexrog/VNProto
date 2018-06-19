@@ -87,6 +87,10 @@ public class UiGlue : MonoBehaviour
 		// Populate Ending UI
 		Text[] endingUiTexts = EndingUi.GetComponentsInChildren<Text>();
 		_endingText = endingUiTexts[0];
+		
+		// Workaround for "clever" slider implementation
+		DefenderPowerMeter.minValue = -1;
+		DefenderPowerMeter.value = -1;
 	}
 
 	// We need to have Model initialized here
@@ -171,7 +175,9 @@ public class UiGlue : MonoBehaviour
 		HideAllUi();
 		ChoiceUi.SetActive(true);
 		_choiceHeader.text = cev.header;
-
+		
+		// Workaround for "clever" slider implementation
+		DefenderPowerMeter.minValue = 0;
 		DefenderPowerMeter.maxValue = gameState.maxPower;
 		DefenderPowerMeter.value = gameState.currentPower;
 		
@@ -250,4 +256,16 @@ public class UiGlue : MonoBehaviour
 		var backgroundImageName = model.GetBackgroundImageByName(bev.backgroundName);
 		BackgroundImage.sprite = _backgroundSprites[backgroundImageName];
 	}
+	
+	// Show gender choice UI
+	public void ShowGenderUi()
+	{
+		// TODO
+	}
+
+	public void ShowPlayerUi(PlayerPhraseEvent pev)
+	{
+		// TODO
+	}
+	
 }

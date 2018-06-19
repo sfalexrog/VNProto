@@ -10,5 +10,7 @@ public class BackgroundChangeEvent : DialogueEvent
     }
 
     public string backgroundName;
+    public string boyBackgroundName;
+    public string girlBackgroundName;
     public int nextEventId;
 }

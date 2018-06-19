@@ -136,7 +136,6 @@ public class DialogueTree : MonoBehaviour
             {
                 _gameState.PlayerGender = PlayerGender.Girl;
             }
-
             currentId = genderEvent.nextEventId;
         }
         SetUiForEvent(getEventById(currentId));
@@ -210,7 +209,20 @@ public class DialogueTree : MonoBehaviour
             if (ev.GetType() == typeof(BackgroundChangeEvent))
             {
                 var bev = (BackgroundChangeEvent) ev;
-                backgrounds.Add(bev.backgroundName);
+                if (bev.backgroundName != null)
+                {
+                    backgrounds.Add(bev.backgroundName);    
+                }
+
+                if (bev.boyBackgroundName != null)
+                {
+                    backgrounds.Add(bev.boyBackgroundName);
+                }
+
+                if (bev.girlBackgroundName != null)
+                {
+                    backgrounds.Add(bev.girlBackgroundName);
+                }
             }
         }
 

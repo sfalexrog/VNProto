@@ -311,7 +311,9 @@ public class DialogueTree : MonoBehaviour
      */
     public string GetPlayerImage()
     {
-        var currentEvent = (PlayerPhraseEvent) getEventById(currentId);
+        var actorEmotion = "default";
+        // TODO: get emotion value from event
+        var currentEvent = getEventById(currentId);
         string actorName = null;
         if (_gameState.PlayerGender == PlayerGender.Boy)
         {
@@ -322,7 +324,6 @@ public class DialogueTree : MonoBehaviour
             actorName = "Player Girl";
         }
         // TODO: store emotions as event data
-        var actorEmotion = "default";
         DialogueActor playerActor;
         if (_actors.TryGetValue(actorName, out playerActor))
         {

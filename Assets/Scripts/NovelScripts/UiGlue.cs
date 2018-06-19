@@ -37,6 +37,7 @@ public class UiGlue : MonoBehaviour
 	
 	
 	// Choice UI
+	private Image _choicePlayerImage;
 	private Text _choiceHeader;
 	private Text[] _choicesTexts;
 	private Button _choiceDefenderButton;
@@ -78,7 +79,9 @@ public class UiGlue : MonoBehaviour
 		// Populate Choice UI
 		Text[] choiceUiTexts = ChoiceUi.GetComponentsInChildren<Text>();
 		Button[] choiceUiButtons = ChoiceUi.GetComponentsInChildren<Button>();
+		Image[] choiceUiImages = ChoiceUi.GetComponentsInChildren<Image>();
 		// choiceUiTexts[0] should be our Defender button text, don't touch it
+		_choicePlayerImage = choiceUiImages[1];
 		_choiceHeader = choiceUiTexts[1];
 		_choiceDefenderButton = choiceUiButtons[0];
 		// The rest of the texts should be our buttons
@@ -213,6 +216,7 @@ public class UiGlue : MonoBehaviour
 		HideAllUi();
 		ChoiceUi.SetActive(true);
 		_choiceHeader.text = cev.header;
+		_choicePlayerImage.sprite = _actorSprites[model.GetPlayerImage()];
 		
 		// Workaround for "clever" slider implementation
 		DefenderPowerMeter.minValue = 0;

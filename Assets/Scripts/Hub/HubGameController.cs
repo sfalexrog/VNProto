@@ -6,6 +6,7 @@ public class HubGameController : MonoBehaviour
 {
 
 	public HubUiGlue UiGlue;
+	public bool RestoreDefenderOnRestart;
 
 	private GameState _gameState;
 
@@ -17,6 +18,10 @@ public class HubGameController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		if (RestoreDefenderOnRestart)
+		{
+			_gameState.currentPower = _gameState.maxPower;
+		}
 		UiGlue.DisableAllButtons();
 		UiGlue.SetPowerMeterMaxValue(_gameState.maxPower);
 		UiGlue.SetPowerMeterValue(_gameState.currentPower);

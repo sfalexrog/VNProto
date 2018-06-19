@@ -716,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiGlue: {fileID: 1715675654}
+  RestoreDefenderOnRestart: 1
 --- !u!4 &622841401
 Transform:
   m_ObjectHideFlags: 0

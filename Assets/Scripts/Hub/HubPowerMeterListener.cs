@@ -11,16 +11,15 @@ public class HubPowerMeterListener : MonoBehaviour
 	 */
 	private Text _text;
 	
-	private void Awake()
-	{
-		_text = GetComponent<Text>();
-	}
-	
 	/**
 	 * Update the text value according to the slider 
 	 */
 	public void OnValueChanged(Slider slider)
 	{
+		if (_text == null)
+		{
+			_text = GetComponent<Text>();
+		}
 		_text.text = slider.value + "/" + slider.maxValue;
 	}
 }

@@ -87,15 +87,15 @@ public class UiGlue : MonoBehaviour
 		// Populate Ending UI
 		Text[] endingUiTexts = EndingUi.GetComponentsInChildren<Text>();
 		_endingText = endingUiTexts[0];
-		
-		// Workaround for "clever" slider implementation
-		DefenderPowerMeter.minValue = -1;
-		DefenderPowerMeter.value = -1;
 	}
 
 	// We need to have Model initialized here
 	void Start()
 	{
+		// Workaround for "clever" slider implementation
+		DefenderPowerMeter.minValue = -1;
+		DefenderPowerMeter.value = -1;
+		
 		if (_actorSprites == null)
 		{
 			_actorSprites = new Dictionary<string, Sprite>();
@@ -182,8 +182,19 @@ public class UiGlue : MonoBehaviour
 		DefenderPowerMeter.value = gameState.currentPower;
 		
 		// Should only show defender button if energy is high enough
-		var shouldShowDefender = !showAlternateText && (gameState.currentPower >= cev.defenderCost);
+		// TODO: move to game logic
+		var shouldShowDefender = !showAlternateText;
 		_choiceDefenderButton.gameObject.SetActive(shouldShowDefender);
+		_choiceDefenderButton.onClick.RemoveAllListeners();
+		if (gameState.currentPower >= cev.defenderCost)
+		{
+			_choiceDefenderButton.image.color = new Color(147, 194, 248);
+			_choiceDefenderButton.onClick.AddListener(delegate { OnDefender(); });
+		}
+		else
+		{
+			_choiceDefenderButton.image.color = Color.grey;
+		}
 		
 		for (int i = 0; i < _choicesTexts.Length; ++i)
 		{

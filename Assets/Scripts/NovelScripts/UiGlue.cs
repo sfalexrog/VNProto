@@ -134,7 +134,26 @@ public class UiGlue : MonoBehaviour
 		GenderChoiceUi.SetActive(false);
 	}
 
+	private string GetGenderText(PhraseEvent pev)
+	{
+		string text = null;
+		if (gameState.PlayerGender == PlayerGender.Boy)
+		{
+			text = pev.boyText;
+		}
+		else
+		{
+			text = pev.girlText;
+		}
 
+		if (text == null)
+		{
+			text = pev.text;
+		}
+
+		return text;
+	}
+	
 	public void ShowPhraseUi(PhraseEvent pev)
 	{
 		if (_actorSprites == null)
@@ -150,7 +169,7 @@ public class UiGlue : MonoBehaviour
 			_actorNameText.text = pev.speakerName;
 			_dialogBox.gameObject.SetActive(true);
 			_monologueBox.gameObject.SetActive(false);
-			_dialogText.text = pev.text;
+			_dialogText.text = GetGenderText(pev);
 		}
 		else
 		{
@@ -158,7 +177,7 @@ public class UiGlue : MonoBehaviour
 			_actorNameText.gameObject.SetActive(false);
 			_dialogBox.gameObject.SetActive(false);
 			_monologueBox.gameObject.SetActive(true);
-			_monologueText.text = pev.text;
+			_monologueText.text = GetGenderText(pev);
 		}
 		
 		Sprite actorSprite;

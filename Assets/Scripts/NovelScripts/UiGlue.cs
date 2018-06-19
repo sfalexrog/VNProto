@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 using Newtonsoft.Json;
+using UnityEngine.Analytics;
 
 public class UiGlue : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class UiGlue : MonoBehaviour
 	public GameObject PhraseUi;
 	public GameObject EndingUi;
 	public GameObject ChoiceUi;
+	public GameObject GenderChoiceUi;
 	public Slider DefenderPowerMeter;
 
 	private GameState gameState;
@@ -129,6 +131,7 @@ public class UiGlue : MonoBehaviour
 		EndingUi.SetActive(false);
 		ChoiceUi.SetActive(false);
 		PhraseUi.SetActive(false);
+		GenderChoiceUi.SetActive(false);
 	}
 
 
@@ -272,7 +275,8 @@ public class UiGlue : MonoBehaviour
 	// Show gender choice UI
 	public void ShowGenderUi()
 	{
-		// TODO
+		HideAllUi();
+		GenderChoiceUi.SetActive(true);
 	}
 
 	public void ShowPlayerUi(PlayerPhraseEvent pev)

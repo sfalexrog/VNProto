@@ -127,6 +127,7 @@ public class DialogueTree : MonoBehaviour
         }
         else if (currentEvent.GetType() == typeof(ChooseGenderEvent))
         {
+            var genderEvent = (ChooseGenderEvent) currentEvent;
             if (choice == 0)
             {
                 _gameState.PlayerGender = PlayerGender.Boy;
@@ -135,6 +136,8 @@ public class DialogueTree : MonoBehaviour
             {
                 _gameState.PlayerGender = PlayerGender.Girl;
             }
+
+            currentId = genderEvent.nextEventId;
         }
         SetUiForEvent(getEventById(currentId));
     }

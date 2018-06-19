@@ -4,6 +4,12 @@
     "Id": 1,
     "Type": 2,
     "backgroundName": "Школа",
+    "nextEventId": 301
+  },
+  // Choose gender
+  {
+    "Id": 301,
+    "Type": 4,
     "nextEventId": 2
   },
     //2

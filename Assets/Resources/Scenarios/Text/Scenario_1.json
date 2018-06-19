@@ -23,7 +23,8 @@
   {
     "Id": 1101,
     "Type": 2,
-    "backgroundName": "Замок",
+    "boyBackgroundName": "Руины",
+    "girlBackgroundName": "Лес",
     "nextEventId": 3
   },
     //3

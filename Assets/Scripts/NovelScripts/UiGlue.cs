@@ -268,7 +268,22 @@ public class UiGlue : MonoBehaviour
 	// Change background as requested
 	public void ChangeBackground(BackgroundChangeEvent bev)
 	{
-		var backgroundImageName = model.GetBackgroundImageByName(bev.backgroundName);
+		string backgroundName = null;
+		// First, try to load gender-specific background
+		if (gameState.PlayerGender == PlayerGender.Boy)
+		{
+			backgroundName = bev.boyBackgroundName;
+		}
+		else
+		{
+			backgroundName = bev.girlBackgroundName;
+		}
+		// If there's no gender-specific background, load a generic one
+		if (backgroundName == null)
+		{
+			backgroundName = bev.backgroundName;
+		}
+		var backgroundImageName = model.GetBackgroundImageByName(backgroundName);
 		BackgroundImage.sprite = _backgroundSprites[backgroundImageName];
 	}
 	

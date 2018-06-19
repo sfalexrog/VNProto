@@ -10,5 +10,13 @@
   {
     "name": "Усадьба",
     "image": "Backgrounds/BackgroundImages/5"
+  },
+  {
+    "name": "Лес",
+    "image": "Backgrounds/BackgroundImages/3"
+  },
+  {
+    "name": "Руины",
+    "image": "Backgrounds/BackgroundImages/4"
   }
 ]

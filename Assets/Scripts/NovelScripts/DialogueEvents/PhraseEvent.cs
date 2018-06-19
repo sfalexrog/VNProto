@@ -12,7 +12,13 @@ public class PhraseEvent : DialogueEvent
         get { return DialogueEventType.TYPE_PHRASE; }
     }
 
+    // Gender-neutral phrase
     public string text;
+    
+    // Gender-based phrase
+    public string boyText;
+    public string girlText;
+
     public string speakerName;
     public int nextEventId;
 

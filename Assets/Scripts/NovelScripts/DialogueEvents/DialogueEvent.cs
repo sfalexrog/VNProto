@@ -10,6 +10,8 @@ public enum DialogueEventType
     TYPE_PHRASE = 0,
     TYPE_CHOICE = 1,
     TYPE_BG_CHANGE = 2,
+    TYPE_PLAYER_PHRASE = 3,
+    TYPE_GENDER_CHOICE = 4,
     TYPE_END = 999
 }
 
@@ -59,6 +61,10 @@ public class EventConverter : JsonCreationConverter<DialogueEvent>
                     return new DialogueChoiceEvent();
                 case (int)DialogueEventType.TYPE_BG_CHANGE:
                     return new BackgroundChangeEvent();
+                case (int)DialogueEventType.TYPE_GENDER_CHOICE:
+                    return new ChooseGenderEvent();
+                case (int)DialogueEventType.TYPE_PLAYER_PHRASE:
+                    return new PlayerPhraseEvent();
                 case (int)DialogueEventType.TYPE_END:
                     return new FinalDialogueEvent();
                 default:

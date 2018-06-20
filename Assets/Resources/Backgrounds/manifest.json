@@ -34,5 +34,9 @@
   {
     "name": "Подъезд",
     "image": "Backgrounds/BackgroundImages/entrance"
+  },
+  {
+    "name": "Телефон",
+    "image": "Backgrounds/BackgroundImages/phone"
   }
 ]

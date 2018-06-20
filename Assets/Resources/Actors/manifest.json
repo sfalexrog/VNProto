@@ -47,19 +47,45 @@
     {
       "default": "Actors/ActorImages/hero_boy"
     }
-  },
-  {
+  },{
     "name": "Player Girl",
     "emotions":
     {
       "default": "Actors/ActorImages/hero_girl"
     }
-  },
-  {
+  },{
     "name": "Неизвестный",
     "emotions":
     {
       "default": "Actors/ActorImages/silhouette"
+    }
+  }
+  ,{
+    "name": "Учитель",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/teacher"
+    }
+  }
+  ,{
+    "name": "Саша",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/leader"
+    }
+  }
+  ,{
+    "name": "Вася",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/coder"
+    }
+  },
+  {
+    "name": "Робот",
+    "emotions":
+    {
+      "default": "Actors/ActorImages/bamblebee"
     }
   }
 ]

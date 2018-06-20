@@ -4421,7 +4421,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 108766741}
   m_FillRect: {fileID: 2035600772}
   m_HandleRect: {fileID: 108766740}
@@ -5612,7 +5612,7 @@ GameObject:
   - component: {fileID: 225475714}
   - component: {fileID: 225475713}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Friends Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12783,7 +12783,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 433059158}
   m_FillRect: {fileID: 1404649692}
   m_HandleRect: {fileID: 433059157}
@@ -13245,7 +13245,7 @@ GameObject:
   - component: {fileID: 554063510}
   - component: {fileID: 554063509}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: Couple Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13308,6 +13308,46 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554063507}
+--- !u!1 &554191930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 554191932}
+  - component: {fileID: 554191931}
+  m_Layer: 0
+  m_Name: Card Ui Glue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &554191931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554191930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b73144330e9b40e89ca7bf197cf77ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &554191932
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554191930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 180.51608, y: 321.12186, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558091881
 GameObject:
   m_ObjectHideFlags: 0
@@ -14813,7 +14853,7 @@ GameObject:
   - component: {fileID: 648395260}
   - component: {fileID: 648395259}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Goal Counter Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23487,7 +23527,7 @@ GameObject:
   - component: {fileID: 990663029}
   - component: {fileID: 990663028}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Goal Prefix Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28761,7 +28801,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1451209668}
   m_FillRect: {fileID: 789721901}
   m_HandleRect: {fileID: 1451209667}
@@ -32595,7 +32635,7 @@ GameObject:
   - component: {fileID: 1427846635}
   - component: {fileID: 1427846634}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: Class Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37442,7 +37482,7 @@ GameObject:
   - component: {fileID: 1630510964}
   - component: {fileID: 1630510963}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Family Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41278,7 +41318,7 @@ GameObject:
   - component: {fileID: 1843590763}
   - component: {fileID: 1843590762}
   m_Layer: 5
-  m_Name: FamilyImage
+  m_Name: Family Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41693,7 +41733,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1954321128}
   m_FillRect: {fileID: 229594960}
   m_HandleRect: {fileID: 1954321127}
@@ -42734,7 +42774,7 @@ GameObject:
   - component: {fileID: 1890265886}
   - component: {fileID: 1890265885}
   m_Layer: 5
-  m_Name: FriendImage
+  m_Name: Friend Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45215,7 +45255,7 @@ GameObject:
   - component: {fileID: 1976847335}
   - component: {fileID: 1976847334}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Actor Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48924,7 +48964,7 @@ GameObject:
   - component: {fileID: 2125869881}
   - component: {fileID: 2125869880}
   m_Layer: 5
-  m_Name: GirlImage
+  m_Name: Girl Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49130,6 +49170,46 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2134043464}
+--- !u!1 &2142225988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2142225989}
+  - component: {fileID: 2142225990}
+  m_Layer: 0
+  m_Name: Card Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2142225989
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142225988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 180.51608, y: 321.12186, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2142225990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142225988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de3fa24d83794438aadc8e7aa223633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2147235022
 GameObject:
   m_ObjectHideFlags: 0

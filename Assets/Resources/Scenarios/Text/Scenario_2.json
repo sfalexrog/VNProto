@@ -2,12 +2,6 @@
 	//1
   {
     "Id": 1,
-    "Type": 4,
-    "nextEventId": 11004
-  },
-	//11004
-  {
-    "Id": 11004,
     "Type": 2,
     "backgroundName": "Комната",
     "nextEventId": 2
@@ -61,7 +55,7 @@
 	"speakerName": "Я",
     "nextEventId": 9,
     "Id": 8,
-    "Type": 3
+    "Type": 0
   },
     //9
   {
@@ -69,7 +63,7 @@
 	"speakerName": "Я",
     "nextEventId": 10,
     "Id": 9,
-    "Type": 3
+    "Type": 0
   },
     //10
   {
@@ -77,7 +71,7 @@
 	"speakerName": "Я",
     "nextEventId": 11,
     "Id": 10,
-    "Type": 3
+    "Type": 0
   },
     //11
   {
@@ -99,7 +93,7 @@
 	"speakerName": "Я",
     "nextEventId": 14,
     "Id": 13,
-    "Type": 3
+    "Type": 0
   },
    //14
   {
@@ -107,7 +101,7 @@
     "speakerName": "Я",
     "nextEventId": 15,
     "Id": 14,
-    "Type": 3
+    "Type": 0
   },
    //15
   {
@@ -115,7 +109,7 @@
 	"speakerName": "Я",
     "nextEventId": 16,
     "Id": 15,
-    "Type": 3
+    "Type": 0
   },
    //16
   {
@@ -123,7 +117,7 @@
 	"speakerName": "Я",
     "nextEventId": 17,
     "Id": 16,
-    "Type": 3
+    "Type": 0
   },
    //17
   {
@@ -145,7 +139,7 @@
 	"speakerName": "Я",
     "nextEventId": 20,
     "Id": 19,
-    "Type": 3
+    "Type": 0
   },
     //20
   {
@@ -153,7 +147,7 @@
 	"speakerName": "Я",
     "nextEventId": 12001,
     "Id": 20,
-    "Type": 3
+    "Type": 0
   },
 	//12001
   {
@@ -198,7 +192,7 @@
     "text": "Я хватаю еще горячий блин и макаю его в варенье",
     "nextEventId": 25,
     "Id": 24,
-    "Type": 3
+    "Type": 0
   },
     //25
   {
@@ -214,7 +208,7 @@
 	"speakerName": "Я",
     "nextEventId": 27,
     "Id": 26,
-    "Type": 3
+    "Type": 0
   },
     //27
   {
@@ -332,7 +326,7 @@
 	"speakerName": "Я",
     "nextEventId": 40,
     "Id": 39,
-    "Type": 3
+    "Type": 0
   },
     //40
   {
@@ -340,7 +334,7 @@
 	"speakerName": "Я",
     "nextEventId": 41,
     "Id": 40,
-    "Type": 3
+    "Type": 0
   },
     //41
   {
@@ -356,7 +350,7 @@
 	"speakerName": "Я",
     "nextEventId": 43,
     "Id": 42,
-    "Type": 3
+    "Type": 0
   },
     //43
   {
@@ -364,7 +358,7 @@
 	"speakerName": "Я",
     "nextEventId": 44,
     "Id": 43,
-    "Type": 3
+    "Type": 0
   },
     //44
   {
@@ -372,7 +366,7 @@
 	"speakerName": "Я",
     "nextEventId": 45,
     "Id": 44,
-    "Type": 3
+    "Type": 0
   },
     //45
   {
@@ -380,7 +374,7 @@
 	"speakerName": "Я",
     "nextEventId": 46,
     "Id": 45,
-    "Type": 3
+    "Type": 0
   },
     //46
   {
@@ -401,8 +395,6 @@
     //48
   {
     "text": "Теперь ты сам моешь тарелку за собой",
-	"girlText": "Теперь ты сама моешь тарелку за собой",
-	"boyText": "Теперь ты сам моешь тарелку за собой",
 	"speakerName": "Мама",
     "nextEventId": 49,
     "Id": 48,
@@ -486,7 +478,7 @@
 	"speakerName": "Я",
     "nextEventId": 56,
     "Id": 55,
-    "Type": 3
+    "Type": 0
   },
     //56
   {
@@ -532,7 +524,7 @@
 	"speakerName": "Я",
     "nextEventId": 62,
     "Id": 61,
-    "Type": 3
+    "Type": 0
   },
     //62
   {
@@ -623,7 +615,7 @@
 	"speakerName": "Я",
     "nextEventId": 66,
     "Id": 65,
-    "Type": 3
+    "Type": 0
   },
     //66
   {
@@ -631,7 +623,7 @@
 	"speakerName": "Я",
     "nextEventId": 67,
     "Id": 66,
-    "Type": 3
+    "Type": 0
   },
     //67
   {
@@ -639,7 +631,7 @@
 	"speakerName": "Я",
     "nextEventId": 68,
     "Id": 67,
-    "Type": 3
+    "Type": 0
   },
     //68
   {
@@ -647,7 +639,7 @@
 	"speakerName": "Я",
     "nextEventId": 69,
     "Id": 68,
-    "Type": 3
+    "Type": 0
   },
     //69
   {
@@ -662,7 +654,7 @@
 	"speakerName": "Я",
     "nextEventId": 71,
     "Id": 70,
-    "Type": 3
+    "Type": 0
   },
     //71
   {
@@ -670,7 +662,7 @@
 	"speakerName": "Я",
     "nextEventId": 72,
     "Id": 71,
-    "Type": 3
+    "Type": 0
   },
     //72
   {
@@ -678,7 +670,7 @@
 	"speakerName": "Я",
     "nextEventId": 73,
     "Id": 72,
-    "Type": 3
+    "Type": 0
   },
     //73
   {
@@ -693,7 +685,7 @@
 	"speakerName": "Я",
     "nextEventId": 75,
     "Id": 74,
-    "Type": 3
+    "Type": 0
   },
     //75
   {

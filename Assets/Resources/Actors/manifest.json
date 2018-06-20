@@ -38,21 +38,21 @@
     "name": "Я",
     "emotions":
     {
-      "default": "Actors/ActorImages/mi_rotate"
+      "default": "Actors/ActorImages/hero_boy"
     }
   },
   {
     "name": "Player Boy",
     "emotions":
     {
-      "default": "Actors/ActorImages/mi"
+      "default": "Actors/ActorImages/hero_boy"
     }
   },
   {
     "name": "Player Girl",
     "emotions":
     {
-      "default": "Actors/ActorImages/5_flip"
+      "default": "Actors/ActorImages/hero_girl"
     }
   },
   {

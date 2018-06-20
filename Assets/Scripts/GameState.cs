@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour
 		currentScene = 1;
 		currentExperience = 0;
 
-		PlayerName = "Player";
+		PlayerName = "Я";
 		PlayerAppearance = "";
 	}
 }

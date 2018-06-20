@@ -24,8 +24,8 @@ public class GameState : MonoBehaviour
 	
 	void Awake()
 	{
-		currentPower = 0;
-		maxPower = 150;
+		currentPower = 2;
+		maxPower = 3;
 		currentScene = 1;
 		currentExperience = 0;
 

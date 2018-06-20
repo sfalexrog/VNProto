@@ -9,7 +9,9 @@
   {
     "Id": 11004,
     "Type": 2,
-    "backgroundName": "Комната",
+    "backgroundName": "Комната м",
+	"boyBackgroundName": "Комната м",
+	"girlBackgroundName": "Комната д",
     "nextEventId": 2
   },
     //2

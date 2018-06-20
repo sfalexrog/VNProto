@@ -20,8 +20,12 @@
     "image": "Backgrounds/BackgroundImages/4"
   },
   {
-    "name": "Комната",
-    "image": "Backgrounds/BackgroundImages/room"
+    "name": "Комната м",
+    "image": "Backgrounds/BackgroundImages/room_boy"
+  },
+  {
+    "name": "Комната д",
+    "image": "Backgrounds/BackgroundImages/room_girl"
   },
   {
     "name": "Кухня",

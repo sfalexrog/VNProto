@@ -42,6 +42,7 @@ public class UiGlue : MonoBehaviour
 	private Text[] _choicesTexts;
 	private Button _choiceDefenderButton;
 	private Button[] _choicesButtons;
+	private Color[] _choicesButtonsColors;
 	
 	// Ending UI
 	private Text _endingText;
@@ -88,11 +89,14 @@ public class UiGlue : MonoBehaviour
 		// FIXME: hardcoded to 3 buttons for now
 		//_choicesTexts = new Text[choiceUiTexts.Length - 2];
 		_choicesTexts = new Text[3];
-		_choicesButtons = new Button[choiceUiButtons.Length - 1];
+		_choicesButtons = new Button[_choicesTexts.Length];
+		_choicesButtonsColors = new Color[_choicesButtons.Length];
 		for (int i = 0; i < _choicesTexts.Length; ++i)
 		{
 			_choicesTexts[i] = choiceUiTexts[i + 2];
 			_choicesButtons[i] = choiceUiButtons[i + 1];
+			// Store initial button colors
+			_choicesButtonsColors[i] = choiceUiButtons[i].image.color;
 		}
 		
 		// Populate Ending UI
@@ -285,9 +289,19 @@ public class UiGlue : MonoBehaviour
 		_endingText.text = fev.text;
 	}
 
+	// Restore initial choice button colors
+	private void RestoreChoiceColors()
+	{
+		for (int i = 0; i < _choicesButtons.Length; ++i)
+		{
+			_choicesButtons[i].image.color = _choicesButtonsColors[i];
+		}
+	}
+
 	// Choice buttons handler (called by Unity)
 	public void OnChoice(int choice)
 	{
+		RestoreChoiceColors();
 		model.OnChoice(choice);
 	}
 	

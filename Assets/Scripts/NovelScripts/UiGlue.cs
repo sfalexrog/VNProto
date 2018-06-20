@@ -352,16 +352,16 @@ public class UiGlue : MonoBehaviour
 		string text = null;
 		if (gameState.PlayerGender == PlayerGender.Boy)
 		{
-			text = pev.boyPhrase;
+			text = pev.boyText;
 		}
 		else
 		{
-			text = pev.girlPhrase;
+			text = pev.girlText;
 		}
 
 		if (text == null)
 		{
-			text = pev.phrase;
+			text = pev.text;
 		}
 
 		return text;

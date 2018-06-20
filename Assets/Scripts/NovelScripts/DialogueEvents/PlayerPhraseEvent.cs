@@ -10,10 +10,10 @@ public class PlayerPhraseEvent : DialogueEvent
     public int nextEventId;
 
     // Gender-neutral phrase
-    public String phrase;
+    public String text;
 
     // Gender-based phrase
-    public String boyPhrase;
-    public String girlPhrase;
+    public String boyText;
+    public String girlText;
     
 }

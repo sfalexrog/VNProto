@@ -66,15 +66,15 @@ public class UiGlue : MonoBehaviour
 		// Populate Phrase UI
 		Image[] phraseUiImages = PhraseUi.GetComponentsInChildren<Image>();
 		_actorImage = phraseUiImages[0];
-		_actorNameBox = phraseUiImages[1];
+		_actorNameBox = phraseUiImages[2];
 		_actorImage.preserveAspect = true;
-		_dialogBox = phraseUiImages[2];
+		_dialogBox = phraseUiImages[1];
 		_monologueBox = phraseUiImages[3];
 		
 		Text[] phraseUiTexts = PhraseUi.GetComponentsInChildren<Text>();
 
-		_actorNameText = phraseUiTexts[0];
-		_dialogText = phraseUiTexts[1];
+		_actorNameText = phraseUiTexts[1];
+		_dialogText = phraseUiTexts[0];
 		_monologueText = phraseUiTexts[2];
 
 		// Populate Choice UI

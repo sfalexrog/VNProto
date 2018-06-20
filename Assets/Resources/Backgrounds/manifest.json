@@ -18,5 +18,17 @@
   {
     "name": "Руины",
     "image": "Backgrounds/BackgroundImages/4"
+  },
+  {
+    "name": "Комната",
+    "image": "Backgrounds/BackgroundImages/room"
+  },
+  {
+    "name": "Кухня",
+    "image": "Backgrounds/BackgroundImages/kitchen"
+  },
+  {
+    "name": "Подъезд",
+    "image": "Backgrounds/BackgroundImages/entrance"
   }
 ]

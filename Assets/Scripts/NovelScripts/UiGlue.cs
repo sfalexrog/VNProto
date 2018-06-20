@@ -108,8 +108,8 @@ public class UiGlue : MonoBehaviour
 		Text[] playerTexts = PlayerPhraseUi.GetComponentsInChildren<Text>();
 
 		_playerImage = playerImages[0];
-		_playerNameBox = playerTexts[0];
-		_playerText = playerTexts[1];
+		_playerNameBox = playerTexts[1];
+		_playerText = playerTexts[0];
 	}
 
 	// We need to have Model initialized here

@@ -1,0 +1,168 @@
+[
+	//1
+  {
+    "Id": 1,
+    "Type": 2,
+    "backgroundName": "Комната м",
+    "nextEventId": 2
+  },
+	//2
+  {
+    "text": "Телефон разрывается от постоянных сообщений",
+    "nextEventId": 3,
+    "Id": 2,
+    "Type": 0
+  },
+	//3
+  {
+    "text": "В чате идет бурное обсуждение",
+    "nextEventId": 4,
+    "Id": 3,
+    "Type": 0
+  },
+  	//4
+  {
+    "text": "Похоже робота опять обдурили в сети",
+    "nextEventId": 5,
+    "Id": 4,
+    "Type": 0
+  },
+    //5
+  {
+    "text": "я беру телефон в руки и открываю чат",
+    "nextEventId": 6,
+    "Id": 5,
+    "Type": 0
+  },
+    //6
+  {
+    "Id": 6,
+    "Type": 2,
+    "backgroundName": "Телефон",
+    "nextEventId": 7
+  },
+	//7
+  {
+    "text": "печатает...",
+	"speakerName": "Робот",
+    "nextEventId": 8,
+    "Id": 7,
+    "Type": 0
+  },
+	//8
+  {
+    "text": "Мне приходят странные смс",
+	"speakerName": "Робот",
+    "nextEventId": 9,
+    "Id": 8,
+    "Type": 0
+  },
+    //9
+  {
+    "text": "Говорят что выйграл приз, просят перейти по ссылке",
+	"speakerName": "Робот",
+    "nextEventId": 10,
+    "Id": 9,
+    "Type": 0
+  },
+  //10
+  {
+    "text": "Я перехожу, а с меня деньги списывают и никакого приза",
+	"speakerName": "Робот",
+    "nextEventId": 11,
+    "Id": 10,
+    "Type": 0
+  },
+  //11
+  {
+    "text": "печатает...",
+	"speakerName": "Учитель",
+    "nextEventId": 12,
+    "Id": 11,
+    "Type": 0
+  },
+    //12
+  {
+    "text": "Это все вирусы",
+	"speakerName": "Учитель",
+    "nextEventId": 13,
+    "Id": 12,
+    "Type": 0
+  },
+	//13
+  {
+    "text": "печатает...",
+	"speakerName": "Саша",
+    "nextEventId": 14,
+    "Id": 13,
+    "Type": 0
+  },
+    //14
+  {
+    "text": "Не надо скачивать что попало из инета",
+	"speakerName": "Саша",
+    "nextEventId": 15,
+    "Id": 14,
+    "Type": 0
+  },
+    //15
+  {
+    "text": "Поставь антивирус!",
+	"speakerName": "Вася",
+    "nextEventId": 16,
+    "Id": 15,
+    "Type": 0
+  },
+	//16
+  {
+    "text": "печатает...",
+	"speakerName": "Робот",
+    "nextEventId": 17,
+    "Id": 16,
+    "Type": 0
+  },
+    //17
+  {
+    "text": "Какой, например?",
+	"speakerName": "Робот",
+    "nextEventId": 18,
+    "Id": 17,
+    "Type": 0
+  },
+    //18
+  {
+    "text": "Эх, всему тебя учить...",
+	"speakerName": "Учитель",
+    "nextEventId": 19,
+    "Id": 18,
+    "Type": 0
+  },
+  //19
+  {
+    "text": "печатает...",
+	"speakerName": "Учитель",
+    "nextEventId": 20,
+    "Id": 19,
+    "Type": 0
+  },
+  //20
+  {
+    "text": "Касперского конечно!!!",
+	"speakerName": "Учитель",
+    "nextEventId": 21,
+    "Id": 20,
+    "Type": 0
+  },
+  //21
+  {
+    "Id": 21,
+    "text": "Нельзя скачивать информацию из непроверенных источников",
+    "Type": 999,
+    "isChapterCompleted": false
+  },
+
+ ]
+
+
+
+

@@ -29,7 +29,9 @@ public class CardUiGlue : MonoBehaviour
 	private Image _friendImage;
 	private Image _coupleImage;
 	private Image _classImage;
-	
+
+	private string _leftButtonStoredText;
+	private string _rightButtonStoredText;
 	
 	// Bind to scene objects
 	void Awake()
@@ -76,6 +78,16 @@ public class CardUiGlue : MonoBehaviour
 		_friendImage.gameObject.SetActive(false);
 		_coupleImage.gameObject.SetActive(false);
 		_classImage.gameObject.SetActive(false);
+
+		if (_leftButtonStoredText != null)
+		{
+			_leftAnswerText.text = _leftButtonStoredText;
+		}
+
+		if (_rightButtonStoredText != null)
+		{
+			_rightAnswerText.text = _rightButtonStoredText;
+		}
 		
 	}
 
@@ -94,9 +106,18 @@ public class CardUiGlue : MonoBehaviour
 		outcomeButton.image.color = Color.yellow;
 		outcomeButton.onClick.RemoveAllListeners();
 		outcomeButton.onClick.AddListener(delegate { ApplyOutcome(outcomeButton); });
+
+		_leftButtonStoredText = _leftAnswerText.text;
+		_rightButtonStoredText = _rightAnswerText.text;
+
+		outcomeButton.GetComponentInChildren<Text>().text = "Ответить";
 		
 		otherButton.onClick.RemoveAllListeners();
-		otherButton.onClick.AddListener(delegate { CancelOutcome(); });
+		otherButton.onClick.AddListener(delegate
+		{
+			ResetUi();
+			PreviewOutcome(otherButton, outcomeButton);
+		});
 		
 		_cancelAnswerButton.gameObject.SetActive(true);
 		

@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "ChapterName": "Пролог",
+    "ScenarioFilename": "Scenarios/Text/Scenario_111",
+    "MinXpRequired": 0,
+    "NextChapterId": 2
+  },
+  {
+    "Id": 2,
+    "ChapterName": "Потеря",
+    "ScenarioFilename": "Scenarios/Text/Scenario_1",
+    "MinXpRequired": 10,
+    "NextChapterId": -1
+  }
+]

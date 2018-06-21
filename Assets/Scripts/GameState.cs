@@ -21,6 +21,13 @@ public class GameState : MonoBehaviour
 	public string PlayerAppearance;
 
 	public PlayerGender PlayerGender = PlayerGender.Boy;
+
+	// currentScene will be replaced by NextChapterId on hub load
+	// if NextChapterId is not -1.
+	public int NextChapterId;
+	
+	// ChapterResource should contain resource name for next chapter
+	public string ChapterResource; 
 	
 	void Awake()
 	{
@@ -31,5 +38,9 @@ public class GameState : MonoBehaviour
 
 		PlayerName = "Я";
 		PlayerAppearance = "";
+
+		NextChapterId = -1;
+		// By default, ChapterResource will point to the first scenario
+		ChapterResource = "Scenarios/Text/Scenario_1";
 	}
 }

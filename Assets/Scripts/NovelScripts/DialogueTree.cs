@@ -27,8 +27,7 @@ public class DialogueTree : MonoBehaviour
             _events = new Dictionary<int, DialogueEvent>();
         }
         _gameState = Toolbox.RegisterComponent<GameState>();
-        int sceneId = _gameState.currentScene;
-        String sceneFilename = "Scenarios/Text/Scenario_" + sceneId;
+        String sceneFilename = _gameState.ChapterResource;
         Debug.Log("Loading scene data from " + sceneFilename);
 
         var sceneJson = Resources.Load<TextAsset>(sceneFilename);
@@ -324,6 +323,11 @@ public class DialogueTree : MonoBehaviour
             if (fev.isChapterCompleted)
             {
                 _gameState.currentExperience += fev.chapterExpReward;
+            }
+            else
+            {
+                // Do not advance player to the next chapter
+                _gameState.NextChapterId = -1;
             }
         }
 

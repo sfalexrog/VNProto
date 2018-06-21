@@ -42,6 +42,31 @@ public class DialogueTree : MonoBehaviour
             {
                 Debug.LogError("Event id " + ev.Id + " already present!");
             }
+            // Set default emotion if emotion is not present
+            if (ev.GetType() == typeof(PhraseEvent))
+            {
+                var pev = (PhraseEvent) ev;
+                if (pev.emotion == null)
+                {
+                    pev.emotion = "default";
+                }
+            }
+            else if (ev.GetType() == typeof(PlayerPhraseEvent))
+            {
+                var pev = (PlayerPhraseEvent) ev;
+                if (pev.emotion == null)
+                {
+                    pev.emotion = "default";
+                }
+            }
+            else if (ev.GetType() == typeof(DialogueChoiceEvent))
+            {
+                var cev = (DialogueChoiceEvent) ev;
+                if (cev.emotion == null)
+                {
+                    cev.emotion = "default";
+                }
+            }
             _events[ev.Id] = ev;
         }
         
@@ -263,8 +288,7 @@ public class DialogueTree : MonoBehaviour
     {
         var currentEvent = (PhraseEvent) getEventById(currentId);
         var currentActorName = currentEvent.speakerName;
-        // TODO: store emotions as event data
-        var actorEmotion = "default";
+        var actorEmotion = currentEvent.emotion;
         DialogueActor currentActor;
         if (currentActorName != null && _actors.TryGetValue(currentActorName, out currentActor))
         {
@@ -311,9 +335,18 @@ public class DialogueTree : MonoBehaviour
      */
     public string GetPlayerImage()
     {
-        var actorEmotion = "default";
-        // TODO: get emotion value from event
         var currentEvent = getEventById(currentId);
+        string actorEmotion = "default";
+        if (currentEvent.GetType() == typeof(PlayerPhraseEvent))
+        {
+            var pev = (PlayerPhraseEvent) currentEvent;
+            actorEmotion = pev.emotion;
+        }
+        else if (currentEvent.GetType() == typeof(DialogueChoiceEvent))
+        {
+            var cev = (DialogueChoiceEvent) currentEvent;
+            actorEmotion = cev.emotion;
+        }
         string actorName = null;
         if (_gameState.PlayerGender == PlayerGender.Boy)
         {

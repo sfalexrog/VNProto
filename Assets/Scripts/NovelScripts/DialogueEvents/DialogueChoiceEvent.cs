@@ -26,4 +26,6 @@ public class DialogueChoiceEvent : DialogueEvent
 
     public ChoiceData[] choices;
 
+    // Actor (player) emotion
+    public string emotion;
 }

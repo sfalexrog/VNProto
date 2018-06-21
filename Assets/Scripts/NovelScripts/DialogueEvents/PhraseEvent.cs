@@ -22,4 +22,6 @@ public class PhraseEvent : DialogueEvent
     public string speakerName;
     public int nextEventId;
 
+    // Actor emotion
+    public string emotion;
 }

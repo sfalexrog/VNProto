@@ -16,4 +16,6 @@ public class PlayerPhraseEvent : DialogueEvent
     public String boyText;
     public String girlText;
     
+    // Actor emotion
+    public string emotion;
 }

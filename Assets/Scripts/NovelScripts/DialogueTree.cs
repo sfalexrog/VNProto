@@ -323,7 +323,7 @@ public class DialogueTree : MonoBehaviour
             var fev = (FinalDialogueEvent) ev;
             if (fev.isChapterCompleted)
             {
-                _gameState.currentScene += 1;
+                _gameState.currentExperience += fev.chapterExpReward;
             }
         }
 

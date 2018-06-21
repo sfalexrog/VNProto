@@ -11,4 +11,7 @@ public class FinalDialogueEvent : DialogueEvent {
 
     public string text;
     public bool isChapterCompleted;
+    
+    // Experience reward for completing the chapter
+    public int chapterExpReward;
 }

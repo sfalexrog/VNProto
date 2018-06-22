@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CardUiGlue : MonoBehaviour
 {
+	public CardController Model;
 	
-
 	private GameObject _purposePanel;
 	private GameObject _answerPanel;
 	private GameObject _parametersPanel;
@@ -23,6 +23,8 @@ public class CardUiGlue : MonoBehaviour
 	private Text _nameText;
 	private Text _questionText;
 
+	private Text _goalText;
+	
 	private Image _actorImage;
 
 	private Image _familyImage;
@@ -30,8 +32,16 @@ public class CardUiGlue : MonoBehaviour
 	private Image _coupleImage;
 	private Image _classImage;
 
+	private Slider _familySlider;
+	private Slider _friendSlider;
+	private Slider _coupleSlider;
+	private Slider _classSlider;
+
 	private string _leftButtonStoredText;
 	private string _rightButtonStoredText;
+
+	private float[] _leftResults;
+	private float[] _rightResults;
 	
 	// Bind to scene objects
 	void Awake()
@@ -50,6 +60,8 @@ public class CardUiGlue : MonoBehaviour
 
 		_leftAnswerText = _leftAnswer.GetComponentInChildren<Text>();
 		_rightAnswerText = _rightAnswer.GetComponentInChildren<Text>();
+
+		_goalText = GameObject.Find("Goal Counter Text").GetComponent<Text>();
 		
 		_leftAnswerText.text = "Left answer";
 		_rightAnswerText.text = "Right answer";
@@ -63,9 +75,56 @@ public class CardUiGlue : MonoBehaviour
 		_friendImage = GameObject.Find("Friend Image").GetComponent<Image>();
 		_coupleImage = GameObject.Find("Couple Image").GetComponent<Image>();
 		_classImage = GameObject.Find("Class Image").GetComponent<Image>();
+
+		_familySlider = GameObject.Find("Family_Slider").GetComponent<Slider>();
+		_friendSlider = GameObject.Find("Friend_Slider").GetComponent<Slider>();
+		_coupleSlider = GameObject.Find("Girlfriend_Slider").GetComponent<Slider>();
+		_classSlider = GameObject.Find("Class_Slider").GetComponent<Slider>();
 		
 		ResetUi();
 		ResetListeners();
+	}
+
+	// Load a card and display it
+	private void Start()
+	{
+		Advance();
+	}
+
+	private void Advance()
+	{
+		_goalText.text = Model.GetCardsRemaining().ToString();
+		Card card = Model.GetNextCard();		
+		
+		_leftResults = Model.GetRelationsChange(0);
+		_rightResults = Model.GetRelationsChange(1);
+		
+		DisplayCard(card);
+	}
+
+	private void DisplayCurrentCard()
+	{
+		DisplayCard(Model.CurrentCard);
+	}
+
+	private void DisplayCard(Card card)
+	{
+		
+		_leftAnswerText.text = card.LeftButtonText;
+		_rightAnswerText.text = card.RightButtonText;
+		
+		_questionText.text = card.Question;
+		// TODO: display actor image in card
+		_nameText.text = card.Actor;
+	}
+
+	private void DisplayRelations()
+	{
+		// TODO: convert to animations
+		 _familySlider.value = Model.GetCurrentRelations(Relation.FAMILY);
+		 _friendSlider.value = Model.GetCurrentRelations(Relation.FRIENDS);
+		 _coupleSlider.value = Model.GetCurrentRelations(Relation.COUPLE);
+		 _classSlider.value = Model.GetCurrentRelations(Relation.CLASS);
 	}
 
 	private void ResetUi()
@@ -126,16 +185,28 @@ public class CardUiGlue : MonoBehaviour
 		_coupleImage.gameObject.SetActive(true);
 		_classImage.gameObject.SetActive(true);
 		// TODO: add predictions from model
-		var familyScale = Random.value * 4;
+		float[] relationChange = null;
+		if (outcomeButton == _leftAnswerButton)
+		{
+			relationChange = _leftResults;
+		}
+		else if (outcomeButton == _rightAnswerButton)
+		{
+			relationChange = _rightResults;
+		}
+		else
+		{
+			Debug.LogError("Unexpected outcome button");
+		}
+
+		var familyScale = relationChange[(int) Relation.FAMILY];
 		_familyImage.gameObject.transform.localScale = new Vector3(familyScale, familyScale, familyScale);
-		var friendScale = Random.value * 4;
+		var friendScale = relationChange[(int) Relation.FRIENDS];
 		_friendImage.gameObject.transform.localScale = new Vector3(friendScale, friendScale, friendScale);
-		var coupleScale = Random.value * 4;
+		var coupleScale = relationChange[(int) Relation.COUPLE];
 		_familyImage.gameObject.transform.localScale = new Vector3(coupleScale, coupleScale, coupleScale);
-		var classScale = Random.value * 4;
+		var classScale = relationChange[(int) Relation.CLASS];
 		_classImage.gameObject.transform.localScale = new Vector3(classScale, classScale, classScale);
-
-
 	}
 
 	private void CancelOutcome()
@@ -146,6 +217,15 @@ public class CardUiGlue : MonoBehaviour
 
 	private void ApplyOutcome(Button outcomeButton)
 	{
+		if (outcomeButton == _leftAnswerButton)
+		{
+			Model.ApplyChange(0);
+		}
+		else if (outcomeButton == _rightAnswerButton)
+		{
+			Model.ApplyChange(1);
+		}
+		Advance();
 		ResetUi();
 		ResetListeners();
 	}
@@ -153,6 +233,6 @@ public class CardUiGlue : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// TODO: place animations here
 	}
 }

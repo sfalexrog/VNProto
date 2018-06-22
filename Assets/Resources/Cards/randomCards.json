@@ -1,0 +1,68 @@
+[
+  {
+    "Id": 1,
+    "Actor": "Мама",
+    "Question": "Ты пойдёшь сегодня в школу?",
+    "LeftButtonText": "Да ну, зачем?",
+    "RightButtonText": "Разве это вопрос?",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -3.0
+      },
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 2.0
+      },
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Actor": "Неизвестный",
+    "Question": "Го в доту, я создал!",
+    "LeftButtonText": "Мид ор фид!",
+    "RightButtonText": "У меня другие дела",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -2.0
+      },
+      {
+        "Faction": "Пара",
+        "Change": -1.0
+      },
+      {
+        "Faction": "Друзья",
+        "Change": 2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 2.0
+      },
+      {
+        "Faction": "Друзья",
+        "Change": -0.5
+      },
+      {
+        "Faction": "Пара",
+        "Change": 2.0
+      }
+    ]
+  }
+]

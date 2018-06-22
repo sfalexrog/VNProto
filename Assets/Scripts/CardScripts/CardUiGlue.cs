@@ -42,6 +42,8 @@ public class CardUiGlue : MonoBehaviour
 
 	private float[] _leftResults;
 	private float[] _rightResults;
+
+	private CardSliderAnimator[] _animations;
 	
 	// Bind to scene objects
 	void Awake()
@@ -80,6 +82,8 @@ public class CardUiGlue : MonoBehaviour
 		_friendSlider = GameObject.Find("Friend_Slider").GetComponent<Slider>();
 		_coupleSlider = GameObject.Find("Girlfriend_Slider").GetComponent<Slider>();
 		_classSlider = GameObject.Find("Class_Slider").GetComponent<Slider>();
+		
+		_animations = new CardSliderAnimator[4];
 		
 		ResetUi();
 		ResetListeners();
@@ -121,10 +125,10 @@ public class CardUiGlue : MonoBehaviour
 	private void DisplayRelations()
 	{
 		// TODO: convert to animations
-		 _familySlider.value = Model.GetCurrentRelations(Relation.FAMILY);
-		 _friendSlider.value = Model.GetCurrentRelations(Relation.FRIENDS);
-		 _coupleSlider.value = Model.GetCurrentRelations(Relation.COUPLE);
-		 _classSlider.value = Model.GetCurrentRelations(Relation.CLASS);
+		_animations[0] = new CardSliderAnimator(_familySlider, Model.GetCurrentRelations(Relation.FAMILY), 1.0f);
+		_animations[1] = new CardSliderAnimator(_friendSlider, Model.GetCurrentRelations(Relation.FRIENDS), 1.0f);
+		_animations[2] = new CardSliderAnimator(_coupleSlider, Model.GetCurrentRelations(Relation.COUPLE), 1.0f);
+		_animations[3] = new CardSliderAnimator(_classSlider, Model.GetCurrentRelations(Relation.CLASS), 1.0f);
 	}
 
 	private void ResetUi()
@@ -233,6 +237,16 @@ public class CardUiGlue : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		// TODO: place animations here
+		for (int i = 0; i < _animations.Length; ++i)
+		{
+			if (_animations[i] != null)
+			{
+				_animations[i].Update();
+				if (_animations[i].IsEnded())
+				{
+					_animations[i] = null;
+				}
+			}
+		}
 	}
 }

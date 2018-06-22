@@ -120,6 +120,10 @@ public class CardUiGlue : MonoBehaviour
 		_questionText.text = card.Question;
 		// TODO: display actor image in card
 		_nameText.text = card.Actor;
+		
+		// Store button text, just in case
+		_leftButtonStoredText = card.LeftButtonText;
+		_rightButtonStoredText = card.RightButtonText;
 	}
 
 	private void DisplayRelations()

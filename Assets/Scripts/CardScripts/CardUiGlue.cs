@@ -98,7 +98,7 @@ public class CardUiGlue : MonoBehaviour
 		
 		_leftResults = Model.GetRelationsChange(0);
 		_rightResults = Model.GetRelationsChange(1);
-		
+		DisplayRelations();
 		DisplayCard(card);
 	}
 

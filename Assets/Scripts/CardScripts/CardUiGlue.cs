@@ -261,13 +261,13 @@ public class CardUiGlue : MonoBehaviour
 			Debug.LogError("Unexpected outcome button");
 		}
 
-		var familyScale = relationChange[(int) Relation.FAMILY];
+		var familyScale = Mathf.Abs(relationChange[(int) Relation.FAMILY]);
 		_familyImage.gameObject.transform.localScale = new Vector3(familyScale, familyScale, familyScale);
-		var friendScale = relationChange[(int) Relation.FRIENDS];
+		var friendScale = Mathf.Abs(relationChange[(int) Relation.FRIENDS]);
 		_friendImage.gameObject.transform.localScale = new Vector3(friendScale, friendScale, friendScale);
-		var coupleScale = relationChange[(int) Relation.COUPLE];
+		var coupleScale = Mathf.Abs(relationChange[(int) Relation.COUPLE]);
 		_familyImage.gameObject.transform.localScale = new Vector3(coupleScale, coupleScale, coupleScale);
-		var classScale = relationChange[(int) Relation.CLASS];
+		var classScale = Mathf.Abs(relationChange[(int) Relation.CLASS]);
 		_classImage.gameObject.transform.localScale = new Vector3(classScale, classScale, classScale);
 	}
 

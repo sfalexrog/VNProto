@@ -51,6 +51,13 @@ public class CardUiGlue : MonoBehaviour
 	private Text _popupDescriptionText;
 	private Button _dismissPopupButton;
 	
+	// Background image
+	private Image _backgroundImage;
+	
+	// Sprite cache for actors and backgrounds
+	private Dictionary<string, Sprite> _actorSprites;
+	private Dictionary<string, Sprite> _backgroundSprites;
+	
 	// Bind to scene objects
 	void Awake()
 	{
@@ -97,6 +104,8 @@ public class CardUiGlue : MonoBehaviour
 		_popupHeaderText = GameObject.Find("Popup Header Text").GetComponent<Text>();
 		_popupDescriptionText = GameObject.Find("Popup Description Text").GetComponent<Text>();
 		_dismissPopupButton = GameObject.Find("Dismiss Popup Button").GetComponent<Button>();
+
+		_backgroundImage = GameObject.Find("Card Background").GetComponent<Image>();
 		
 		ResetUi();
 		ResetListeners();
@@ -105,6 +114,21 @@ public class CardUiGlue : MonoBehaviour
 	// Load a card and display it
 	private void Start()
 	{
+		var actorResources = Model.GetUsedActors();
+		var backgroundResources = Model.GetUsedBackgrounds();
+		
+		_actorSprites = new Dictionary<string, Sprite>();
+		_backgroundSprites = new Dictionary<string, Sprite>();
+
+		foreach (var actorResource in actorResources)
+		{
+			_actorSprites[actorResource] = Resources.Load<Sprite>(actorResource);
+		}
+
+		foreach (var backgroundResource in backgroundResources)
+		{
+			_backgroundSprites[backgroundResource] = Resources.Load<Sprite>(backgroundResource);
+		}
 		Advance();
 	}
 
@@ -146,7 +170,8 @@ public class CardUiGlue : MonoBehaviour
 		_rightAnswerText.text = card.RightButtonText;
 		
 		_questionText.text = card.Question;
-		// TODO: display actor image in card
+		_actorImage.sprite = _actorSprites[Model.GetActorForCard(card)];
+		_backgroundImage.sprite = _backgroundSprites[Model.GetBackgroundForCard(card)];
 		_nameText.text = card.Actor;
 		
 		// Store button text, just in case

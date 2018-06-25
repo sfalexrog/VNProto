@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +26,11 @@ public class CardController : MonoBehaviour
 	private float[] _relations; 
 
 	private const int MAX_RELATIONS = 10;
+
+	// Actor name -> actor resource mapping
+	private Dictionary<string, DialogueActor> _actors;
+	// Background name -> background resource mapping
+	private Dictionary<string, string> _backgrounds;
 	
 	void Awake()
 	{
@@ -37,6 +45,26 @@ public class CardController : MonoBehaviour
 		{
 			_relations[i] = MAX_RELATIONS / 2;
 		}
+
+		_actors = new Dictionary<string, DialogueActor>();
+        
+		// Load actor data
+		var actorJson = Resources.Load<TextAsset>("Actors/manifest");
+		var actors = JsonConvert.DeserializeObject<List<DialogueActor>>(actorJson.text);
+		foreach (var actor in actors)
+		{
+			_actors[actor.name] = actor;
+		}
+        
+		_backgrounds = new Dictionary<string, string>();
+		// Load background data
+		var backgroundsJson = Resources.Load<TextAsset>("Backgrounds/manifest");
+		var backgrounds = JsonConvert.DeserializeObject<List<DialogueBackground>>(backgroundsJson.text);
+		foreach (var background in backgrounds)
+		{
+			_backgrounds[background.name] = background.image;
+		}
+		
 	}
 
 	private Card _currentCard;
@@ -152,4 +180,43 @@ public class CardController : MonoBehaviour
 		// Experience rewards will be handled in hub
 		SceneManager.LoadScene("Scenes/HubScene");
 	}
+
+	public string[] GetUsedBackgrounds()
+	{
+		var backgroundResources = new HashSet<string>();
+		var backgroundNames = _generator.GetCardBackgroundsNames();
+		foreach (var bgName in backgroundNames)
+		{
+			backgroundResources.Add(_backgrounds[bgName]);
+		}
+
+		return backgroundResources.ToArray();
+	}
+
+	public string[] GetUsedActors()
+	{
+		var actorResources = new HashSet<string>();
+		var actorNames = _generator.GetCardActorsNames();
+		foreach (var actorName in actorNames)
+		{
+			foreach (var res in _actors[actorName].emotions.Values)
+			{
+				actorResources.Add(res);
+			}
+		}
+
+		return actorResources.ToArray();
+	}
+
+	public string GetBackgroundForCard(Card card)
+	{
+		return _backgrounds[card.Background];
+	}
+
+	public string GetActorForCard(Card card)
+	{
+		// TODO: emotions?
+		return _actors[card.Actor].emotions["default"];
+	}
+	
 }

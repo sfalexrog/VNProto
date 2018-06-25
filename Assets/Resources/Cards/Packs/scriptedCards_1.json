@@ -2,6 +2,7 @@
   {
     "Id": 101,
     "Actor": "Мама",
+    "Background": "Замок",
     "Question": "Поздравляю, ты мальчик!",
     "LeftButtonText": "И зачем ты мне это говоришь?",
     "RightButtonText": "Спасибо.",
@@ -29,6 +30,7 @@
   {
     "Id": 102,
     "Actor": "Неизвестный",
+    "Background": "Телефон",
     "Question": "Можно и продолжить",
     "LeftButtonText": "Отлично",
     "RightButtonText": "Отлично",
@@ -64,6 +66,7 @@
   {
     "Id": 103,
     "Actor": "Мама",
+    "Background": "Руины",
     "Question": "Поздравляю, ты девочка!",
     "LeftButtonText": "Отлично",
     "RightButtonText": "Родился девочкой - терпи",

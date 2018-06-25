@@ -11,6 +11,7 @@ public class HubGameController : MonoBehaviour
 	private GameState _gameState;
 
 	private Dictionary<int, ChapterDescription> _chapters;
+	private Dictionary<int, CardGameDescription> _cards;
 
 	void Awake()
 	{
@@ -27,6 +28,22 @@ public class HubGameController : MonoBehaviour
 
 			_chapters[chapter.Id] = chapter;
 		}
+				
+		var cardJson = Resources.Load<TextAsset>("Cards/manifest");
+		var cardList = JsonConvert.DeserializeObject<List<CardGameDescription>>(cardJson.text);
+		_cards = new Dictionary<int, CardGameDescription>();
+		foreach (var card in cardList)
+		{
+			if (_cards.ContainsKey(card.Id))
+			{
+				Debug.LogError("Card game ID " + card.Id + " already present!");
+			}
+
+			_cards[card.Id] = card;
+		}
+
+		_gameState.ChapterResource = _chapters[_gameState.currentScene].ScenarioFilename;
+		_gameState.CardScriptResource = _cards[_gameState.CurrentCardGameId].CardScriptFilename;
 		
 		// Advance chapter if possible
 		if (_gameState.NextChapterId != -1)
@@ -35,7 +52,14 @@ public class HubGameController : MonoBehaviour
 			_gameState.ChapterResource = _chapters[_gameState.currentScene].ScenarioFilename;
 		}
 
+		if (_gameState.NextCardGameId != -1)
+		{
+			_gameState.CurrentCardGameId = _gameState.NextCardGameId;
+			_gameState.CardScriptResource = _cards[_gameState.CurrentCardGameId].CardScriptFilename;
+		}
+
 		_gameState.NextChapterId = _chapters[_gameState.currentScene].NextChapterId;
+		_gameState.NextCardGameId = _cards[_gameState.CurrentCardGameId].NextCardGameId;
 	}
 
 	// Use this for initialization
@@ -53,12 +77,19 @@ public class HubGameController : MonoBehaviour
 		if (_gameState.currentExperience >= _chapters[_gameState.currentScene].MinXpRequired)
 		{
 			UiGlue.SetStoryButtonEnabled();
-			UiGlue.SetCardButtonDisabled();
 		}
 		else
 		{
 			UiGlue.SetStoryButtonDisabled();
+		}
+
+		if (_gameState.currentExperience >= _cards[_gameState.CurrentCardGameId].MinXpRequired)
+		{
 			UiGlue.SetCardButtonEnabled();
+		}
+		else
+		{
+			UiGlue.SetCardButtonDisabled();
 		}
 		
 		UiGlue.SetStoryModeText(_chapters[_gameState.currentScene].ChapterName);

@@ -29,6 +29,8 @@ public class GameState : MonoBehaviour
 	// ChapterResource should contain resource name for next chapter
 	public string ChapterResource;
 
+	public int CurrentCardGameId;
+	
 	// Next id for card game
 	public int NextCardGameId;
 	
@@ -49,8 +51,9 @@ public class GameState : MonoBehaviour
 		// By default, ChapterResource will point to the first scenario
 		ChapterResource = "Scenarios/Text/Scenario_1";
 
+		CurrentCardGameId = 1;
 		NextCardGameId = -1;
 		// By default, CardScriptResource will point to the first card script
-		CardScriptResource = "Cards/Scripts/ScriptedCardGame";
+		//CardScriptResource = "Cards/Scripts/RandomCardGame";
 	}
 }

@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "Id": 1,
+    "CardGameName": "ScriptedTest",
+    "CardScriptFilename": "Cards/Scripts/ScriptedCardGame",
+    "MinXpRequired": 0,
+    "NextCardGameId": 2
+  },
+  {
+    "Id": 2,
+    "CardGameName": "RandomCardTest",
+    "CardScriptFilename": "Cards/Scripts/RandomCardGame",
+    "MinXpRequired": 5,
+    "NextCardGameId": -1
+  }
+]

@@ -329,5 +329,4 @@ public class CardUiGlue : MonoBehaviour
 	{
 		Model.OnCardGameFinish();
 	}
-
 }

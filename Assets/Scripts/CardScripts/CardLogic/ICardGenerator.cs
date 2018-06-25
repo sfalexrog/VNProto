@@ -20,6 +20,8 @@ public abstract class ICardGenerator
 {
     public abstract Card YieldCard();
     public abstract int GetNumCardsRemaining();
+    public abstract string[] GetCardBackgroundsNames();
+    public abstract string[] GetCardActorsNames();
 
     public static ICardGenerator FromScript(string resourceName, int gender = 0)
     {

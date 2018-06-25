@@ -1,4 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using Random = System.Random;
 
 public class RandomCardGenerator : ICardGenerator
 {
@@ -31,5 +34,43 @@ public class RandomCardGenerator : ICardGenerator
     public override int GetNumCardsRemaining()
     {
         return _cardSequence.Length - _currentIdx;
+    }
+
+    public override string[] GetCardBackgroundsNames()
+    {
+        var backgrounds = new HashSet<string>();
+        foreach (var cardId in _cardSequence)
+        {
+            var card = _cards.GetCardById(cardId);
+            if (card.Background != null)
+            {
+                backgrounds.Add(card.Background);    
+            }
+            else
+            {
+                Debug.LogError("Card " + card.Id + " has no background defined!");
+            }
+        }
+
+        return backgrounds.ToArray();
+    }
+
+    public override string[] GetCardActorsNames()
+    {
+        var actors = new HashSet<string>();
+        foreach (var cardId in _cardSequence)
+        {
+            var card = _cards.GetCardById(cardId);
+            if (card.Actor != null)
+            {
+                actors.Add(card.Actor);    
+            }
+            else
+            {
+                Debug.LogError("Card " + card.Id + " has no actor defined!");
+            }
+        }
+
+        return actors.ToArray();
     }
 }

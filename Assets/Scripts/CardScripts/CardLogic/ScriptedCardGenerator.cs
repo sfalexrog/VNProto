@@ -1,4 +1,6 @@
 ﻿using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -25,5 +27,35 @@ public class ScriptedCardGenerator : ICardGenerator
     public override int GetNumCardsRemaining()
     {
         return _cardSequence.Length - _currentIdx;
+    }
+    
+    public override string[] GetCardBackgroundsNames()
+    {
+        var backgrounds = new HashSet<string>();
+        foreach (var cardId in _cardSequence)
+        {
+            var card = _cards.GetCardById(cardId);
+            if (card.Background != null)
+            {
+                backgrounds.Add(card.Background);    
+            }
+        }
+
+        return backgrounds.ToArray();
+    }
+
+    public override string[] GetCardActorsNames()
+    {
+        var actors = new HashSet<string>();
+        foreach (var cardId in _cardSequence)
+        {
+            var card = _cards.GetCardById(cardId);
+            if (card.Actor != null)
+            {
+                actors.Add(card.Actor);    
+            }
+        }
+
+        return actors.ToArray();
     }
 }

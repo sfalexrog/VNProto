@@ -20,4 +20,6 @@ public class Card
 
     public Outcome[] LeftOutcomes;
     public Outcome[] RightOutcomes;
+
+    public string Background;
 }

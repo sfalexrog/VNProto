@@ -4,6 +4,6 @@
 		"Cards/Packs/randomCards",
 		"Cards/Packs/moreRandomCards"
 	],
-	"NumCards": 20
+	"NumCards": 10,
+	"CompletionReward": 5
 }
-

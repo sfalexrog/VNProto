@@ -177,7 +177,11 @@ public class CardController : MonoBehaviour
 		{
 			_gameState.NextCardGameId = -1;
 		}
-		// Experience rewards will be handled in hub
+		else
+		{
+			// Apply completion reward
+			_gameState.currentExperience += _generator.CompletionReward;
+		}
 		SceneManager.LoadScene("Scenes/HubScene");
 	}
 

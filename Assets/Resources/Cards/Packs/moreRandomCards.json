@@ -1,10 +1,11 @@
 [
   {
-    "Id": 1,
+    "Id": 20,
     "Actor": "Мама",
-    "Question": "Ты пойдёшь сегодня в школу?",
+    "Background": "Замок",
+    "Question": "Помой посуду!",
     "LeftButtonText": "Да ну, зачем?",
-    "RightButtonText": "Разве это вопрос?",
+    "RightButtonText": "Хорошо, сейчас",
     "LeftOutcomes": [
       {
         "Faction": "Семья",
@@ -22,7 +23,7 @@
       },
       {
         "Faction": "Друзья",
-        "Change": 1.0
+        "Change": -1.0
       },
       {
         "Faction": "Пара",
@@ -31,37 +32,38 @@
     ]
   },
   {
-    "Id": 2,
-    "Actor": "Неизвестный",
-    "Question": "Го в доту, я создал!",
-    "LeftButtonText": "Мид ор фид!",
-    "RightButtonText": "У меня другие дела",
+    "Id": 22,
+    "Actor": "Учитель",
+    "Background": "Школа",
+    "Question": "Кто сделал домашнее задание?",
+    "LeftButtonText": "[Поднять руку]",
+    "RightButtonText": "[Ничего не делать]",
     "LeftOutcomes": [
       {
-        "Faction": "Семья",
-        "Change": -2.0
-      },
-      {
-        "Faction": "Пара",
+        "Faction": "Друзья",
         "Change": -1.0
       },
       {
-        "Faction": "Друзья",
+        "Faction": "Класс",
         "Change": 2.0
+      },
+      {
+        "Faction": "Семья",
+        "Change": 1.0
       }
     ],
     "RightOutcomes": [
       {
-        "Faction": "Семья",
-        "Change": 2.0
-      },
-      {
         "Faction": "Друзья",
-        "Change": -0.5
+        "Change": 1.0
       },
       {
-        "Faction": "Пара",
+        "Faction": "Класс",
         "Change": 2.0
+      },
+      {
+        "Faction": "Семья",
+        "Change": -1.0
       }
     ]
   }

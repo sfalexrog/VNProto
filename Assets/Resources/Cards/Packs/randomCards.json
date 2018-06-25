@@ -2,6 +2,7 @@
   {
     "Id": 1,
     "Actor": "Мама",
+    "Background": "Замок",
     "Question": "Ты пойдёшь сегодня в школу?",
     "LeftButtonText": "Да ну, зачем?",
     "RightButtonText": "Разве это вопрос?",
@@ -33,6 +34,7 @@
   {
     "Id": 2,
     "Actor": "Неизвестный",
+    "Background": "Телефон",
     "Question": "Го в доту, я создал!",
     "LeftButtonText": "Мид ор фид!",
     "RightButtonText": "У меня другие дела",

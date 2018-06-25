@@ -19,7 +19,7 @@ public class CardController : MonoBehaviour
 	private ICardGenerator _generator;
 
 	// Relation values
-	private float[] _relations;
+	private float[] _relations; 
 
 	private const int MAX_RELATIONS = 10;
 	
@@ -27,13 +27,9 @@ public class CardController : MonoBehaviour
 	{
 		_gameState = Toolbox.RegisterComponent<GameState>();
 		
-		// TODO: Get generator name from GameState
+		_generator = ICardGenerator.FromScript(_gameState.CardScriptResource, (int)_gameState.PlayerGender);
 		
-		var cardHeap = new CardHeap();
-		cardHeap.LoadCards("Cards/randomCards");
-		_generator = new RandomCardGenerator(cardHeap, 20);
-		
-		// TODO: Load relations from GameState 
+		// TODO: Load relations from GameState
 
 		_relations = new float[4];
 		for (int i = 0; i < 4; ++i)
@@ -123,5 +119,30 @@ public class CardController : MonoBehaviour
 		{
 			_relations[i] += change[i];
 		}
+	}
+
+	/**
+	 * Check if the game is over
+	 */
+	public bool IsGameOverState()
+	{
+		bool result = false;
+		foreach(var relation in _relations)
+		{
+			if ((relation <= 0) || (relation >= MAX_RELATIONS))
+			{
+				result = true;
+			}
+		}
+
+		return result;
+	}
+	
+	/**
+	 * Finish the game
+	 */
+	public void OnCardGameFinish()
+	{
+		
 	}
 }

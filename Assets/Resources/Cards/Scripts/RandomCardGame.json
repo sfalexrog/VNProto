@@ -1,0 +1,9 @@
+{
+	"Generator": "random",
+	"CardPacks": [
+		"Cards/Packs/randomCards",
+		"Cards/Packs/moreRandomCards"
+	],
+	"NumCards": 20
+}
+

@@ -21,14 +21,14 @@ public class RandomCardGenerator : ICardGenerator
         }
     }
 
-    public Card YieldCard()
+    public override Card YieldCard()
     {
         Card retCard = _cards.GetCardById(_cardSequence[_currentIdx]);
         _currentIdx += 1;
         return retCard;
     }
 
-    public int GetNumCardsRemaining()
+    public override int GetNumCardsRemaining()
     {
         return _cardSequence.Length - _currentIdx;
     }

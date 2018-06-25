@@ -44,6 +44,12 @@ public class CardUiGlue : MonoBehaviour
 	private float[] _rightResults;
 
 	private CardSliderAnimator[] _animations;
+
+	// Popup "window" and background
+	private GameObject _popupPanel;
+	private Text _popupHeaderText;
+	private Text _popupDescriptionText;
+	private Button _dismissPopupButton;
 	
 	// Bind to scene objects
 	void Awake()
@@ -84,6 +90,13 @@ public class CardUiGlue : MonoBehaviour
 		_classSlider = GameObject.Find("Class_Slider").GetComponent<Slider>();
 		
 		_animations = new CardSliderAnimator[4];
+
+		// Bind to popup background instead of the popup itself
+		// It should disable player input upon its appearance
+		_popupPanel = GameObject.Find("Popup Background");
+		_popupHeaderText = GameObject.Find("Popup Header Text").GetComponent<Text>();
+		_popupDescriptionText = GameObject.Find("Popup Description Text").GetComponent<Text>();
+		_dismissPopupButton = GameObject.Find("Dismiss Popup Button").GetComponent<Button>();
 		
 		ResetUi();
 		ResetListeners();
@@ -97,13 +110,28 @@ public class CardUiGlue : MonoBehaviour
 
 	private void Advance()
 	{
-		_goalText.text = Model.GetCardsRemaining().ToString();
-		Card card = Model.GetNextCard();		
+		if (Model.IsGameOverState())
+		{
+			DisplayGameOverState();
+		}
+		else
+		{
+			var cardsRemaining = Model.GetCardsRemaining();
+			_goalText.text = cardsRemaining.ToString();
+			if (cardsRemaining == 0)
+			{
+				DisplayWinState();
+			}
+			else
+			{
+				Card card = Model.GetNextCard();		
 		
-		_leftResults = Model.GetRelationsChange(0);
-		_rightResults = Model.GetRelationsChange(1);
-		DisplayRelations();
-		DisplayCard(card);
+				_leftResults = Model.GetRelationsChange(0);
+				_rightResults = Model.GetRelationsChange(1);
+				DisplayRelations();
+				DisplayCard(card);	
+			}
+		}
 	}
 
 	private void DisplayCurrentCard()
@@ -156,6 +184,7 @@ public class CardUiGlue : MonoBehaviour
 			_rightAnswerText.text = _rightButtonStoredText;
 		}
 		
+		_popupPanel.SetActive(false);
 	}
 
 	private void ResetListeners()
@@ -233,13 +262,14 @@ public class CardUiGlue : MonoBehaviour
 		{
 			Model.ApplyChange(1);
 		}
-		Advance();
 		ResetUi();
+		Advance();
 		ResetListeners();
 	}
 	
 	
 	// Update is called once per frame
+	// Play any live animations
 	void Update () {
 		for (int i = 0; i < _animations.Length; ++i)
 		{
@@ -248,9 +278,31 @@ public class CardUiGlue : MonoBehaviour
 				_animations[i].Update();
 				if (_animations[i].IsEnded())
 				{
+					// Delete animation if it's ended
 					_animations[i] = null;
 				}
 			}
 		}
 	}
+
+	void DisplayGameOverState()
+	{
+		_popupPanel.SetActive(true);
+		_popupHeaderText.text = "Провал...";
+		_popupDescriptionText.text = "Главное в жизни - баланс. Следи за отношениями со всеми!";
+
+	}
+
+	void DisplayWinState()
+	{
+		_popupPanel.SetActive(true);
+		_popupHeaderText.text = "Победа!";
+		_popupDescriptionText.text = "Поздравляю! Ты прошёл дальше!";
+	}
+
+	public void OnPopupDismiss()
+	{
+		Model.OnCardGameFinish();
+	}
+
 }

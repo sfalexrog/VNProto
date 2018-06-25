@@ -1,0 +1,12 @@
+{
+	"Generator": "scripted",
+	"CardPacks": [
+		"Cards/Packs/scriptedCards_1"
+	],
+	"BoyCardIds": [
+		101, 102
+	],
+	"GirlCardIds": [
+		103, 102
+	]
+}

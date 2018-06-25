@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Relation
 {
@@ -143,6 +144,12 @@ public class CardController : MonoBehaviour
 	 */
 	public void OnCardGameFinish()
 	{
-		
+		// Disable progress by setting next card game ID to -1
+		if (IsGameOverState())
+		{
+			_gameState.NextCardGameId = -1;
+		}
+		// Experience rewards will be handled in hub
+		SceneManager.LoadScene("Scenes/HubScene");
 	}
 }

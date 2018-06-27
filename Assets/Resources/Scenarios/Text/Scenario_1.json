@@ -726,7 +726,8 @@
     "text": "<color=green>(Глава успешно завершена)</color>
 	Похоже мой аккаунт украли. Надо идти в лабораторию, там мне точно помогут!",
     "Type": 999,
-    "isChapterCompleted": true
+    "isChapterCompleted": true,
+	"chapterExpreward": 1
   }
  ]
 

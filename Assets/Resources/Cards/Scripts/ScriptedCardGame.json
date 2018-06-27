@@ -1,13 +1,13 @@
 {
 	"Generator": "scripted",
 	"CardPacks": [
-		"Cards/Packs/scriptedCards_1"
+		"Cards/Packs/scriptedCards_mission_1"
 	],
 	"BoyCardIds": [
-		101, 102
+		1, 2
 	],
 	"GirlCardIds": [
-		103, 102
+		1, 3, 2
 	],
-	"CompletionReward": 5
+	"CompletionReward": 1
 }

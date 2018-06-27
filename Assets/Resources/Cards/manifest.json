@@ -10,7 +10,7 @@
     "Id": 2,
     "CardGameName": "RandomCardTest",
     "CardScriptFilename": "Cards/Scripts/RandomCardGame",
-    "MinXpRequired": 5,
+    "MinXpRequired": 0,
     "NextCardGameId": -1
   }
 ]

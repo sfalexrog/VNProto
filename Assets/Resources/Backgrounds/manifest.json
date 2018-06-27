@@ -38,5 +38,9 @@
   {
     "name": "Телефон",
     "image": "Backgrounds/BackgroundImages/phone"
+  },
+  {
+    "name": "Синий",
+    "image": "Backgrounds/BackgroundImages/dark_blue"
   }
 ]

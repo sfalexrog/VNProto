@@ -1,9 +1,8 @@
 {
 	"Generator": "random",
 	"CardPacks": [
-		"Cards/Packs/randomCards",
-		"Cards/Packs/moreRandomCards"
+		"Cards/Packs/scriptedCards_mission_1"
 	],
 	"NumCards": 10,
-	"CompletionReward": 5
+	"CompletionReward": 1
 }

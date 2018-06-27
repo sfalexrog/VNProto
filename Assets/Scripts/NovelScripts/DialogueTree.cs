@@ -209,6 +209,16 @@ public class DialogueTree : MonoBehaviour
                 {
                     actors.Add(pev.speakerName);    
                 }
+                // Cache gender-specific actors as well
+                if (pev.boySpeakerName != null)
+                {
+                    actors.Add(pev.boySpeakerName);
+                }
+
+                if (pev.girlSpeakerName != null)
+                {
+                    actors.Add(pev.girlSpeakerName);
+                }
             }
         }
         // Add player characters to the sprite list
@@ -280,13 +290,29 @@ public class DialogueTree : MonoBehaviour
     }
     
     
+    public string GetGenderedSpeaker(PhraseEvent pev)
+    {
+        var speaker = pev.speakerName;
+        if (_gameState.PlayerGender == PlayerGender.Boy && pev.boySpeakerName != null)
+        {
+            speaker = pev.boySpeakerName;
+        }
+
+        if (_gameState.PlayerGender == PlayerGender.Girl && pev.girlSpeakerName != null)
+        {
+            speaker = pev.girlSpeakerName;
+        }
+
+        return speaker;
+    }
+    
     /**
      * Get the appropriate image for the on-screen actor
      */
     public string GetCurrentActorImage()
     {
         var currentEvent = (PhraseEvent) getEventById(currentId);
-        var currentActorName = currentEvent.speakerName;
+        var currentActorName = GetGenderedSpeaker(currentEvent);
         var actorEmotion = currentEvent.emotion;
         DialogueActor currentActor;
         if (currentActorName != null && _actors.TryGetValue(currentActorName, out currentActor))

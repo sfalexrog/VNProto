@@ -20,6 +20,11 @@ public class PhraseEvent : DialogueEvent
     public string girlText;
 
     public string speakerName;
+    
+    // Gender-based actor
+    public string boySpeakerName;
+    public string girlSpeakerName;
+    
     public int nextEventId;
 
     // Actor emotion

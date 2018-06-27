@@ -175,6 +175,7 @@ public class UiGlue : MonoBehaviour
 
 		return text;
 	}
+
 	
 	public void ShowPhraseUi(PhraseEvent pev)
 	{
@@ -184,11 +185,14 @@ public class UiGlue : MonoBehaviour
 		}
 		HideAllUi();
 		PhraseUi.SetActive(true);
-		if (pev.speakerName != null)
+
+		var speaker = model.GetGenderedSpeaker(pev);
+		
+		if (speaker != null)
 		{
 			_actorNameBox.gameObject.SetActive(true);
 			_actorNameText.gameObject.SetActive(true);
-			_actorNameText.text = pev.speakerName;
+			_actorNameText.text = speaker;
 			_dialogBox.gameObject.SetActive(true);
 			_monologueBox.gameObject.SetActive(false);
 			_dialogText.text = GetGenderText(pev);

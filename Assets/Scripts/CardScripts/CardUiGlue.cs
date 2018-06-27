@@ -266,7 +266,7 @@ public class CardUiGlue : MonoBehaviour
 		var friendScale = Mathf.Abs(relationChange[(int) Relation.FRIENDS]);
 		_friendImage.gameObject.transform.localScale = new Vector3(friendScale, friendScale, friendScale);
 		var coupleScale = Mathf.Abs(relationChange[(int) Relation.COUPLE]);
-		_familyImage.gameObject.transform.localScale = new Vector3(coupleScale, coupleScale, coupleScale);
+		_coupleImage.gameObject.transform.localScale = new Vector3(coupleScale, coupleScale, coupleScale);
 		var classScale = Mathf.Abs(relationChange[(int) Relation.CLASS]);
 		_classImage.gameObject.transform.localScale = new Vector3(classScale, classScale, classScale);
 	}

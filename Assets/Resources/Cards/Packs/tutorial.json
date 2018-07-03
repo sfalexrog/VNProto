@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 1,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Отвечай на вопросы, которые тебе задают персонажи!",
+    "LeftButtonText": "Понял",
+    "RightButtonText": "Понял",
+    "LeftOutcomes": [
+    ],
+    "RightOutcomes": [
+    ]
+  },
+  {
+    "Id": 2,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Каждый ответ изменит отношения с персонажами. Точки подскажут как изменятся отношения при ответе",
+    "LeftButtonText": "Скучноооо",
+    "RightButtonText": "Ок",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Ты проиграешь если отношения достигнут минимума или максимума",
+    "LeftButtonText": "Надоел!",
+    "RightButtonText": "Понял",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Для победы продержись заданное число ходов. Удачи!",
+    "LeftButtonText": "Наконец то",
+    "RightButtonText": "Спасибо",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      }
+    ]
+  }   
+]

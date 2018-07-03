@@ -1,0 +1,134 @@
+[
+  {
+    "Id": 101,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Нужно помыть посуду",
+    "LeftButtonText": "Но я собирался погулять",
+    "RightButtonText": "Хорошо",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 102,
+    "Actor": "Иди готовься к школе",
+    "Background": "Синий",
+    "Question": "Иди готовься к школе",
+    "LeftButtonText": "Ничего не задали (соврать)",
+    "RightButtonText": "Уже делаю",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 103,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Что ты хочешь на обед?",
+    "LeftButtonText": "Суп",
+    "RightButtonText": "Пиццу",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 104,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Проверь, не пришла ли почта",
+    "LeftButtonText": "Там все равно ничего интересного",
+    "RightButtonText": "Через 5 минут схожу",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 105,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Не бойся дать сдачи, если что",
+    "LeftButtonText": "Лучше избежать драки",
+    "RightButtonText": "Разумеется",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 106,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Ты рад что мы переехали?",
+    "LeftButtonText": "Я не знаю",
+    "RightButtonText": "Думаю да",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  }
+]

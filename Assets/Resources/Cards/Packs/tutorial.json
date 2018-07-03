@@ -20,13 +20,13 @@
     "RightButtonText": "Ок",
     "LeftOutcomes": [
       {
-        "Faction": "Друзья",
+        "Faction": "Семья",
         "Change": -1.0
       }
     ],
     "RightOutcomes": [
       {
-        "Faction": "Друзья",
+        "Faction": "Семья",
         "Change": 2.0
       }
     ]
@@ -36,17 +36,17 @@
     "Actor": "Мама",
     "Background": "Синий",
     "Question": "Ты проиграешь если отношения достигнут минимума или максимума",
-    "LeftButtonText": "Надоел!",
-    "RightButtonText": "Понял",
+    "LeftButtonText": "Быстрее уже",
+    "RightButtonText": "Ясно",
     "LeftOutcomes": [
       {
-        "Faction": "Друзья",
-        "Change": -2.0
+        "Faction": "Семья",
+        "Change": -1.0
       }
     ],
     "RightOutcomes": [
       {
-        "Faction": "Друзья",
+        "Faction": "Семья",
         "Change": 1.0
       }
     ]
@@ -56,17 +56,17 @@
     "Actor": "Мама",
     "Background": "Синий",
     "Question": "Для победы продержись заданное число ходов. Удачи!",
-    "LeftButtonText": "Наконец то",
+    "LeftButtonText": "Наконец то конец обучения",
     "RightButtonText": "Спасибо",
     "LeftOutcomes": [
       {
-        "Faction": "Друзья",
+        "Faction": "Семья",
         "Change": -1.0
       }
     ],
     "RightOutcomes": [
       {
-        "Faction": "Друзья",
+        "Faction": "Семья",
         "Change": 1.0
       }
     ]

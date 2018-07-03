@@ -38,14 +38,14 @@
     "name": "Я",
     "emotions":
     {
-      "default": "Actors/ActorImages/hero_boy"
+      "default": "Actors/ActorImages/hero_boy_test"
     }
   },
   {
     "name": "Player Boy",
     "emotions":
     {
-      "default": "Actors/ActorImages/hero_boy"
+      "default": "Actors/ActorImages/hero_boy_test"
     }
   },{
     "name": "Player Girl",

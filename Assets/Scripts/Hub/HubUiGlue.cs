@@ -19,7 +19,7 @@ public class HubUiGlue : MonoBehaviour
 		// Prevent card game from advancing
 		var gameState = Toolbox.RegisterComponent<GameState>();
 		gameState.NextCardGameId = -1;
-		SceneManager.LoadScene("Scenes/VNScene");
+		SceneManager.LoadScene("Scenes/VNInkyScene");
 	}
 
     public void StartCardGame()

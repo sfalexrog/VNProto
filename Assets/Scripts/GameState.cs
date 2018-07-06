@@ -49,7 +49,7 @@ public class GameState : MonoBehaviour
 
 		NextChapterId = -1;
 		// By default, ChapterResource will point to the first scenario
-		ChapterResource = "Scenarios/Text/Scenario_1";
+		ChapterResource = "Scenarios/Ink/Chapter_01";
 
 		CurrentCardGameId = 1;
 		NextCardGameId = -1;

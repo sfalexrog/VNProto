@@ -9,7 +9,7 @@
   {
     "Id": 2,
     "CardGameName": "RandomCardTest",
-    "CardScriptFilename": "Cards/Scripts/RandomCardGame",
+    "CardScriptFilename": "Cards/Scripts/Mission2",
     "MinXpRequired": 0,
     "NextCardGameId": -1
   }

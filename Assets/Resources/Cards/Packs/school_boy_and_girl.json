@@ -1,0 +1,586 @@
+[
+  {
+    "Id": 1001,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Как тебе в новой школе?",
+    "LeftButtonText": "Раньше было лучше",
+    "RightButtonText": "Мне нравится!",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 1002,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Сходи в магазин",
+    "LeftButtonText": "Я уже вчера ходил!",
+    "RightButtonText": "Хорошо",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 1003,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Познакомился с кем нибудь в школе?",
+    "LeftButtonText": "Да, со Стасом",
+    "RightButtonText": "Да, с Димой",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 1004,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Давай купим тебе новых книг",
+    "LeftButtonText": "Ненавижу читать",
+    "RightButtonText": "Конечно",
+    "LeftOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ]
+  },
+  {
+    "Id": 1005,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Чего ты ходишь в джинсах с подворотами, давай купим покороче",
+    "LeftButtonText": "Так модно",
+    "RightButtonText": "Давай, замучился уже",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      },
+      {
+        "Faction": "Класс",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 1006,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Никогда не садись в машину к незнакомым!",
+    "LeftButtonText": "Спасибо, капитан-очевидность",
+    "RightButtonText": "Конечно",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 1007,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Не сиди много за компом, иди лучше гулять!",
+    "LeftButtonText": "Не люблю гулять",
+    "RightButtonText": "Пойду пройдусь",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ]
+  },
+  {
+    "Id": 1008,
+    "Actor": "Стас",
+    "Background": "Синий",
+    "Question": "Помоги сделать домашку плз",
+    "LeftButtonText": "Я занят",
+    "RightButtonText": "Давай",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 1009,
+    "Actor": "Стас",
+    "Background": "Синий",
+    "Question": "Го в комп играть",
+    "LeftButtonText": "В другой раз",
+    "RightButtonText": "Го",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10010,
+    "Actor": "Стас",
+    "Background": "Синий",
+    "Question": "Давай уроки завтра прогуляем",
+    "LeftButtonText": "Не в этот раз",
+    "RightButtonText": "Я за",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": -2.0
+      },
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10011,
+    "Actor": "Стас",
+    "Background": "Синий",
+    "Question": "Этот Денис идиот!",
+    "LeftButtonText": "Не согласен",
+    "RightButtonText": "Плюсую",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ]
+  },
+  {
+    "Id": 10012,
+    "Actor": "Стас",
+    "Background": "Синий",
+    "Question": "Эта Диана просто дура!",
+    "LeftButtonText": "Не согласен",
+    "RightButtonText": "Плюсую",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ]
+  },
+  {
+    "Id": 10013,
+    "Actor": "Стас",
+    "Background": "Синий",
+    "Question": "Хочу себе купить новый телефон",
+    "LeftButtonText": "Не трать зря деньги",
+    "RightButtonText": "Хорошая идея",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": -1.0
+      },
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 10014,
+    "Actor": "Денис",
+    "Background": "Синий",
+    "Question": "Как тебе мой новый велик?",
+    "LeftButtonText": "Отстой",
+    "RightButtonText": "Классный",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10015,
+    "Actor": "Денис",
+    "Background": "Синий",
+    "Question": "Эта Вика слишком много о себе думает!",
+    "LeftButtonText": "Нееет, ты чего...",
+    "RightButtonText": "Ага",
+    "LeftOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": -1.0
+      }
+    ]
+  },
+  {
+    "Id": 10016,
+    "Actor": "Денис",
+    "Background": "Синий",
+    "Question": "Я как школу закончу поеду за границу учиться",
+    "LeftButtonText": "Не вижу смысла",
+    "RightButtonText": "Круто",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10017,
+    "Actor": "Денис",
+    "Background": "Синий",
+    "Question": "Я завтра школу прогуляю, прикроешь?",
+    "LeftButtonText": "Нет",
+    "RightButtonText": "Да",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10018,
+    "Actor": "Диана",
+    "Background": "Синий",
+    "Question": "Как тебе моя новая сумка?",
+    "LeftButtonText": "Отстой",
+    "RightButtonText": "Классная",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10019,
+    "Actor": "Диана",
+    "Background": "Синий",
+    "Question": "Этот граф слишком много о себе думает!",
+    "LeftButtonText": "Нееет, ты чего...",
+    "RightButtonText": "Ага",
+    "LeftOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": -1.0
+      }
+    ]
+  },
+  {
+    "Id": 10020,
+    "Actor": "Диана",
+    "Background": "Синий",
+    "Question": "Я как школу закончу поеду за границу учиться",
+    "LeftButtonText": "Не вижу смысла",
+    "RightButtonText": "Круто",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      },
+      {
+        "Faction": "Класс",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10021,
+    "Actor": "Диана",
+    "Background": "Синий",
+    "Question": "Я завтра школу прогуляю, прикроешь?",
+    "LeftButtonText": "Нет",
+    "RightButtonText": "Да",
+    "LeftOutcomes": [
+      {
+        "Faction": "Семья",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10022,
+    "Actor": "Панда",
+    "Background": "Синий",
+    "Question": "Подежуришь завтра в классе?",
+    "LeftButtonText": "Я должен уйти сразу после уроков",
+    "RightButtonText": "Да",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10023,
+    "Actor": "Панда",
+    "Background": "Синий",
+    "Question": "Не хочешь съездить на олимпиаду по истории?",
+    "LeftButtonText": "Не люблю историю",
+    "RightButtonText": "С радостью",
+    "LeftOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": -1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 10024,
+    "Actor": "Панда",
+    "Background": "Синий",
+    "Question": "Я думаю Вика сможет стать прекрасным историком",
+    "LeftButtonText": "Не думаю",
+    "RightButtonText": "Я тоже так думаю",
+    "LeftOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10025,
+    "Actor": "Вика",
+    "Background": "Синий",
+    "Question": "Не хочешь вместе домашку сделать?",
+    "LeftButtonText": "Сегодня не смогу",
+    "RightButtonText": "Хочу",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10026,
+    "Actor": "Витя",
+    "Background": "Синий",
+    "Question": "Не хочешь вместе домашку сделать?",
+    "LeftButtonText": "Сегодня не смогу",
+    "RightButtonText": "Хочу",
+    "LeftOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 1.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  },
+  {
+    "Id": 10027,
+    "Actor": "Мама",
+    "Background": "Синий",
+    "Question": "Познакомился с кем нибудь в школе?",
+    "LeftButtonText": "Да, со Стасом",
+    "RightButtonText": "Да, с Дианой",
+    "LeftOutcomes": [
+      {
+        "Faction": "Друзья",
+        "Change": 2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Класс",
+        "Change": 2.0
+      }
+    ]
+  },
+  {
+    "Id": 10028,
+    "Actor": "Панда",
+    "Background": "Синий",
+    "Question": "Я думаю Витя сможет стать прекрасным историком",
+    "LeftButtonText": "Не думаю",
+    "RightButtonText": "Я тоже так думаю",
+    "LeftOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": -2.0
+      }
+    ],
+    "RightOutcomes": [
+      {
+        "Faction": "Пара",
+        "Change": 1.0
+      }
+    ]
+  }
+]

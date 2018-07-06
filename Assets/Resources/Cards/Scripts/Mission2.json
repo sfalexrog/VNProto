@@ -1,0 +1,9 @@
+{
+  "Generator": "random",
+  "CardPacks": [
+    "Cards/Packs/base",
+    "Cards/Packs/school"
+  ],
+  "NumCards": 20,
+  "CompletionReward": 1
+}

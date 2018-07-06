@@ -21,10 +21,10 @@
   },
   {
     "Id": 102,
-    "Actor": "Иди готовься к школе",
+    "Actor": "Мама",
     "Background": "Синий",
     "Question": "Иди готовься к школе",
-    "LeftButtonText": "Ничего не задали (соврать)",
+    "LeftButtonText": "Я и так все знаю",
     "RightButtonText": "Уже делаю",
     "LeftOutcomes": [
       {
@@ -49,13 +49,13 @@
     "LeftOutcomes": [
       {
         "Faction": "Семья",
-        "Change": -1.0
+        "Change": 1.0
       }
     ],
     "RightOutcomes": [
       {
         "Faction": "Семья",
-        "Change": 1.0
+        "Change": -1.0
       }
     ]
   },

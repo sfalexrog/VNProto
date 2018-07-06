@@ -1,27 +1,27 @@
 [
   {
-    "name": "Алиса",
+    "name": "Вика",
     "emotions":
     {
       "default": "Actors/ActorImages/1"
     }
   },
   {
-    "name": "Максим",
+    "name": "Витя",
     "emotions":
     {
       "default": "Actors/ActorImages/2"
     }
   },
   {
-    "name": "Эрик",
+    "name": "Денис",
     "emotions":
     {
       "default": "Actors/ActorImages/3"
     }
   },
   {
-    "name": "Костя",
+    "name": "Стас",
     "emotions":
     {
       "default": "Actors/ActorImages/4"
@@ -61,7 +61,7 @@
     }
   }
   ,{
-    "name": "Учитель",
+    "name": "Панда",
     "emotions":
     {
       "default": "Actors/ActorImages/teacher"

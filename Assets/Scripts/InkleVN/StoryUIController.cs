@@ -335,14 +335,20 @@ public class StoryUIController : MonoBehaviour {
     private void ShowActor(SceneTransitionRequest str)
     {
         var timeOffset = 0.0f;
+        // Fix up actor name for player
+        var actorName = str.TransitionSpeaker;
+        if (actorName.Contains("Player"))
+        {
+            actorName = "Я";
+        }
         // If the actor name is already on screen, change it gracefully
         if (_actorGroup.alpha > 0.99f)
         {
-            if (ActorName.text != str.TransitionSpeaker)
+            if (ActorName.text != actorName)
             {
-                var animGroup = new AnimGroup();
+                var animGroup = new AnimGroup();       
                 animGroup.AddAnimation(new FadeAnimation(ActorName, Time.time, FadeOutDuration, FadeOutCurve, 0.0f))
-                    .AddAnimation(new SetTextAnimation(ActorName, Time.time + FadeOutDuration, str.TransitionSpeaker))
+                    .AddAnimation(new SetTextAnimation(ActorName, Time.time + FadeOutDuration, actorName))
                     .AddAnimation(new FadeAnimation(ActorName, Time.time + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
                 timeOffset = FadeOutDuration + FadeInDuration;
                 _pendingAnimations.Enqueue(animGroup);
@@ -351,7 +357,7 @@ public class StoryUIController : MonoBehaviour {
         else
         {
             // Change the name without any animation, the fade in from the canvas group will do the rest
-            ActorName.text = str.TransitionSpeaker;
+            ActorName.text = actorName;
             _pendingAnimations.Enqueue(new AnimGroup().AddAnimation(new FadeCGAnimation(_actorGroup, Time.time + timeOffset, FadeInDuration, FadeInCurve, 1.0f)));
         }
     }

@@ -40,11 +40,13 @@ public class StoryUIController : MonoBehaviour {
 
     [Header("Animation targets")]
     public Image PlayerPhraseBackgroundAnchor;
-
+    public Image PlayerPhraseTextAnchor;
     public Image DescriptionBackgroundAnchor;
+    public Image DescriptionTextAnchor;
     public Image NPCPhraseBackgroundAnchor;
-
+    public Image NPCPhraseTextAnchor;
     public Image ChoiceBackgroundAnchor;
+    public Image ChoiceTextAnchor;
 
     [Header("Choice colors")]
     public Color GoodChoice;
@@ -372,27 +374,35 @@ public class StoryUIController : MonoBehaviour {
         _pendingAnimations.Enqueue(animGroup);
     }
 
-    private void TransitionMainText(SceneTransitionRequest str, Image anchorTarget)
+    private void TransitionMainText(SceneTransitionRequest str, Image anchorTarget, Image anchorTextTarget)
     {
+        // Calculate margins for text background
+        var marginTopBottom = (anchorTarget.rectTransform.rect.height - anchorTextTarget.rectTransform.rect.height);
+
         var animGroup = new AnimGroup();
         var textFadeOut = new FadeAnimation(PhraseText, Time.time, FadeOutDuration, FadeOutCurve, 0.0f);
         animGroup.AddAnimation(textFadeOut);
 
         var lastAnimFinish = textFadeOut.TimeEnd;
 
-        var defaultTextBoxSize = new Vector2(anchorTarget.rectTransform.rect.width - 30,
-                                            anchorTarget.rectTransform.rect.height - 35);
+        var defaultTextBoxSize = new Vector2(anchorTextTarget.rectTransform.rect.width,
+                                            anchorTextTarget.rectTransform.rect.height);
 
         var requiredHeight = GetDesiredTextHeight(PhraseText, str.TransitionPhrase, defaultTextBoxSize);
 
+        // Resize text and text background appropriately
         if (PhraseBackground.rectTransform.anchoredPosition != anchorTarget.rectTransform.anchoredPosition ||
             !Mathf.Approximately(requiredHeight, PhraseText.rectTransform.rect.height))
         {
-            var textBoxResize = new RectAnimation(PhraseBackground.rectTransform, textFadeOut.TimeEnd, TransitionDuration, TransitionCurve, anchorTarget.rectTransform);
+            var textBgResize = new RectAnimation(PhraseBackground.rectTransform, textFadeOut.TimeEnd, TransitionDuration, TransitionCurve, anchorTarget.rectTransform);
             // Fixup for correct size
-            textBoxResize.TargetSize.y = requiredHeight + 35;
+            textBgResize.TargetSize.y = requiredHeight + marginTopBottom;
+            animGroup.AddAnimation(textBgResize);
+            lastAnimFinish = textBgResize.TimeEnd;
+            // Add short (less than 1 frame) animation for text
+            var textBoxResize = new RectAnimation(PhraseText.rectTransform, textBgResize.TimeEnd - 0.001f, 0.001f, TransitionCurve, anchorTextTarget.rectTransform);
+            textBoxResize.TargetSize.y = requiredHeight;
             animGroup.AddAnimation(textBoxResize);
-            lastAnimFinish = textBoxResize.TimeEnd;
         }
 
         var textChange = new SetTextAnimation(PhraseText, lastAnimFinish, str.TransitionPhrase);
@@ -466,7 +476,7 @@ public class StoryUIController : MonoBehaviour {
         if (str.TransitionSpeaker == null)
 		{
             HideActor();
-            TransitionMainText(str, DescriptionBackgroundAnchor);
+            TransitionMainText(str, DescriptionBackgroundAnchor, DescriptionTextAnchor);
 		}
 		else
 		{
@@ -477,18 +487,18 @@ public class StoryUIController : MonoBehaviour {
 				if (str.TransitionSpeaker.Contains("Player"))
 				{
                     
-                    TransitionMainText(str, PlayerPhraseBackgroundAnchor);
+                    TransitionMainText(str, PlayerPhraseBackgroundAnchor, PlayerPhraseTextAnchor);
 				}
 				else
 				{
-                    TransitionMainText(str, NPCPhraseBackgroundAnchor);
+                    TransitionMainText(str, NPCPhraseBackgroundAnchor, NPCPhraseTextAnchor);
 				}
 			}
             else
             {
                 // Disable generic tap target
                 TapTarget.gameObject.SetActive(false);
-                TransitionMainText(str, ChoiceBackgroundAnchor);
+                TransitionMainText(str, ChoiceBackgroundAnchor, ChoiceTextAnchor);
                 CreateChoices(str);
             }
 		}

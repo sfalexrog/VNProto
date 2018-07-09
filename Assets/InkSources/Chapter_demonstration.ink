@@ -53,5 +53,11 @@ Location: Комната м
 	Я: Да я всегда на чеку.
 	->dialog1
 	*[Мне уже пора спать, давай завтра продолжим...]
-	->DONE
-	->END
+
+    ->Conflict01
+    ===Conflict01===
+    ~ expGain = expGain + 1
+    ~ didCompleteChapter = true
+    ->DONE
+
+->END

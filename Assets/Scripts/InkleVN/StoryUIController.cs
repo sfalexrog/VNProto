@@ -457,6 +457,8 @@ public class StoryUIController : MonoBehaviour {
 	{
         HideChoices();
 		if (!_willAcceptTransitions) return false;
+        // Re-enable generic tap target if it was disabled before
+        TapTarget.gameObject.SetActive(true);
         if (str.TransitionBackground != null)
         {
             TransitionBackground(str);
@@ -472,8 +474,6 @@ public class StoryUIController : MonoBehaviour {
 			ActorImage.sprite = _actorPool.GetActorSprite(str.TransitionSpeaker, str.TransitionSpeakerEmotion);
 			if (str.TransitionChoices == null)
 			{
-                // Enable generic tap target if there are no choices
-                TapTarget.gameObject.SetActive(true);
 				if (str.TransitionSpeaker.Contains("Player"))
 				{
                     

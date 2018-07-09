@@ -16,9 +16,13 @@ public class StoryUIController : MonoBehaviour {
     public Image BackgroundTransition;
     public Image PhraseBackground;
     public Text PhraseText;
-    public Image ActorNameBox;
-    public Text ActorName;
-    public Image ActorImage;
+    public Image PlayerActorNameBox;
+    public Text PlayerActorName;
+    public Image PlayerActorImage;
+    public Image NPCActorNameBox;
+    public Text NPCActorName;
+    public Image NPCActorImage;
+    
 
 
     public Button TapTarget;
@@ -62,7 +66,8 @@ public class StoryUIController : MonoBehaviour {
     private Button[] _choiceButtons;
 
     // Actor image and name canvas group (used to show/hide both actor image and actor name box)
-    private CanvasGroup _actorGroup;
+    private CanvasGroup _playerActorGroup;
+    private CanvasGroup _NPCActorGroup;
 
     public void SetOnChoiceHandler(OnChoice handler)
     {
@@ -275,15 +280,23 @@ public class StoryUIController : MonoBehaviour {
         }
     }
 
-    private Queue<AnimGroup> _pendingAnimations;
+    // Note: this used to be a queue, but with our use case, it's quite improbable
+    // to have more than a handful of pending animations, and accessing the last
+    // item is more important for us.
+    private List<AnimGroup> _pendingAnimations;
 
     void Awake()
     {
         _willAcceptTransitions = true;
         _actorPool = new ActorPool(false);
         _backgroundPool = new BackgroundPool(false);
-        _pendingAnimations = new Queue<AnimGroup>();
-        _actorGroup = ActorImage.GetComponent<CanvasGroup>();
+        _pendingAnimations = new List<AnimGroup>();
+        _playerActorGroup = PlayerActorImage.GetComponent<CanvasGroup>();
+        _NPCActorGroup = NPCActorImage.GetComponent<CanvasGroup>();
+
+        // Hide all player groups by default
+        _playerActorGroup.alpha = 0.0f;
+        _NPCActorGroup.alpha = 0.0f;
     }
 
     /**
@@ -306,7 +319,8 @@ public class StoryUIController : MonoBehaviour {
         _shadowText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, requestedSize.y);
 
         _shadowText.text = textContents;
-        return LayoutUtility.GetPreferredWidth(_shadowText.rectTransform);
+        // Return a slightly larger value to fit the text
+        return Mathf.Ceil(LayoutUtility.GetPreferredWidth(_shadowText.rectTransform));
     }
 
     private float GetDesiredTextHeight(Text textComponent, string textContents, Vector2 requestedSize)
@@ -321,19 +335,41 @@ public class StoryUIController : MonoBehaviour {
 
         _shadowText.text = textContents;
         _shadowText.rectTransform.ForceUpdateRectTransforms();
-        return LayoutUtility.GetPreferredHeight(_shadowText.rectTransform);
+        // Return a slightly larger value to fit the text
+        return Mathf.Ceil(LayoutUtility.GetPreferredHeight(_shadowText.rectTransform)) + 3.0f;
+    }
+
+    /**
+     * Looks at the animation queue and returns the time of the last animation.
+     * If there are no pending animations, returns current frame time.
+     */
+    private float GetNextAnimTime()
+    {
+        if (_pendingAnimations.Count > 0)
+        {
+            return _pendingAnimations[_pendingAnimations.Count - 1].TimeEnd;
+        }
+        return Time.time;
     }
 
     // Animate actor group hiding
-    private void HideActor()
+    private void HideActor(CanvasGroup actorCGroup)
     {
+        var timeStart = GetNextAnimTime();
         // Account for floats being floats
-        if (_actorGroup.alpha < 0.001f) return;
+        if (actorCGroup.alpha < 0.001f) return;
         var animGroup = new AnimGroup();
-        animGroup.AddAnimation(new FadeCGAnimation(_actorGroup, Time.time, FadeOutDuration, FadeOutCurve, 0.0f));
-        _pendingAnimations.Enqueue(animGroup);
+        animGroup.AddAnimation(new FadeCGAnimation(actorCGroup, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+        _pendingAnimations.Add(animGroup);
     }
 
+    // Animate all actor groups hiding
+    private void HideAllActors()
+    {
+        HideActor(_NPCActorGroup);
+        HideActor(_playerActorGroup);
+    }
+    /*
     private void ShowActor(SceneTransitionRequest str)
     {
         var timeOffset = 0.0f;
@@ -348,7 +384,7 @@ public class StoryUIController : MonoBehaviour {
         {
             if (ActorName.text != actorName)
             {
-                var animGroup = new AnimGroup();       
+                var animGroup = new AnimGroup();
                 animGroup.AddAnimation(new FadeAnimation(ActorName, Time.time, FadeOutDuration, FadeOutCurve, 0.0f))
                     .AddAnimation(new SetTextAnimation(ActorName, Time.time + FadeOutDuration, actorName))
                     .AddAnimation(new FadeAnimation(ActorName, Time.time + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
@@ -363,6 +399,120 @@ public class StoryUIController : MonoBehaviour {
             _pendingAnimations.Enqueue(new AnimGroup().AddAnimation(new FadeCGAnimation(_actorGroup, Time.time + timeOffset, FadeInDuration, FadeInCurve, 1.0f)));
         }
     }
+    */
+    private void TransitionActor(SceneTransitionRequest str)
+    {
+        var timeStart = GetNextAnimTime();
+        
+        var timeOffset = 0.0f;
+        var actorName = str.TransitionSpeaker;
+        // Flag for player character - we do things a bit different for him
+        var isPlayerCharacter = false;
+        // Fix up actor name for player
+        if (actorName.Contains("Player"))
+        {
+            actorName = "Я";
+            isPlayerCharacter = true;
+        }
+
+        // Check if any actor group is displayed
+        var isPCDisplayed = (_playerActorGroup.alpha > 0.99f);
+        var isNPCDisplayed = (_NPCActorGroup.alpha > 0.99f);
+
+        var animGroup = new AnimGroup();
+        // Should we add group to the animation list?
+        var addGroup = false;
+
+        // Transition to player character
+        if (isPlayerCharacter)
+        {
+            // Check if we need to hide NPC group
+            if (isNPCDisplayed)
+            {
+                HideActor(_NPCActorGroup);
+                // Update our animation time
+                timeStart = GetNextAnimTime();
+            }
+            var pcSprite = _actorPool.GetActorSprite(str.TransitionSpeaker, str.TransitionSpeakerEmotion);
+            var currentPcSprite = PlayerActorImage.sprite;
+
+            if (isPCDisplayed)
+            {
+                // If player character is displayed, but has a different sprite (emotion),
+                // fade it out and replace with an appropriate one
+                if (currentPcSprite != pcSprite)
+                {
+                    animGroup.AddAnimation(new FadeAnimation(PlayerActorImage, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+                    animGroup.AddAnimation(new SetSpriteAnimation(PlayerActorImage, timeStart + FadeOutDuration, pcSprite));
+                    animGroup.AddAnimation(new FadeAnimation(PlayerActorImage, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
+                    addGroup = true;
+                }
+                // There's not much to do otherwise
+            }
+            else
+            {
+                // We can actually swap images when the group is not shown
+                if (currentPcSprite != pcSprite)
+                {
+                    animGroup.AddAnimation(new SetSpriteAnimation(PlayerActorImage, timeStart + FadeOutDuration, pcSprite));
+                }
+                animGroup.AddAnimation(new FadeCGAnimation(_playerActorGroup, timeStart, FadeInDuration, FadeInCurve, 1.0f));
+                addGroup = true;
+            }
+        }
+        else
+        {
+            // Check if we need to hide player character
+            if (isPCDisplayed)
+            {
+                HideActor(_playerActorGroup);
+                // Again, update animation time
+                timeStart = GetNextAnimTime();
+            }
+            // Get the NPC sprite
+            var npcSprite = _actorPool.GetActorSprite(str.TransitionSpeaker, str.TransitionSpeakerEmotion);
+            var currentNpcSprite = NPCActorImage.sprite;
+            var currentNpcName = NPCActorName.text;
+
+            if (isNPCDisplayed)
+            {
+                // We might still need to change the NPC picture
+                if (currentNpcSprite != npcSprite)
+                {
+                    animGroup.AddAnimation(new FadeAnimation(NPCActorImage, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+                    animGroup.AddAnimation(new SetSpriteAnimation(NPCActorImage, timeStart + FadeOutDuration, npcSprite));
+                    animGroup.AddAnimation(new FadeAnimation(NPCActorImage, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
+                    addGroup = true;
+                }
+                // ...and possibly his/her name
+                if (currentNpcName != str.TransitionSpeaker)
+                {
+                    animGroup.AddAnimation(new FadeAnimation(NPCActorName, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+                    animGroup.AddAnimation(new SetTextAnimation(NPCActorName, timeStart + FadeOutDuration, str.TransitionSpeaker));
+                    animGroup.AddAnimation(new FadeAnimation(NPCActorName, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
+                    addGroup = true;
+                }
+            }
+            else
+            {
+                // Animate group fade in and possibly change sprites/text while it's hidden
+                if (currentNpcSprite != npcSprite)
+                {
+                    animGroup.AddAnimation(new SetSpriteAnimation(NPCActorImage, timeStart, npcSprite));
+                }
+                if (currentNpcName != str.TransitionSpeaker)
+                {
+                    animGroup.AddAnimation(new SetTextAnimation(NPCActorName, timeStart, str.TransitionSpeaker));
+                }
+                animGroup.AddAnimation(new FadeCGAnimation(_NPCActorGroup, timeStart, FadeInDuration, FadeInCurve, 1.0f));
+                addGroup = true;
+            }
+        }
+        if (addGroup)
+        {
+            _pendingAnimations.Add(animGroup);
+        }
+    }
 
     private void TransitionBackground(SceneTransitionRequest str)
     {
@@ -371,7 +521,7 @@ public class StoryUIController : MonoBehaviour {
         animGroup.AddAnimation(new FadeAnimation(BackgroundTransition, Time.time, FadeInDuration, FadeInCurve, 1.0f))
             .AddAnimation(new SetSpriteAnimation(Background, Time.time + FadeInDuration, BackgroundTransition.sprite))
             .AddAnimation(new FadeAnimation(BackgroundTransition, Time.time + FadeInDuration, 0.001f, FadeOutCurve, 0.0f));
-        _pendingAnimations.Enqueue(animGroup);
+        _pendingAnimations.Add(animGroup);
     }
 
     private void TransitionMainText(SceneTransitionRequest str, Image anchorTarget, Image anchorTextTarget)
@@ -380,7 +530,7 @@ public class StoryUIController : MonoBehaviour {
         var marginTopBottom = (anchorTarget.rectTransform.rect.height - anchorTextTarget.rectTransform.rect.height);
 
         var animGroup = new AnimGroup();
-        var textFadeOut = new FadeAnimation(PhraseText, Time.time, FadeOutDuration, FadeOutCurve, 0.0f);
+        var textFadeOut = new FadeAnimation(PhraseText, GetNextAnimTime(), FadeOutDuration, FadeOutCurve, 0.0f);
         animGroup.AddAnimation(textFadeOut);
 
         var lastAnimFinish = textFadeOut.TimeEnd;
@@ -400,7 +550,7 @@ public class StoryUIController : MonoBehaviour {
             animGroup.AddAnimation(textBgResize);
             lastAnimFinish = textBgResize.TimeEnd;
             // Add short (less than 1 frame) animation for text
-            var textBoxResize = new RectAnimation(PhraseText.rectTransform, textBgResize.TimeEnd - 0.001f, 0.001f, TransitionCurve, anchorTextTarget.rectTransform);
+            var textBoxResize = new RectAnimation(PhraseText.rectTransform, textBgResize.TimeEnd, 0.001f, TransitionCurve, anchorTextTarget.rectTransform);
             textBoxResize.TargetSize.y = requiredHeight;
             animGroup.AddAnimation(textBoxResize);
         }
@@ -409,13 +559,13 @@ public class StoryUIController : MonoBehaviour {
         animGroup.AddAnimation(textChange);
         var textFadeIn = new FadeAnimation(PhraseText, lastAnimFinish, FadeInDuration, FadeInCurve, 1.0f);
         animGroup.AddAnimation(textFadeIn);
-        _pendingAnimations.Enqueue(animGroup);
+        _pendingAnimations.Add(animGroup);
     }
 
     private void CreateChoices(SceneTransitionRequest str)
     {
         var animGroup = new AnimGroup();
-        var curTime = Time.time;
+        var curTime = GetNextAnimTime();
         if (_choiceButtons != null)
         {
             foreach(var btn in _choiceButtons)
@@ -443,7 +593,7 @@ public class StoryUIController : MonoBehaviour {
 
             _choiceButtons[i] = choiceButton;
         }
-        _pendingAnimations.Enqueue(animGroup);
+        _pendingAnimations.Add(animGroup);
     }
 
     private void HideChoices()
@@ -475,18 +625,18 @@ public class StoryUIController : MonoBehaviour {
         }
         if (str.TransitionSpeaker == null)
 		{
-            HideActor();
+            HideAllActors();
             TransitionMainText(str, DescriptionBackgroundAnchor, DescriptionTextAnchor);
 		}
 		else
 		{
-            ShowActor(str);
-			ActorImage.sprite = _actorPool.GetActorSprite(str.TransitionSpeaker, str.TransitionSpeakerEmotion);
+            TransitionActor(str);
+            
+			//ActorImage.sprite = _actorPool.GetActorSprite(str.TransitionSpeaker, str.TransitionSpeakerEmotion);
 			if (str.TransitionChoices == null)
 			{
 				if (str.TransitionSpeaker.Contains("Player"))
-				{
-                    
+				{        
                     TransitionMainText(str, PlayerPhraseBackgroundAnchor, PlayerPhraseTextAnchor);
 				}
 				else
@@ -519,7 +669,7 @@ public class StoryUIController : MonoBehaviour {
 			// Disable tap target during animation
 			_willAcceptTransitions = false;
 			// Play back animations
-			var animGroup = _pendingAnimations.Peek();
+			var animGroup = _pendingAnimations[0];
 			var t = Time.time;
 			foreach (var textAnim in animGroup.FadeAnimations)
 			{
@@ -577,7 +727,7 @@ public class StoryUIController : MonoBehaviour {
 
 			if (t > animGroup.TimeEnd)
 			{
-				_pendingAnimations.Dequeue();
+				_pendingAnimations.RemoveAt(0);
 			}
 			
 		}

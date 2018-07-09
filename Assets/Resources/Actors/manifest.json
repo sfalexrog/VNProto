@@ -24,7 +24,8 @@
     "name": "Стас",
     "emotions":
     {
-      "default": "Actors/ActorImages/4"
+      "default": "Actors/ActorImages/boy_2",
+	  "грусть": "Actors/ActorImages/boy_2"
     }
   },
   {
@@ -38,14 +39,15 @@
     "name": "Я",
     "emotions":
     {
-      "default": "Actors/ActorImages/hero_boy_test"
+      "default": "Actors/ActorImages/boy"
     }
   },
   {
     "name": "Player Boy",
     "emotions":
     {
-      "default": "Actors/ActorImages/hero_boy_test"
+      "default": "Actors/ActorImages/boy",
+	  "грусть": "Actors/ActorImages/boy"
     }
   },{
     "name": "Player Girl",

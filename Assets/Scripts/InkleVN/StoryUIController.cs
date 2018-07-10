@@ -31,6 +31,7 @@ public class StoryUIController : MonoBehaviour {
 
     public Image UIContainer;
     public Button ChoiceButtonPrototype;
+    public float ChoiceButtonDistance;
 
     [Header("Animation controls")]
     public float FadeOutDuration;
@@ -584,7 +585,8 @@ public class StoryUIController : MonoBehaviour {
             choiceButtonCG.alpha = 0.0f;
             animGroup.AddAnimation(new FadeCGAnimation(choiceButtonCG, curTime + i * FadeInDuration, FadeInDuration, FadeInCurve, 1.0f));
 
-            choiceButton.image.rectTransform.anchoredPosition = ChoiceButtonPrototype.image.rectTransform.anchoredPosition + new Vector2(0.0f, -i * (ChoiceButtonPrototype.image.rectTransform.rect.height + 40));
+            choiceButton.image.rectTransform.anchoredPosition = ChoiceButtonPrototype.image.rectTransform.anchoredPosition
+                                                                + new Vector2(0.0f, -i * (ChoiceButtonPrototype.image.rectTransform.rect.height + ChoiceButtonDistance));
 
             choiceButton.onClick.AddListener(delegate { _choiceHandler(choice.ChoiceID); });
 

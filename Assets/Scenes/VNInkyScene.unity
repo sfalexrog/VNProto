@@ -1505,6 +1505,7 @@ MonoBehaviour:
   TapTarget: {fileID: 436037097}
   UIContainer: {fileID: 1602247321}
   ChoiceButtonPrototype: {fileID: 245179456}
+  ChoiceButtonDistance: 40
   FadeOutDuration: 0.1
   FadeOutCurve:
     serializedVersion: 2

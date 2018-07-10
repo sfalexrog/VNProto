@@ -44,7 +44,7 @@ public class GameState : MonoBehaviour
 		currentScene = 1;
 		currentExperience = 0;
 
-		PlayerName = "Я";
+		PlayerName = "Игрок";
 		PlayerAppearance = "";
 
 		NextChapterId = -1;

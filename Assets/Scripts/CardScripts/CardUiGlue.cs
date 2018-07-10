@@ -313,16 +313,16 @@ public class CardUiGlue : MonoBehaviour
 	void DisplayGameOverState()
 	{
 		_popupPanel.SetActive(true);
-		_popupHeaderText.text = "Провал...";
-		_popupDescriptionText.text = "Главное в жизни - баланс. Следи за отношениями со всеми!";
+		_popupHeaderText.text = "Вы проиграли";
+		_popupDescriptionText.text = "Главное в жизни - баланс. Следите за отношениями со всеми!";
 
 	}
 
 	void DisplayWinState()
 	{
 		_popupPanel.SetActive(true);
-		_popupHeaderText.text = "Победа!";
-		_popupDescriptionText.text = "Поздравляю! Ты прошёл дальше!";
+		_popupHeaderText.text = "Вы победили!";
+		_popupDescriptionText.text = "Ты сумел сохранить отношения со всеми. Миссия пройдена!";
 	}
 
 	public void OnPopupDismiss()

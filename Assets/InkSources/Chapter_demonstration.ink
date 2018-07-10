@@ -57,7 +57,8 @@ Location: Комната м
     ===Conflict01===
     Конец ознакомительного фрагмента
     ~ expGain = expGain + 1
-    ~ didCompleteChapter = true
+    ~ didCompleteChapter = false
+    
     ->DONE
 
 ->END

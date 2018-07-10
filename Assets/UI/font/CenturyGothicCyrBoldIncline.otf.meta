@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 16b8804b56bda40b5aed265468bda2cf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CenturyGothicCyr
+  fontNames:
+  - CenturyGothicCyr
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 110b28a3f3c964bc69ccea12a7d4b8be, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

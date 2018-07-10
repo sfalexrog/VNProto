@@ -1,6 +1,6 @@
 [
   {
-    "name": "Школа",
+    "name": "класс",
     "image": "Backgrounds/BackgroundImages/Class"
   },
   {
@@ -42,5 +42,9 @@
   {
     "name": "Синий",
     "image": "Backgrounds/BackgroundImages/dark_blue"
+  },
+  {
+    "name": "У_школы",
+    "image": "Backgrounds/BackgroundImages/Near_school"
   }
 ]

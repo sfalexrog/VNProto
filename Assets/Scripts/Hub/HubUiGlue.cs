@@ -35,7 +35,7 @@ public class HubUiGlue : MonoBehaviour
 		// TODO
 		Debug.LogWarning("Story mode is disabled at the moment");
 		ModeDisabledPopup.gameObject.SetActive(true);
-		ModeDisabledDescription.text = "Продолжение истории в данный момент недоступно. Идите в Город, чтобы получить больше опыта.";
+		ModeDisabledDescription.text = "Для продолжения пройдите миссию в городе.";
 	}
 
 	public void ShowCardGameDisabledPopup()
@@ -43,7 +43,7 @@ public class HubUiGlue : MonoBehaviour
 		// TODO
 		Debug.LogWarning("Card game is disabled at the moment");
 		ModeDisabledPopup.gameObject.SetActive(true);
-		ModeDisabledDescription.text = "Режим игры в данный момент недоступен. Пора продолжать историю!";
+        ModeDisabledDescription.text = "Для продолжения пройдите сюжетную главу.";
 	}
 
 	public void DisableAllButtons()

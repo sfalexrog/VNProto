@@ -17,7 +17,9 @@
     "name": "Денис",
     "emotions":
     {
-      "default": "Actors/ActorImages/3"
+      "default": "Actors/ActorImages/3",
+      "злость": "Actors/ActorImages/3",
+      "радость": "Actors/ActorImages/3"
     }
   },
   {
@@ -25,7 +27,7 @@
     "emotions":
     {
       "default": "Actors/ActorImages/boy_2",
-	  "грусть": "Actors/ActorImages/boy_2"
+	    "грусть": "Actors/ActorImages/boy_2"
     }
   },
   {
@@ -44,32 +46,35 @@
   },
   {
     "name": "Player Boy",
-    "emotions":
-    {
+    "emotions": {
       "default": "Actors/ActorImages/boy",
-	  "грусть": "Actors/ActorImages/boy"
+      "грусть": "Actors/ActorImages/boy"
     }
-  },{
+  },
+  {
     "name": "Player Girl",
-    "emotions":
-    {
+    "emotions": {
       "default": "Actors/ActorImages/hero_girl"
     }
-  },{
+  },
+  {
     "name": "Неизвестный",
-    "emotions":
-    {
+    "emotions": {
       "default": "Actors/ActorImages/silhouette"
     }
-  }
-  ,{
+  },
+  {
     "name": "Панда",
-    "emotions":
-    {
+    "emotions": {
       "default": "Actors/ActorImages/teacher"
     }
-  }
-  ,{
+  },
+  {
+    "name": "Учитель",
+    "emotions": {
+      "default": "Actors/ActorImages/teacher"
+    }
+  },{
     "name": "Саша",
     "emotions":
     {

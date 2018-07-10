@@ -53,6 +53,12 @@ public class StoryUIController : MonoBehaviour {
     public Image ChoiceBackgroundAnchor;
     public Image ChoiceTextAnchor;
 
+    public Image PlayerHiddenAnchor;
+    public Image NPCHiddenAnchor;
+
+    public Image PlayerShownAnchor;
+    public Image NPCShownAnchor;
+
     [Header("Choice colors")]
     public Color GoodChoice;
     public Color NeutralChoice;
@@ -361,6 +367,19 @@ public class StoryUIController : MonoBehaviour {
         if (actorCGroup.alpha < 0.001f) return;
         var animGroup = new AnimGroup();
         animGroup.AddAnimation(new FadeCGAnimation(actorCGroup, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+        if (actorCGroup == _NPCActorGroup)
+        {
+            var anim = new RectAnimation(NPCActorImage.rectTransform, timeStart, TransitionDuration, TransitionCurve, NPCHiddenAnchor.rectTransform);
+            // Preserve size for transform
+            anim.TargetSize = anim.InitialSize;
+            animGroup.AddAnimation(anim);
+        }
+        else if (actorCGroup == _playerActorGroup)
+        {
+            var anim = new RectAnimation(PlayerActorImage.rectTransform, timeStart, TransitionDuration, TransitionCurve, PlayerHiddenAnchor.rectTransform);
+            anim.TargetSize = anim.InitialSize;
+            animGroup.AddAnimation(anim);
+        }
         _pendingAnimations.Add(animGroup);
     }
 
@@ -370,37 +389,7 @@ public class StoryUIController : MonoBehaviour {
         HideActor(_NPCActorGroup);
         HideActor(_playerActorGroup);
     }
-    /*
-    private void ShowActor(SceneTransitionRequest str)
-    {
-        var timeOffset = 0.0f;
-        // Fix up actor name for player
-        var actorName = str.TransitionSpeaker;
-        if (actorName.Contains("Player"))
-        {
-            actorName = "Я";
-        }
-        // If the actor name is already on screen, change it gracefully
-        if (_actorGroup.alpha > 0.99f)
-        {
-            if (ActorName.text != actorName)
-            {
-                var animGroup = new AnimGroup();
-                animGroup.AddAnimation(new FadeAnimation(ActorName, Time.time, FadeOutDuration, FadeOutCurve, 0.0f))
-                    .AddAnimation(new SetTextAnimation(ActorName, Time.time + FadeOutDuration, actorName))
-                    .AddAnimation(new FadeAnimation(ActorName, Time.time + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
-                timeOffset = FadeOutDuration + FadeInDuration;
-                _pendingAnimations.Enqueue(animGroup);
-            }
-        }
-        else
-        {
-            // Change the name without any animation, the fade in from the canvas group will do the rest
-            ActorName.text = actorName;
-            _pendingAnimations.Enqueue(new AnimGroup().AddAnimation(new FadeCGAnimation(_actorGroup, Time.time + timeOffset, FadeInDuration, FadeInCurve, 1.0f)));
-        }
-    }
-    */
+    
     private void TransitionActor(SceneTransitionRequest str)
     {
         var timeStart = GetNextAnimTime();
@@ -444,6 +433,7 @@ public class StoryUIController : MonoBehaviour {
                 if (currentPcSprite != pcSprite)
                 {
                     animGroup.AddAnimation(new FadeAnimation(PlayerActorImage, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+                    //animGroup.AddAnimation(new RectAnimation(PlayerActorImage.rectTransform, timeStart, TransitionDuration, TransitionCurve, PlayerHiddenAnchor.rectTransform));
                     animGroup.AddAnimation(new SetSpriteAnimation(PlayerActorImage, timeStart + FadeOutDuration, pcSprite));
                     animGroup.AddAnimation(new FadeAnimation(PlayerActorImage, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
                     addGroup = true;
@@ -455,8 +445,11 @@ public class StoryUIController : MonoBehaviour {
                 // We can actually swap images when the group is not shown
                 if (currentPcSprite != pcSprite)
                 {
-                    animGroup.AddAnimation(new SetSpriteAnimation(PlayerActorImage, timeStart + FadeOutDuration, pcSprite));
+                    animGroup.AddAnimation(new SetSpriteAnimation(PlayerActorImage, timeStart, pcSprite));
                 }
+                var flyInAnim = new RectAnimation(PlayerActorImage.rectTransform, timeStart, TransitionDuration, TransitionCurve, PlayerShownAnchor.rectTransform);
+                flyInAnim.TargetSize = flyInAnim.InitialSize;
+                animGroup.AddAnimation(flyInAnim);
                 animGroup.AddAnimation(new FadeCGAnimation(_playerActorGroup, timeStart, FadeInDuration, FadeInCurve, 1.0f));
                 addGroup = true;
             }
@@ -477,20 +470,34 @@ public class StoryUIController : MonoBehaviour {
 
             if (isNPCDisplayed)
             {
+                var isDifferentCharacter = (currentNpcName != str.TransitionSpeaker);
                 // We might still need to change the NPC picture
                 if (currentNpcSprite != npcSprite)
                 {
-                    animGroup.AddAnimation(new FadeAnimation(NPCActorImage, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
-                    animGroup.AddAnimation(new SetSpriteAnimation(NPCActorImage, timeStart + FadeOutDuration, npcSprite));
-                    animGroup.AddAnimation(new FadeAnimation(NPCActorImage, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
-                    addGroup = true;
-                }
-                // ...and possibly his/her name
-                if (currentNpcName != str.TransitionSpeaker)
-                {
-                    animGroup.AddAnimation(new FadeAnimation(NPCActorName, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
-                    animGroup.AddAnimation(new SetTextAnimation(NPCActorName, timeStart + FadeOutDuration, str.TransitionSpeaker));
-                    animGroup.AddAnimation(new FadeAnimation(NPCActorName, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
+                    // Remove the character from scene if we need to transition to a differet character
+                    if (isDifferentCharacter)
+                    {
+                        animGroup.AddAnimation(new FadeCGAnimation(_NPCActorGroup, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+                        var disappearAnimation = new RectAnimation(NPCActorImage.rectTransform, timeStart, TransitionDuration, TransitionCurve, NPCHiddenAnchor.rectTransform);
+                        disappearAnimation.TargetSize = disappearAnimation.InitialSize;
+                        animGroup.AddAnimation(disappearAnimation);
+                        var timeShift = Mathf.Max(FadeOutDuration, TransitionDuration);
+                        var appearAnimation = new RectAnimation(NPCActorImage.rectTransform, timeStart + timeShift, TransitionDuration, TransitionCurve, NPCShownAnchor.rectTransform);
+                        appearAnimation.TargetSize = appearAnimation.InitialSize;
+                        animGroup.AddAnimation(appearAnimation);
+
+                        animGroup.AddAnimation(new SetSpriteAnimation(NPCActorImage, timeStart + timeShift, npcSprite));
+
+                        animGroup.AddAnimation(new FadeCGAnimation(_NPCActorGroup, timeStart + timeShift, FadeInDuration, FadeInCurve, 1.0f));
+                        animGroup.AddAnimation(new SetTextAnimation(NPCActorName, timeStart + timeShift, str.TransitionSpeaker));
+                        animGroup.AddAnimation(new FadeAnimation(NPCActorName, timeStart + timeShift, FadeInDuration, FadeInCurve, 1.0f));
+                    }
+                    else
+                    {
+                        animGroup.AddAnimation(new FadeAnimation(NPCActorImage, timeStart, FadeOutDuration, FadeOutCurve, 0.0f));
+                        animGroup.AddAnimation(new SetSpriteAnimation(NPCActorImage, timeStart + FadeOutDuration, npcSprite));
+                        animGroup.AddAnimation(new FadeAnimation(NPCActorImage, timeStart + FadeOutDuration, FadeInDuration, FadeInCurve, 1.0f));
+                    }
                     addGroup = true;
                 }
             }
@@ -505,6 +512,9 @@ public class StoryUIController : MonoBehaviour {
                 {
                     animGroup.AddAnimation(new SetTextAnimation(NPCActorName, timeStart, str.TransitionSpeaker));
                 }
+                var flyInAnimation = new RectAnimation(NPCActorImage.rectTransform, timeStart, TransitionDuration, TransitionCurve, NPCShownAnchor.rectTransform);
+                flyInAnimation.TargetSize = flyInAnimation.InitialSize;
+                animGroup.AddAnimation(flyInAnimation);
                 animGroup.AddAnimation(new FadeCGAnimation(_NPCActorGroup, timeStart, FadeInDuration, FadeInCurve, 1.0f));
                 addGroup = true;
             }

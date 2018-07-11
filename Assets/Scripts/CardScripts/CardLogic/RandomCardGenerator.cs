@@ -9,18 +9,23 @@ public class RandomCardGenerator : ICardGenerator
     private int[] _cardSequence;
     private int _currentIdx;
     
-    public RandomCardGenerator(CardHeap cards, int generatedCount)
+    public RandomCardGenerator(CardHeap cards, int generatedCount, int[] usedCardIds)
     {
         _cards = cards;
         _cardSequence = new int[generatedCount];
         _currentIdx = 0;
         // TODO: factor in card frequencies
         var rng = new Random();
-        var keys = _cards.GetCardIndices();
+        // If no used card IDs array is not supplied,
+        // assume we can use all cards
+        if (usedCardIds == null)
+        {
+            usedCardIds = _cards.GetCardIndices();
+        }        
         for (int i = 0; i < _cardSequence.Length; ++i)
         {
-            int keyIdx = rng.Next(keys.Length);
-            _cardSequence[i] = keys[keyIdx];
+            int keyIdx = rng.Next(usedCardIds.Length);
+            _cardSequence[i] = usedCardIds[keyIdx];
         }
     }
 

@@ -8,9 +8,9 @@ public class CardScript
     public string Generator;
     // Array of used card packs
     public string[] CardPacks;
-    // IDs of cards used for boy character; ignored for "random" generator
+    // IDs of cards used for boy character;
     public int[] BoyCardIds;
-    // IDs of cards used for girl character; ignored for "random" generator
+    // IDs of cards used for girl character;
     public int[] GirlCardIds;
     // Number of generated cards; ignored for "scripted" generator
     public int NumCards;
@@ -48,7 +48,16 @@ public abstract class ICardGenerator
         
         if (cardScript.Generator == "random")
         {
-            generator = new RandomCardGenerator(heap, cardScript.NumCards);
+            int[] cardIds = null;
+            if (gender == (int) PlayerGender.Boy)
+            {
+                cardIds = cardScript.BoyCardIds;
+            }
+            else
+            {
+                cardIds = cardScript.GirlCardIds;
+            }
+            generator = new RandomCardGenerator(heap, cardScript.NumCards, cardIds);
         }
         else if (cardScript.Generator == "scripted")
         {

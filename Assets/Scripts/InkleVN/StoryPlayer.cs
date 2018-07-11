@@ -228,6 +228,7 @@ public class StoryPlayer : MonoBehaviour
                 if (tagComponents[0].Equals("defenderAvailable"))
                 {
                     canUseDefender = tagComponents[1].Trim().Equals("true");
+                    transitionBuilder.SetCanUseDefender(canUseDefender);
                 }
                 else if (tagComponents[0].Equals("defenderCost"))
                 {

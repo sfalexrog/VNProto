@@ -22,8 +22,8 @@ public class StoryUIController : MonoBehaviour {
     public Image NPCActorNameBox;
     public Text NPCActorName;
     public Image NPCActorImage;
-    
 
+    public Button DefenderButton;
 
     public Button TapTarget;
 
@@ -59,10 +59,10 @@ public class StoryUIController : MonoBehaviour {
     public Image PlayerShownAnchor;
     public Image NPCShownAnchor;
 
-    [Header("Choice colors")]
-    public Color GoodChoice;
-    public Color NeutralChoice;
-    public Color BadChoice;
+    [Header("Choice Sprites")]
+    public Sprite GoodChoice;
+    public Sprite NeutralChoice;
+    public Sprite BadChoice;
 
     public delegate void OnChoice(int choiceIndex);
 
@@ -71,6 +71,7 @@ public class StoryUIController : MonoBehaviour {
     private Text _shadowText;
 
     private Button[] _choiceButtons;
+    private Image[] _choiceButtonTags;
 
     // Actor image and name canvas group (used to show/hide both actor image and actor name box)
     private CanvasGroup _playerActorGroup;
@@ -585,7 +586,8 @@ public class StoryUIController : MonoBehaviour {
             }
         }
         _choiceButtons = new Button[str.TransitionChoices.Length];
-        for(int i = 0; i < str.TransitionChoices.Length; ++i)
+        _choiceButtonTags = new Image[str.TransitionChoices.Length];
+        for (int i = 0; i < str.TransitionChoices.Length; ++i)
         {
             var choiceButton = Instantiate<Button>(ChoiceButtonPrototype, UIContainer.transform);
             var choice = str.TransitionChoices[i];
@@ -604,8 +606,41 @@ public class StoryUIController : MonoBehaviour {
             choiceButtonText.text = choice.ChoiceText;
 
             _choiceButtons[i] = choiceButton;
+            // FIXME: Next code is prone to breakage
+            // We want the last image to be our "tag"
+            var buttonImages = choiceButton.GetComponentsInChildren<Image>();
+            var buttonTag = buttonImages[buttonImages.Length - 1];
+            switch(choice.ChoiceType)
+            {
+                case "good":
+                    buttonTag.sprite = GoodChoice;
+                    break;
+                case "neutral":
+                    buttonTag.sprite = NeutralChoice;
+                    break;
+                case "bad":
+                    buttonTag.sprite = BadChoice;
+                    break;
+                default:
+                    Debug.LogError($"Unknown choice type: {choice.ChoiceType}");
+                    break;
+            }
+            var buttonTagColor = buttonTag.color;
+            // Hide tag by default
+            buttonTagColor.a = 0.0f;
+            buttonTag.color = buttonTagColor;
+            _choiceButtonTags[i] = buttonTag;
         }
         _pendingAnimations.Add(animGroup);
+        if (str.CanUseDefender)
+        {
+            // Make defender button appear
+            curTime = GetNextAnimTime();
+            DefenderButton.gameObject.SetActive(true);
+            var defenderCGroup = DefenderButton.GetComponent<CanvasGroup>();
+            var defenderAnim = new AnimGroup();
+            animGroup.AddAnimation(new FadeCGAnimation(defenderCGroup, curTime, FadeInDuration, FadeInCurve, 1.0f));
+        }
     }
 
     private void HideChoices()
@@ -619,8 +654,28 @@ public class StoryUIController : MonoBehaviour {
             }
             _choiceButtons = null;
         }
+        DefenderButton.gameObject.SetActive(false);
     }
-    
+
+    public void OnDefender()
+    {
+        // Ignore presses until animations are done playing
+        if (!_willAcceptTransitions) return;
+        // Don't even start if the button tags are not present!
+        if (_choiceButtonTags == null)
+        {
+            Debug.LogError("Called OnDefender when no button tags are present!");
+            return;
+        }
+        var animGroup = new AnimGroup();
+        var timeStart = GetNextAnimTime();
+        for (int i = 0; i < _choiceButtonTags.Length; ++i)
+        {
+            animGroup.AddAnimation(new FadeAnimation(_choiceButtonTags[i], timeStart + i * FadeInDuration / 2.0f, FadeInDuration, FadeInCurve, 1.0f));
+        }
+        _pendingAnimations.Add(animGroup);
+        DefenderButton.gameObject.SetActive(false);
+    }
 	
 	/**
 	 * Transition scene to another state

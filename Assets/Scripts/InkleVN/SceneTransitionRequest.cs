@@ -15,6 +15,10 @@ namespace InkleVN
         public string TransitionSpeakerEmotion { get; private set; }
 
         public string TransitionPhrase { get; private set; }
+
+        public bool CanUseDefender { get; private set; }
+
+        public int DefenderCost { get; private set; }
         
         public StoryPlayer.StoryChoice[] TransitionChoices { get; private set; }
 
@@ -57,6 +61,12 @@ namespace InkleVN
             {
                 if (_choices == null) _choices = new List<StoryPlayer.StoryChoice>();
                 _choices.Add(choice);
+                return this;
+            }
+
+            public Builder SetCanUseDefender(bool canUseDefender)
+            {
+                _str.CanUseDefender = canUseDefender;
                 return this;
             }
 

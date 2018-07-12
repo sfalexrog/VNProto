@@ -59,6 +59,9 @@ public class StoryUIController : MonoBehaviour {
     public Image PlayerShownAnchor;
     public Image NPCShownAnchor;
 
+    public Image BackgroundLeftAnchor;
+    public Image BackgroundRightAnchor;
+
     [Header("Choice Sprites")]
     public Sprite GoodChoice;
     public Sprite NeutralChoice;
@@ -452,6 +455,10 @@ public class StoryUIController : MonoBehaviour {
                 flyInAnim.TargetSize = flyInAnim.InitialSize;
                 animGroup.AddAnimation(flyInAnim);
                 animGroup.AddAnimation(new FadeCGAnimation(_playerActorGroup, timeStart, FadeInDuration, FadeInCurve, 1.0f));
+                // Also, animate background movement
+                var bgAnim = new RectAnimation(Background.rectTransform, timeStart, TransitionDuration, TransitionCurve, BackgroundRightAnchor.rectTransform);
+                bgAnim.TargetSize = bgAnim.InitialSize;
+                animGroup.AddAnimation(bgAnim);
                 addGroup = true;
             }
         }
@@ -517,6 +524,9 @@ public class StoryUIController : MonoBehaviour {
                 flyInAnimation.TargetSize = flyInAnimation.InitialSize;
                 animGroup.AddAnimation(flyInAnimation);
                 animGroup.AddAnimation(new FadeCGAnimation(_NPCActorGroup, timeStart, FadeInDuration, FadeInCurve, 1.0f));
+                var bgAnim = new RectAnimation(Background.rectTransform, timeStart, TransitionDuration, TransitionCurve, BackgroundLeftAnchor.rectTransform);
+                bgAnim.TargetSize = bgAnim.InitialSize;
+                animGroup.AddAnimation(bgAnim);
                 addGroup = true;
             }
         }

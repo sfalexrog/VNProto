@@ -25,6 +25,9 @@ public class StoryUIController : MonoBehaviour {
 
     public Button DefenderButton;
 
+    public CanvasGroup DefenderGroup;
+    public DefenderController DefenderControl;
+
     public Button TapTarget;
 
     [Header("UI prototype elements")]
@@ -69,7 +72,14 @@ public class StoryUIController : MonoBehaviour {
 
     public delegate void OnChoice(int choiceIndex);
 
+    // Callback to check if the player can actually use defender
+    public delegate bool CanUseDefender();
+    // Callback that gets called when the player uses Defender
+    public delegate void OnDefenderHandler();
+
     private OnChoice _choiceHandler;
+    private CanUseDefender _canUseDefender;
+    private OnDefenderHandler _defenderHandler;
 
     private Text _shadowText;
 
@@ -83,6 +93,26 @@ public class StoryUIController : MonoBehaviour {
     public void SetOnChoiceHandler(OnChoice handler)
     {
         _choiceHandler = handler;
+    }
+
+    public void SetCanUseDefenderHandler(CanUseDefender handler)
+    {
+        _canUseDefender = handler;
+    }
+
+    public void SetOnDefenderHandler(OnDefenderHandler handler)
+    {
+        _defenderHandler = handler;
+    }
+
+    public void SetMaxDefenderCharge(int charge)
+    {
+        DefenderControl.MaxValue = charge;
+    }
+
+    public void SetCurrentDefenderCharge(int charge)
+    {
+        DefenderControl.CurrentValue = charge;
     }
 
     private bool _willAcceptTransitions;
@@ -308,6 +338,9 @@ public class StoryUIController : MonoBehaviour {
         // Hide all player groups by default
         _playerActorGroup.alpha = 0.0f;
         _NPCActorGroup.alpha = 0.0f;
+
+        // Hide defender meter as well
+        DefenderGroup.alpha = 0.0f;
     }
 
     /**
@@ -650,6 +683,14 @@ public class StoryUIController : MonoBehaviour {
             var defenderCGroup = DefenderButton.GetComponent<CanvasGroup>();
             var defenderAnim = new AnimGroup();
             animGroup.AddAnimation(new FadeCGAnimation(defenderCGroup, curTime, FadeInDuration, FadeInCurve, 1.0f));
+            animGroup.AddAnimation(new FadeCGAnimation(DefenderGroup, curTime, FadeInDuration, FadeInCurve, 1.0f));
+            // Check if the button should be interactable
+            if (_canUseDefender == null)
+            {
+                Debug.LogError("Defender checking delegate not set!");
+                return;
+            }
+            defenderCGroup.interactable = _canUseDefender();
         }
     }
 
@@ -665,6 +706,12 @@ public class StoryUIController : MonoBehaviour {
             _choiceButtons = null;
         }
         DefenderButton.gameObject.SetActive(false);
+        if (DefenderGroup.alpha > 0.0f)
+        {
+            var animGroup = new AnimGroup();
+            animGroup.AddAnimation(new FadeCGAnimation(DefenderGroup, GetNextAnimTime(), FadeOutDuration, FadeOutCurve, 0.0f));
+            _pendingAnimations.Add(animGroup);
+        }
     }
 
     public void OnDefender()
@@ -677,6 +724,23 @@ public class StoryUIController : MonoBehaviour {
             Debug.LogError("Called OnDefender when no button tags are present!");
             return;
         }
+        // Perform sanity check
+        if (_defenderHandler == null)
+        {
+            Debug.LogError("Called OnDefender without delegate set!");
+            return;
+        }
+        if (_canUseDefender == null)
+        {
+            Debug.LogError("Called OnDefender without checking delegate!");
+            return;
+        }
+        if (!_canUseDefender())
+        {
+            Debug.LogError("Attempted to call defender when it is not available!");
+            return;
+        }
+        _defenderHandler();
         var animGroup = new AnimGroup();
         var timeStart = GetNextAnimTime();
         for (int i = 0; i < _choiceButtonTags.Length; ++i)

@@ -48,6 +48,9 @@ public class StoryPlayer : MonoBehaviour
 
     private bool _didCompleteChapter;
     private int _expGain;
+
+    // Current defender cost
+    private int _currentDefenderCost = 1;
 	
 	void Start()
 	{
@@ -65,6 +68,10 @@ public class StoryPlayer : MonoBehaviour
         _expGain = 0;
 
 		UI.SetOnChoiceHandler(OnChoice);
+        UI.SetOnDefenderHandler(OnDefender);
+        UI.SetCanUseDefenderHandler(CanUseDefender);
+        UI.SetMaxDefenderCharge(_gameState.maxPower);
+        UI.SetCurrentDefenderCharge(_gameState.currentPower);
 		/*
 		Debug.Log(LayoutUtility.GetPreferredHeight(OutputText.rectTransform));
 		Debug.Log(LayoutUtility.GetPreferredHeight(OutputBackground.rectTransform));
@@ -188,6 +195,17 @@ public class StoryPlayer : MonoBehaviour
 		OnProceed();
 	}
 
+    private bool CanUseDefender()
+    {
+        return _gameState.currentPower >= _currentDefenderCost;
+    }
+
+    private void OnDefender()
+    {
+        _gameState.currentPower -= _currentDefenderCost;
+        UI.SetCurrentDefenderCharge(_gameState.currentPower);
+    }
+
     private string RebuildString(string[] splitString, int offset)
     {
         StringBuilder sb = new StringBuilder();
@@ -233,6 +251,7 @@ public class StoryPlayer : MonoBehaviour
                 else if (tagComponents[0].Equals("defenderCost"))
                 {
                     defenderCost = int.Parse(tagComponents[1]);
+                    _currentDefenderCost = defenderCost;
                 }
             }
             else

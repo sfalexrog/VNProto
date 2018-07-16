@@ -60,7 +60,7 @@ public class StoryPlayer : MonoBehaviour
 		_story = new Story(storyJson.text);
 		ProceedButton.onClick.AddListener(delegate { OnProceed(); });
 		
-		_story.BindExternalFunction("gender", () => GetGender());
+		_story.BindExternalFunction("isGenderBoy", () => IsGenderBoy());
         // Bind variable changes
         _story.ObserveVariable("didCompleteChapter", OnDidCompleteChapterChange);
         _story.ObserveVariable("expGain", OnExpGainChange);
@@ -104,9 +104,9 @@ public class StoryPlayer : MonoBehaviour
         _expGain = expGain;
     }
 	
-	private int GetGender()
+	private bool IsGenderBoy()
 	{
-        return (int)_gameState.PlayerGender;
+        return _gameState.PlayerGender == PlayerGender.Boy;
 	}
 
 	private class Phrase
@@ -126,7 +126,7 @@ public class StoryPlayer : MonoBehaviour
 			// Check against player actor name
 			if (splitPhrase[0].Equals(_playerActorName))
 			{
-				parsedPhrase.ActorName = GetGender() == 0 ? _playerBoyName : _playerGirlName;
+				parsedPhrase.ActorName = IsGenderBoy() ? _playerBoyName : _playerGirlName;
 				StringBuilder sb = new StringBuilder();
 
 				for (int i = 1; i < splitPhrase.Length; ++i)
@@ -277,7 +277,7 @@ public class StoryPlayer : MonoBehaviour
             {
                 if (splitText[0].Equals(_playerActorName))
                 {
-                    var speaker = GetGender() == 0 ? _playerBoyName : _playerGirlName;
+                    var speaker = IsGenderBoy() ? _playerBoyName : _playerGirlName;
                     transitionBuilder.SetSpeaker(speaker, actorEmotion);
                     transitionBuilder.SetPhrase(RebuildString(splitText, 1).Trim());
                 }

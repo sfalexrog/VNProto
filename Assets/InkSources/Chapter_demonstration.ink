@@ -1,12 +1,6 @@
-VAR didCompleteChapter = false
-VAR expGain = 0
+INCLUDE GameData.ink
 
 -> start
-
-EXTERNAL isGenderBoy()
-
-=== function isGenderBoy() ===
-    ~ return true
 
 === start ===
 
@@ -52,6 +46,7 @@ Location: Комната м
 	->dialog1
 	*[Мне уже пора спать, давай завтра продолжим... @bad]
     ->Conflict01
+    
     ===Conflict01===
     Конец ознакомительного фрагмента
     ~ expGain = expGain + 1

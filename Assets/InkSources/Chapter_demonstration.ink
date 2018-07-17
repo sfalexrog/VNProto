@@ -4,7 +4,7 @@ INCLUDE GameData.ink
 
 === start ===
 
-Location: Комната м
+# Location: Комната м
 Ты сидишь в своей комнате
 Раздается стук в дверь
 Я: Войдите
@@ -49,9 +49,6 @@ Location: Комната м
     
     ===Conflict01===
     Конец ознакомительного фрагмента
-    ~ expGain = expGain + 1
-    ~ didCompleteChapter = false
-    
     ->DONE
 
 ->END

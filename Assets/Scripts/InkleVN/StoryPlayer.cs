@@ -47,7 +47,6 @@ public class StoryPlayer : MonoBehaviour
 	private static string _playerGirlName = "Player Girl";
 
     private bool _didCompleteChapter;
-    private int _expGain;
 
     // Current defender cost
     private int _currentDefenderCost = 1;
@@ -63,9 +62,7 @@ public class StoryPlayer : MonoBehaviour
 		_story.BindExternalFunction("isGenderBoy", () => IsGenderBoy());
         // Bind variable changes
         _story.ObserveVariable("didCompleteChapter", OnDidCompleteChapterChange);
-        _story.ObserveVariable("expGain", OnExpGainChange);
         _didCompleteChapter = false;
-        _expGain = 0;
 
 		UI.SetOnChoiceHandler(OnChoice);
         UI.SetOnDefenderHandler(OnDefender);
@@ -95,13 +92,6 @@ public class StoryPlayer : MonoBehaviour
         int didCompleteChapter = (int)newValue;
         Debug.Log($"[StoryPlayer] didCompleteChapter set to {didCompleteChapter}");
         _didCompleteChapter = (didCompleteChapter == 1);
-    }
-
-    private void OnExpGainChange(string variableName, object newValue)
-    {
-        int expGain = (int)newValue;
-        Debug.Log($"[StoryPlayer] Player will now gain {expGain} for completing the chapter");
-        _expGain = expGain;
     }
 	
 	private bool IsGenderBoy()
@@ -331,11 +321,6 @@ public class StoryPlayer : MonoBehaviour
             if (!_didCompleteChapter)
             {
                 _gameState.NextChapterId = -1;
-            }
-            else
-            {
-                // Reward player with his/her hard-earned experience
-                _gameState.currentExperience += _expGain;
             }
             SceneManager.LoadScene("Scenes/HubScene");
 		}

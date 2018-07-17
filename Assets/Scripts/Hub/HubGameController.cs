@@ -83,14 +83,14 @@ public class HubGameController : MonoBehaviour
 			UiGlue.SetStoryButtonDisabled();
 		}
 
-		if (_gameState.currentExperience >= _cards[_gameState.CurrentCardGameId].MinXpRequired)
-		{
+		//if (_gameState.currentExperience >= _cards[_gameState.CurrentCardGameId].MinXpRequired)
+		//{
 			UiGlue.SetCardButtonEnabled();
-		}
-		else
-		{
-			UiGlue.SetCardButtonDisabled();
-		}
+		//}
+		//else
+		//{
+		//	UiGlue.SetCardButtonDisabled();
+		//}
 		
 		UiGlue.SetStoryModeText(_chapters[_gameState.currentScene].ChapterName);
 	}

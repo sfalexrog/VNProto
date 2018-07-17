@@ -160,7 +160,7 @@ public class CardUiGlue : MonoBehaviour
 
 	private void DisplayCurrentCard()
 	{
-		DisplayCard(Model.CurrentCard);
+		DisplayCard(Model.currentCard);
 	}
 
 	private void DisplayCard(Card card)

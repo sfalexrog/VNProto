@@ -1,12 +1,8 @@
+INCLUDE GameData.ink
 VAR didCompleteChapter = false
 VAR expGain = 0
 
 -> start
-
-EXTERNAL isGenderBoy()
-
-=== function isGenderBoy() ===
-~ return true
 
 === start ===
 Location: Лаборатория

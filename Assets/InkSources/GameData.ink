@@ -3,9 +3,10 @@
 CONST MAX_REL_POINTS = 15
 CONST MIN_REL_POINTS = -15
 
-VAR Stas_RelPoints = 10
+VAR Stas_RelPoints = 0
 VAR Leader_RelPoints = 0
 VAR Love_RelPoints = 0
+VAR Mother_RelPoints = 0
 
 ////Functions
 

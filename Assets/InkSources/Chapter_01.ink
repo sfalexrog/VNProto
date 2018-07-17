@@ -1,6 +1,6 @@
 INCLUDE GameData.ink
-VAR didCompleteChapter = false
-VAR expGain = 0
+
+LIST MomHelpStates = WashDishes, CleanUp
 
 -> start
 
@@ -80,6 +80,7 @@ Location: Кухня
     *[Только не сегодня…]
         ->Conflict02
     *[Ладно, вымою…]
+        ~ MomHelpStates += WashDishes
         ->Conflict02
 == Conflict02 ==
 Мама: И не надо на меня так смотреть! 
@@ -104,6 +105,7 @@ Location: {isGenderBoy() : Комната м | Комната д}
 Иногда Ваши выборы влияют на отношения с персонажами
 Я: Мам... #defenderAvailable: false 
     *[Сейчас мигом тут все уберу!]
+        ~ MomHelpStates += CleanUp
         ~ ChangeRelPoints(Mother_RelPoints, 2)
         Мама очень рада, что ты ей помогаешь
         Мама: Умничка! # радость
@@ -117,6 +119,12 @@ Location: {isGenderBoy() : Комната м | Комната д}
         ->Conflict03
 
 == Conflict03 ==
+
+{ MomHelpStates == (WashDishes, CleanUp):
+Мама: заебись сынок
+респет +10
+~ ChangeRelPoints(Mother_RelPoints, 10)
+}
 
 Мама: И посмотри, не пришли ли квитанции за газ!
 
@@ -134,8 +142,6 @@ Location: Подъезд
 Я: Хм… А это еще что? # удивление
 Я: «Лаборатория Компьютерной Безопасности. У вас проблемы? Мы их решим!»
 
-~ expGain = expGain + 1
-~ didCompleteChapter = true
 ->DONE
 
 ->END

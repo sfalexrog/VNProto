@@ -13547,6 +13547,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardController: {fileID: 2142225990}
+  _purposePanel: {fileID: 1817224860}
+  _answerPanel: {fileID: 1552827830}
+  _parametersPanel: {fileID: 976547863}
+  _leftAnswer: {fileID: 1692753263}
+  _rightAnswer: {fileID: 164363175}
+  _leftAnswerButton: {fileID: 1692753265}
+  _rightAnswerButton: {fileID: 164363177}
+  _cancelAnswerButton: {fileID: 1752907765}
+  _leftAnswerText: {fileID: 1273512836}
+  _rightAnswerText: {fileID: 362183571}
+  _nameText: {fileID: 241848889}
+  _questionText: {fileID: 1769236063}
+  _goalText: {fileID: 648395259}
+  _actorImage: {fileID: 1976847334}
+  _familyImage: {fileID: 1843590762}
+  _friendImage: {fileID: 1890265885}
+  _coupleImage: {fileID: 2125869880}
+  _classImage: {fileID: 1830240971}
+  _familySlider: {fileID: 175954419}
+  _friendSlider: {fileID: 534610605}
+  _coupleSlider: {fileID: 1848492787}
+  _classSlider: {fileID: 1246319570}
+  _popupPanel: {fileID: 936345721}
+  _popupHeaderText: {fileID: 123177398}
+  _popupDescriptionText: {fileID: 462508069}
+  _dismissPopupButton: {fileID: 1695661564}
+  _backgroundImage: {fileID: 237655398}
 --- !u!4 &554191932
 Transform:
   m_ObjectHideFlags: 0
@@ -22574,7 +22601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &936345722
 RectTransform:
   m_ObjectHideFlags: 0

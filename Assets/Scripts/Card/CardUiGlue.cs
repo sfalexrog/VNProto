@@ -10,35 +10,35 @@ namespace OneDayProto.Card
     {
         public CardController cardController;
 
-        private GameObject _purposePanel;
-        private GameObject _answerPanel;
-        private GameObject _parametersPanel;
-        private GameObject _leftAnswer;
-        private GameObject _rightAnswer;
+        public GameObject _purposePanel;
+        public GameObject _answerPanel;
+        public GameObject _parametersPanel;
+        public GameObject _leftAnswer;
+        public GameObject _rightAnswer;
 
-        private Button _leftAnswerButton;
-        private Button _rightAnswerButton;
-        private Button _cancelAnswerButton;
+        public Button _leftAnswerButton;
+        public Button _rightAnswerButton;
+        public Button _cancelAnswerButton;
 
-        private Text _leftAnswerText;
-        private Text _rightAnswerText;
+        public Text _leftAnswerText;
+        public Text _rightAnswerText;
 
-        private Text _nameText;
-        private Text _questionText;
+        public Text _nameText;
+        public Text _questionText;
 
-        private Text _goalText;
+        public Text _goalText;
 
-        private Image _actorImage;
+        public Image _actorImage;
 
-        private Image _familyImage;
-        private Image _friendImage;
-        private Image _coupleImage;
-        private Image _classImage;
+        public Image _familyImage;
+        public Image _friendImage;
+        public Image _coupleImage;
+        public Image _classImage;
 
-        private Slider _familySlider;
-        private Slider _friendSlider;
-        private Slider _coupleSlider;
-        private Slider _classSlider;
+        public Slider _familySlider;
+        public Slider _friendSlider;
+        public Slider _coupleSlider;
+        public Slider _classSlider;
 
         private string _leftButtonStoredText;
         private string _rightButtonStoredText;
@@ -49,62 +49,24 @@ namespace OneDayProto.Card
         private CardSliderAnimator[] _animations;
 
         // Popup "window" and background
-        private GameObject _popupPanel;
-        private Text _popupHeaderText;
-        private Text _popupDescriptionText;
-        private Button _dismissPopupButton;
+        public GameObject _popupPanel;
+        public Text _popupHeaderText;
+        public Text _popupDescriptionText;
+        public Button _dismissPopupButton;
 
         // Background image
-        private Image _backgroundImage;
+        public Image _backgroundImage;
 
         // Bind to scene objects
         void Awake()
         {
 
-            _purposePanel = GameObject.Find("Purpose_Panel");
-            _answerPanel = GameObject.Find("Answer_Panel");
-            _parametersPanel = GameObject.Find("Parameters_Panel");
-            _leftAnswer = GameObject.Find("Left answer");
-            _rightAnswer = GameObject.Find("Right answer");
-
-            _leftAnswerButton = _leftAnswer.GetComponent<Button>();
-            _rightAnswerButton = _rightAnswer.GetComponent<Button>();
-            _cancelAnswerButton = GameObject.Find("Cancel Choice Area").GetComponent<Button>();
             _cancelAnswerButton.onClick.AddListener(delegate { CancelOutcome(); });
-
-            _leftAnswerText = _leftAnswer.GetComponentInChildren<Text>();
-            _rightAnswerText = _rightAnswer.GetComponentInChildren<Text>();
-
-            _goalText = GameObject.Find("Goal Counter Text").GetComponent<Text>();
 
             _leftAnswerText.text = "Left answer";
             _rightAnswerText.text = "Right answer";
 
-            _nameText = GameObject.Find("Name Text").GetComponent<Text>();
-            _questionText = GameObject.Find("Question Text").GetComponent<Text>();
-
-            _actorImage = GameObject.Find("Actor Image").GetComponent<Image>();
-
-            _familyImage = GameObject.Find("Family Image").GetComponent<Image>();
-            _friendImage = GameObject.Find("Friend Image").GetComponent<Image>();
-            _coupleImage = GameObject.Find("Couple Image").GetComponent<Image>();
-            _classImage = GameObject.Find("Class Image").GetComponent<Image>();
-
-            _familySlider = GameObject.Find("Family_Slider").GetComponent<Slider>();
-            _friendSlider = GameObject.Find("Friend_Slider").GetComponent<Slider>();
-            _coupleSlider = GameObject.Find("Girlfriend_Slider").GetComponent<Slider>();
-            _classSlider = GameObject.Find("Class_Slider").GetComponent<Slider>();
-
             _animations = new CardSliderAnimator[4];
-
-            // Bind to popup background instead of the popup itself
-            // It should disable player input upon its appearance
-            _popupPanel = GameObject.Find("Popup Background");
-            _popupHeaderText = GameObject.Find("Popup Header Text").GetComponent<Text>();
-            _popupDescriptionText = GameObject.Find("Popup Description Text").GetComponent<Text>();
-            _dismissPopupButton = GameObject.Find("Dismiss Popup Button").GetComponent<Button>();
-
-            _backgroundImage = GameObject.Find("Card Background").GetComponent<Image>();
 
             ResetUi();
             ResetListeners();

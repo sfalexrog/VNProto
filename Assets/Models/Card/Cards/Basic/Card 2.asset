@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
+  m_Name: Card 2
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
+  question: "\u0427\u0442\u043E \u0442\u044B \u0445\u043E\u0447\u0435\u0448\u044C
+    \u043D\u0430 \u043E\u0431\u0435\u0434?"
+  leftButton: "\u0421\u0443\u043F"
+  leftOutcomes:
+  - faction: 0
+    change: 1
+  rightButton: "\u041F\u0438\u0446\u0446\u0443"
+  rightOutcomes:
+  - faction: 0
+    change: -1
+  background: 0
+  girlVersionCard: {fileID: 0}

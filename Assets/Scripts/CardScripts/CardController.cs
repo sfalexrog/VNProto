@@ -66,13 +66,20 @@ public class CardController : MonoBehaviour
 		}
 		
 	}
-    
-	public Card currentCard { get; private set; }
+
+	private Card _currentCard;
+
+	public Card CurrentCard	{
+		get
+		{
+			return _currentCard;	
+		}
+	}
 
 	public Card GetNextCard()
 	{
-		currentCard = _generator.YieldCard();
-		return currentCard;
+		_currentCard = _generator.YieldCard();
+		return _currentCard;
 	}
 
 	public int GetCardsRemaining()
@@ -96,11 +103,11 @@ public class CardController : MonoBehaviour
 		Card.Outcome[] outcomes;
 		if (answer == 0) // left answer
 		{
-			outcomes = currentCard.LeftOutcomes;
+			outcomes = _currentCard.LeftOutcomes;
 		}
 		else
 		{
-			outcomes = currentCard.RightOutcomes;
+			outcomes = _currentCard.RightOutcomes;
 		}
 
 		foreach (var outcome in outcomes)

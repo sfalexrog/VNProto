@@ -20,7 +20,7 @@ public class CardScript
 
 public abstract class ICardGenerator
 {
-    public abstract Card YieldCard();
+    public abstract CardOld YieldCard();
     public abstract int GetNumCardsRemaining();
     public abstract string[] GetCardBackgroundsNames();
     public abstract string[] GetCardActorsNames();

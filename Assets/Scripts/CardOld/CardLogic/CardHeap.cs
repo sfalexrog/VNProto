@@ -10,17 +10,17 @@ using UnityEngine;
 
 public class CardHeap
 {
-    private Dictionary<int, Card> _cards;
+    private Dictionary<int, CardOld> _cards;
     
     public CardHeap()
     {
-        _cards = new Dictionary<int, Card>();
+        _cards = new Dictionary<int, CardOld>();
     }
 
     public void LoadCards(string resourceName)
     {
         var cardsText = Resources.Load<TextAsset>(resourceName);
-        var cardsList = JsonConvert.DeserializeObject<List<Card>>(cardsText.text);
+        var cardsList = JsonConvert.DeserializeObject<List<CardOld>>(cardsText.text);
         
         foreach(var card in cardsList)
         {
@@ -38,7 +38,7 @@ public class CardHeap
         return _cards.Keys.ToArray();
     }
 
-    public Card GetCardById(int cardIndex)
+    public CardOld GetCardById(int cardIndex)
     {
         return _cards[cardIndex];
     }

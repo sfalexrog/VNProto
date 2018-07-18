@@ -29,9 +29,9 @@ public class RandomCardGenerator : ICardGenerator
         }
     }
 
-    public override Card YieldCard()
+    public override CardOld YieldCard()
     {
-        Card retCard = _cards.GetCardById(_cardSequence[_currentIdx]);
+        CardOld retCard = _cards.GetCardById(_cardSequence[_currentIdx]);
         _currentIdx += 1;
         return retCard;
     }

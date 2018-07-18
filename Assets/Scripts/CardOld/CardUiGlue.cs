@@ -3,330 +3,334 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardUiGlue : MonoBehaviour
+namespace OneDayProto.Card
 {
-	public CardController Model;
-	
-	private GameObject _purposePanel;
-	private GameObject _answerPanel;
-	private GameObject _parametersPanel;
-	private GameObject _leftAnswer;
-	private GameObject _rightAnswer;
 
-	private Button _leftAnswerButton;
-	private Button _rightAnswerButton;
-	private Button _cancelAnswerButton;
+    public class CardUiGlue : MonoBehaviour
+    {
+        public CardController Model;
 
-	private Text _leftAnswerText;
-	private Text _rightAnswerText;
+        private GameObject _purposePanel;
+        private GameObject _answerPanel;
+        private GameObject _parametersPanel;
+        private GameObject _leftAnswer;
+        private GameObject _rightAnswer;
 
-	private Text _nameText;
-	private Text _questionText;
+        private Button _leftAnswerButton;
+        private Button _rightAnswerButton;
+        private Button _cancelAnswerButton;
 
-	private Text _goalText;
-	
-	private Image _actorImage;
+        private Text _leftAnswerText;
+        private Text _rightAnswerText;
 
-	private Image _familyImage;
-	private Image _friendImage;
-	private Image _coupleImage;
-	private Image _classImage;
+        private Text _nameText;
+        private Text _questionText;
 
-	private Slider _familySlider;
-	private Slider _friendSlider;
-	private Slider _coupleSlider;
-	private Slider _classSlider;
+        private Text _goalText;
 
-	private string _leftButtonStoredText;
-	private string _rightButtonStoredText;
+        private Image _actorImage;
 
-	private float[] _leftResults;
-	private float[] _rightResults;
+        private Image _familyImage;
+        private Image _friendImage;
+        private Image _coupleImage;
+        private Image _classImage;
 
-	private CardSliderAnimator[] _animations;
+        private Slider _familySlider;
+        private Slider _friendSlider;
+        private Slider _coupleSlider;
+        private Slider _classSlider;
 
-	// Popup "window" and background
-	private GameObject _popupPanel;
-	private Text _popupHeaderText;
-	private Text _popupDescriptionText;
-	private Button _dismissPopupButton;
-	
-	// Background image
-	private Image _backgroundImage;
-	
-	// Sprite cache for actors and backgrounds
-	private Dictionary<string, Sprite> _actorSprites;
-	private Dictionary<string, Sprite> _backgroundSprites;
-	
-	// Bind to scene objects
-	void Awake()
-	{
-		
-		_purposePanel = GameObject.Find("Purpose_Panel");
-		_answerPanel = GameObject.Find("Answer_Panel");
-		_parametersPanel = GameObject.Find("Parameters_Panel");
-		_leftAnswer = GameObject.Find("Left answer");
-		_rightAnswer = GameObject.Find("Right answer");
+        private string _leftButtonStoredText;
+        private string _rightButtonStoredText;
 
-		_leftAnswerButton = _leftAnswer.GetComponent<Button>();
-		_rightAnswerButton = _rightAnswer.GetComponent<Button>();
-		_cancelAnswerButton = GameObject.Find("Cancel Choice Area").GetComponent<Button>();
-		_cancelAnswerButton.onClick.AddListener(delegate { CancelOutcome(); });
+        private float[] _leftResults;
+        private float[] _rightResults;
 
-		_leftAnswerText = _leftAnswer.GetComponentInChildren<Text>();
-		_rightAnswerText = _rightAnswer.GetComponentInChildren<Text>();
+        private CardSliderAnimator[] _animations;
 
-		_goalText = GameObject.Find("Goal Counter Text").GetComponent<Text>();
-		
-		_leftAnswerText.text = "Left answer";
-		_rightAnswerText.text = "Right answer";
+        // Popup "window" and background
+        private GameObject _popupPanel;
+        private Text _popupHeaderText;
+        private Text _popupDescriptionText;
+        private Button _dismissPopupButton;
 
-		_nameText = GameObject.Find("Name Text").GetComponent<Text>();
-		_questionText = GameObject.Find("Question Text").GetComponent<Text>();
+        // Background image
+        private Image _backgroundImage;
 
-		_actorImage = GameObject.Find("Actor Image").GetComponent<Image>();
+        // Sprite cache for actors and backgrounds
+        private Dictionary<string, Sprite> _actorSprites;
+        private Dictionary<string, Sprite> _backgroundSprites;
 
-		_familyImage = GameObject.Find("Family Image").GetComponent<Image>();
-		_friendImage = GameObject.Find("Friend Image").GetComponent<Image>();
-		_coupleImage = GameObject.Find("Couple Image").GetComponent<Image>();
-		_classImage = GameObject.Find("Class Image").GetComponent<Image>();
+        // Bind to scene objects
+        void Awake()
+        {
 
-		_familySlider = GameObject.Find("Family_Slider").GetComponent<Slider>();
-		_friendSlider = GameObject.Find("Friend_Slider").GetComponent<Slider>();
-		_coupleSlider = GameObject.Find("Girlfriend_Slider").GetComponent<Slider>();
-		_classSlider = GameObject.Find("Class_Slider").GetComponent<Slider>();
-		
-		_animations = new CardSliderAnimator[4];
+            _purposePanel = GameObject.Find("Purpose_Panel");
+            _answerPanel = GameObject.Find("Answer_Panel");
+            _parametersPanel = GameObject.Find("Parameters_Panel");
+            _leftAnswer = GameObject.Find("Left answer");
+            _rightAnswer = GameObject.Find("Right answer");
 
-		// Bind to popup background instead of the popup itself
-		// It should disable player input upon its appearance
-		_popupPanel = GameObject.Find("Popup Background");
-		_popupHeaderText = GameObject.Find("Popup Header Text").GetComponent<Text>();
-		_popupDescriptionText = GameObject.Find("Popup Description Text").GetComponent<Text>();
-		_dismissPopupButton = GameObject.Find("Dismiss Popup Button").GetComponent<Button>();
+            _leftAnswerButton = _leftAnswer.GetComponent<Button>();
+            _rightAnswerButton = _rightAnswer.GetComponent<Button>();
+            _cancelAnswerButton = GameObject.Find("Cancel Choice Area").GetComponent<Button>();
+            _cancelAnswerButton.onClick.AddListener(delegate { CancelOutcome(); });
 
-		_backgroundImage = GameObject.Find("Card Background").GetComponent<Image>();
-		
-		ResetUi();
-		ResetListeners();
-	}
+            _leftAnswerText = _leftAnswer.GetComponentInChildren<Text>();
+            _rightAnswerText = _rightAnswer.GetComponentInChildren<Text>();
 
-	// Load a card and display it
-	private void Start()
-	{
-		var actorResources = Model.GetUsedActors();
-		var backgroundResources = Model.GetUsedBackgrounds();
-		
-		_actorSprites = new Dictionary<string, Sprite>();
-		_backgroundSprites = new Dictionary<string, Sprite>();
+            _goalText = GameObject.Find("Goal Counter Text").GetComponent<Text>();
 
-		foreach (var actorResource in actorResources)
-		{
-			_actorSprites[actorResource] = Resources.Load<Sprite>(actorResource);
-		}
+            _leftAnswerText.text = "Left answer";
+            _rightAnswerText.text = "Right answer";
 
-		foreach (var backgroundResource in backgroundResources)
-		{
-			_backgroundSprites[backgroundResource] = Resources.Load<Sprite>(backgroundResource);
-		}
-		Advance();
-	}
+            _nameText = GameObject.Find("Name Text").GetComponent<Text>();
+            _questionText = GameObject.Find("Question Text").GetComponent<Text>();
 
-	private void Advance()
-	{
-		if (Model.IsGameOverState())
-		{
-			DisplayGameOverState();
-		}
-		else
-		{
-			var cardsRemaining = Model.GetCardsRemaining();
-			_goalText.text = cardsRemaining.ToString();
-			if (cardsRemaining == 0)
-			{
-				DisplayWinState();
-			}
-			else
-			{
-				Card card = Model.GetNextCard();		
-		
-				_leftResults = Model.GetRelationsChange(0);
-				_rightResults = Model.GetRelationsChange(1);
-				DisplayRelations();
-				DisplayCard(card);	
-			}
-		}
-	}
+            _actorImage = GameObject.Find("Actor Image").GetComponent<Image>();
 
-	private void DisplayCurrentCard()
-	{
-		DisplayCard(Model.CurrentCard);
-	}
+            _familyImage = GameObject.Find("Family Image").GetComponent<Image>();
+            _friendImage = GameObject.Find("Friend Image").GetComponent<Image>();
+            _coupleImage = GameObject.Find("Couple Image").GetComponent<Image>();
+            _classImage = GameObject.Find("Class Image").GetComponent<Image>();
 
-	private void DisplayCard(Card card)
-	{
-		
-		_leftAnswerText.text = card.LeftButtonText;
-		_rightAnswerText.text = card.RightButtonText;
-		
-		_questionText.text = card.Question;
-		_actorImage.sprite = _actorSprites[Model.GetActorForCard(card)];
-		_backgroundImage.sprite = _backgroundSprites[Model.GetBackgroundForCard(card)];
-		_nameText.text = card.Actor;
-		
-		// Store button text, just in case
-		_leftButtonStoredText = card.LeftButtonText;
-		_rightButtonStoredText = card.RightButtonText;
-	}
+            _familySlider = GameObject.Find("Family_Slider").GetComponent<Slider>();
+            _friendSlider = GameObject.Find("Friend_Slider").GetComponent<Slider>();
+            _coupleSlider = GameObject.Find("Girlfriend_Slider").GetComponent<Slider>();
+            _classSlider = GameObject.Find("Class_Slider").GetComponent<Slider>();
 
-	private void DisplayRelations()
-	{
-		// TODO: convert to animations
-		_animations[0] = new CardSliderAnimator(_familySlider, Model.GetCurrentRelations(Relation.FAMILY), 1.0f);
-		_animations[1] = new CardSliderAnimator(_friendSlider, Model.GetCurrentRelations(Relation.FRIENDS), 1.0f);
-		_animations[2] = new CardSliderAnimator(_coupleSlider, Model.GetCurrentRelations(Relation.COUPLE), 1.0f);
-		_animations[3] = new CardSliderAnimator(_classSlider, Model.GetCurrentRelations(Relation.CLASS), 1.0f);
-	}
+            _animations = new CardSliderAnimator[4];
 
-	private void ResetUi()
-	{
-		_leftAnswerButton.image.color = Color.white;
-		_rightAnswerButton.image.color = Color.white;
-		_cancelAnswerButton.gameObject.SetActive(false);
-		
-		_familyImage.gameObject.SetActive(false);
-		_friendImage.gameObject.SetActive(false);
-		_coupleImage.gameObject.SetActive(false);
-		_classImage.gameObject.SetActive(false);
+            // Bind to popup background instead of the popup itself
+            // It should disable player input upon its appearance
+            _popupPanel = GameObject.Find("Popup Background");
+            _popupHeaderText = GameObject.Find("Popup Header Text").GetComponent<Text>();
+            _popupDescriptionText = GameObject.Find("Popup Description Text").GetComponent<Text>();
+            _dismissPopupButton = GameObject.Find("Dismiss Popup Button").GetComponent<Button>();
 
-		if (_leftButtonStoredText != null)
-		{
-			_leftAnswerText.text = _leftButtonStoredText;
-		}
+            _backgroundImage = GameObject.Find("Card Background").GetComponent<Image>();
 
-		if (_rightButtonStoredText != null)
-		{
-			_rightAnswerText.text = _rightButtonStoredText;
-		}
-		
-		_popupPanel.SetActive(false);
-	}
+            ResetUi();
+            ResetListeners();
+        }
 
-	private void ResetListeners()
-	{
-		_leftAnswerButton.onClick.RemoveAllListeners();
-		_rightAnswerButton.onClick.RemoveAllListeners();
-		
-		_leftAnswerButton.onClick.AddListener(delegate { PreviewOutcome(_leftAnswerButton, _rightAnswerButton); });
-		_rightAnswerButton.onClick.AddListener(delegate { PreviewOutcome(_rightAnswerButton, _leftAnswerButton); });
-	}
+        // Load a card and display it
+        private void Start()
+        {
+            var actorResources = Model.GetUsedActors();
+            var backgroundResources = Model.GetUsedBackgrounds();
+
+            _actorSprites = new Dictionary<string, Sprite>();
+            _backgroundSprites = new Dictionary<string, Sprite>();
+
+            foreach (var actorResource in actorResources)
+            {
+                _actorSprites[actorResource] = Resources.Load<Sprite>(actorResource);
+            }
+
+            foreach (var backgroundResource in backgroundResources)
+            {
+                _backgroundSprites[backgroundResource] = Resources.Load<Sprite>(backgroundResource);
+            }
+            Advance();
+        }
+
+        private void Advance()
+        {
+            if (Model.IsGameOverState())
+            {
+                DisplayGameOverState();
+            }
+            else
+            {
+                var cardsRemaining = Model.GetCardsRemaining();
+                _goalText.text = cardsRemaining.ToString();
+                if (cardsRemaining == 0)
+                {
+                    DisplayWinState();
+                }
+                else
+                {
+                    CardOld card = Model.GetNextCard();
+
+                    _leftResults = Model.GetRelationsChange(0);
+                    _rightResults = Model.GetRelationsChange(1);
+                    DisplayRelations();
+                    DisplayCard(card);
+                }
+            }
+        }
+
+        private void DisplayCurrentCard()
+        {
+            DisplayCard(Model.CurrentCard);
+        }
+
+        private void DisplayCard(CardOld card)
+        {
+
+            _leftAnswerText.text = card.LeftButtonText;
+            _rightAnswerText.text = card.RightButtonText;
+
+            _questionText.text = card.Question;
+            _actorImage.sprite = _actorSprites[Model.GetActorForCard(card)];
+            _backgroundImage.sprite = _backgroundSprites[Model.GetBackgroundForCard(card)];
+            _nameText.text = card.Actor;
+
+            // Store button text, just in case
+            _leftButtonStoredText = card.LeftButtonText;
+            _rightButtonStoredText = card.RightButtonText;
+        }
+
+        private void DisplayRelations()
+        {
+            // TODO: convert to animations
+            _animations[0] = new CardSliderAnimator(_familySlider, Model.GetCurrentRelations(FactionType.Family), 1.0f);
+            _animations[1] = new CardSliderAnimator(_friendSlider, Model.GetCurrentRelations(FactionType.Friends), 1.0f);
+            _animations[2] = new CardSliderAnimator(_coupleSlider, Model.GetCurrentRelations(FactionType.Couple), 1.0f);
+            _animations[3] = new CardSliderAnimator(_classSlider, Model.GetCurrentRelations(FactionType.Class), 1.0f);
+        }
+
+        private void ResetUi()
+        {
+            _leftAnswerButton.image.color = Color.white;
+            _rightAnswerButton.image.color = Color.white;
+            _cancelAnswerButton.gameObject.SetActive(false);
+
+            _familyImage.gameObject.SetActive(false);
+            _friendImage.gameObject.SetActive(false);
+            _coupleImage.gameObject.SetActive(false);
+            _classImage.gameObject.SetActive(false);
+
+            if (_leftButtonStoredText != null)
+            {
+                _leftAnswerText.text = _leftButtonStoredText;
+            }
+
+            if (_rightButtonStoredText != null)
+            {
+                _rightAnswerText.text = _rightButtonStoredText;
+            }
+
+            _popupPanel.SetActive(false);
+        }
+
+        private void ResetListeners()
+        {
+            _leftAnswerButton.onClick.RemoveAllListeners();
+            _rightAnswerButton.onClick.RemoveAllListeners();
+
+            _leftAnswerButton.onClick.AddListener(delegate { PreviewOutcome(_leftAnswerButton, _rightAnswerButton); });
+            _rightAnswerButton.onClick.AddListener(delegate { PreviewOutcome(_rightAnswerButton, _leftAnswerButton); });
+        }
 
 
-	private void PreviewOutcome(Button outcomeButton, Button otherButton)
-	{
-		outcomeButton.image.color = Color.yellow;
-		outcomeButton.onClick.RemoveAllListeners();
-		outcomeButton.onClick.AddListener(delegate { ApplyOutcome(outcomeButton); });
+        private void PreviewOutcome(Button outcomeButton, Button otherButton)
+        {
+            outcomeButton.image.color = Color.yellow;
+            outcomeButton.onClick.RemoveAllListeners();
+            outcomeButton.onClick.AddListener(delegate { ApplyOutcome(outcomeButton); });
 
-		_leftButtonStoredText = _leftAnswerText.text;
-		_rightButtonStoredText = _rightAnswerText.text;
+            _leftButtonStoredText = _leftAnswerText.text;
+            _rightButtonStoredText = _rightAnswerText.text;
 
-		outcomeButton.GetComponentInChildren<Text>().text = "Ответить";
-		
-		otherButton.onClick.RemoveAllListeners();
-		otherButton.onClick.AddListener(delegate
-		{
-			ResetUi();
-			PreviewOutcome(otherButton, outcomeButton);
-		});
-		
-		_cancelAnswerButton.gameObject.SetActive(true);
-		
-		_familyImage.gameObject.SetActive(true);
-		_friendImage.gameObject.SetActive(true);
-		_coupleImage.gameObject.SetActive(true);
-		_classImage.gameObject.SetActive(true);
-		// TODO: add predictions from model
-		float[] relationChange = null;
-		if (outcomeButton == _leftAnswerButton)
-		{
-			relationChange = _leftResults;
-		}
-		else if (outcomeButton == _rightAnswerButton)
-		{
-			relationChange = _rightResults;
-		}
-		else
-		{
-			Debug.LogError("Unexpected outcome button");
-		}
+            outcomeButton.GetComponentInChildren<Text>().text = "Ответить";
 
-		var familyScale = Mathf.Abs(relationChange[(int) Relation.FAMILY]);
-		_familyImage.gameObject.transform.localScale = new Vector3(familyScale, familyScale, familyScale);
-		var friendScale = Mathf.Abs(relationChange[(int) Relation.FRIENDS]);
-		_friendImage.gameObject.transform.localScale = new Vector3(friendScale, friendScale, friendScale);
-		var coupleScale = Mathf.Abs(relationChange[(int) Relation.COUPLE]);
-		_coupleImage.gameObject.transform.localScale = new Vector3(coupleScale, coupleScale, coupleScale);
-		var classScale = Mathf.Abs(relationChange[(int) Relation.CLASS]);
-		_classImage.gameObject.transform.localScale = new Vector3(classScale, classScale, classScale);
-	}
+            otherButton.onClick.RemoveAllListeners();
+            otherButton.onClick.AddListener(delegate {
+                ResetUi();
+                PreviewOutcome(otherButton, outcomeButton);
+            });
 
-	private void CancelOutcome()
-	{
-		ResetUi();
-		ResetListeners();
-	}
+            _cancelAnswerButton.gameObject.SetActive(true);
 
-	private void ApplyOutcome(Button outcomeButton)
-	{
-		if (outcomeButton == _leftAnswerButton)
-		{
-			Model.ApplyChange(0);
-		}
-		else if (outcomeButton == _rightAnswerButton)
-		{
-			Model.ApplyChange(1);
-		}
-		ResetUi();
-		Advance();
-		ResetListeners();
-	}
-	
-	
-	// Update is called once per frame
-	// Play any live animations
-	void Update () {
-		for (int i = 0; i < _animations.Length; ++i)
-		{
-			if (_animations[i] != null)
-			{
-				_animations[i].Update();
-				if (_animations[i].IsEnded())
-				{
-					// Delete animation if it's ended
-					_animations[i] = null;
-				}
-			}
-		}
-	}
+            _familyImage.gameObject.SetActive(true);
+            _friendImage.gameObject.SetActive(true);
+            _coupleImage.gameObject.SetActive(true);
+            _classImage.gameObject.SetActive(true);
+            // TODO: add predictions from model
+            float[] relationChange = null;
+            if (outcomeButton == _leftAnswerButton)
+            {
+                relationChange = _leftResults;
+            }
+            else if (outcomeButton == _rightAnswerButton)
+            {
+                relationChange = _rightResults;
+            }
+            else
+            {
+                Debug.LogError("Unexpected outcome button");
+            }
 
-	void DisplayGameOverState()
-	{
-		_popupPanel.SetActive(true);
-		_popupHeaderText.text = "Вы проиграли";
-		_popupDescriptionText.text = "Главное в жизни - баланс. Следите за отношениями со всеми!";
+            var familyScale = Mathf.Abs(relationChange[(int) FactionType.Family]);
+            _familyImage.gameObject.transform.localScale = new Vector3(familyScale, familyScale, familyScale);
+            var friendScale = Mathf.Abs(relationChange[(int) FactionType.Friends]);
+            _friendImage.gameObject.transform.localScale = new Vector3(friendScale, friendScale, friendScale);
+            var coupleScale = Mathf.Abs(relationChange[(int) FactionType.Couple]);
+            _coupleImage.gameObject.transform.localScale = new Vector3(coupleScale, coupleScale, coupleScale);
+            var classScale = Mathf.Abs(relationChange[(int) FactionType.Class]);
+            _classImage.gameObject.transform.localScale = new Vector3(classScale, classScale, classScale);
+        }
 
-	}
+        private void CancelOutcome()
+        {
+            ResetUi();
+            ResetListeners();
+        }
 
-	void DisplayWinState()
-	{
-		_popupPanel.SetActive(true);
-		_popupHeaderText.text = "Вы победили!";
-		_popupDescriptionText.text = "Ты сумел сохранить отношения со всеми. Миссия пройдена!";
-	}
+        private void ApplyOutcome(Button outcomeButton)
+        {
+            if (outcomeButton == _leftAnswerButton)
+            {
+                Model.ApplyChange(0);
+            }
+            else if (outcomeButton == _rightAnswerButton)
+            {
+                Model.ApplyChange(1);
+            }
+            ResetUi();
+            Advance();
+            ResetListeners();
+        }
 
-	public void OnPopupDismiss()
-	{
-		Model.OnCardGameFinish();
-	}
+
+        // Update is called once per frame
+        // Play any live animations
+        void Update()
+        {
+            for (int i = 0; i < _animations.Length; ++i)
+            {
+                if (_animations[i] != null)
+                {
+                    _animations[i].Update();
+                    if (_animations[i].IsEnded())
+                    {
+                        // Delete animation if it's ended
+                        _animations[i] = null;
+                    }
+                }
+            }
+        }
+
+        void DisplayGameOverState()
+        {
+            _popupPanel.SetActive(true);
+            _popupHeaderText.text = "Вы проиграли";
+            _popupDescriptionText.text = "Главное в жизни - баланс. Следите за отношениями со всеми!";
+
+        }
+
+        void DisplayWinState()
+        {
+            _popupPanel.SetActive(true);
+            _popupHeaderText.text = "Вы победили!";
+            _popupDescriptionText.text = "Ты сумел сохранить отношения со всеми. Миссия пройдена!";
+        }
+
+        public void OnPopupDismiss()
+        {
+            Model.OnCardGameFinish();
+        }
+    }
 }

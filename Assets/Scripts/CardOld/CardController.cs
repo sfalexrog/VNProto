@@ -7,220 +7,216 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum Relation
+namespace OneDayProto.Card
 {
-	FAMILY = 0,
-	FRIENDS = 1,
-	COUPLE = 2,
-	CLASS = 3
-}
+    public class CardController : MonoBehaviour
+    {
+        private GameState _gameState;
 
-public class CardController : MonoBehaviour
-{
+        private ICardGenerator _generator;
 
-	private GameState _gameState;
+        // Relation values
+        private float[] _relations;
 
-	private ICardGenerator _generator;
+        private const int MAX_RELATIONS = 10;
 
-	// Relation values
-	private float[] _relations; 
+        // Actor name -> actor resource mapping
+        private Dictionary<string, DialogueActor> _actors;
+        // Background name -> background resource mapping
+        private Dictionary<string, string> _backgrounds;
 
-	private const int MAX_RELATIONS = 10;
+        void Awake()
+        {
+            _gameState = Toolbox.RegisterComponent<GameState>();
 
-	// Actor name -> actor resource mapping
-	private Dictionary<string, DialogueActor> _actors;
-	// Background name -> background resource mapping
-	private Dictionary<string, string> _backgrounds;
-	
-	void Awake()
-	{
-		_gameState = Toolbox.RegisterComponent<GameState>();
-		
-		_generator = ICardGenerator.FromScript(_gameState.CardScriptResource, (int)_gameState.PlayerGender);
-		
-		// TODO: Load relations from GameState
+            _generator = ICardGenerator.FromScript(_gameState.CardScriptResource, (int) _gameState.PlayerGender);
 
-		_relations = new float[4];
-		for (int i = 0; i < 4; ++i)
-		{
-			_relations[i] = MAX_RELATIONS / 2;
-		}
+            // TODO: Load relations from GameState
 
-		_actors = new Dictionary<string, DialogueActor>();
-        
-		// Load actor data
-		var actorJson = Resources.Load<TextAsset>("Actors/manifest");
-		var actors = JsonConvert.DeserializeObject<List<DialogueActor>>(actorJson.text);
-		foreach (var actor in actors)
-		{
-			_actors[actor.name] = actor;
-		}
-        
-		_backgrounds = new Dictionary<string, string>();
-		// Load background data
-		var backgroundsJson = Resources.Load<TextAsset>("Backgrounds/manifest");
-		var backgrounds = JsonConvert.DeserializeObject<List<DialogueBackground>>(backgroundsJson.text);
-		foreach (var background in backgrounds)
-		{
-			_backgrounds[background.name] = background.image;
-		}
-		
-	}
+            _relations = new float[4];
+            for (int i = 0; i < 4; ++i)
+            {
+                _relations[i] = MAX_RELATIONS / 2;
+            }
 
-	private Card _currentCard;
+            _actors = new Dictionary<string, DialogueActor>();
 
-	public Card CurrentCard	{
-		get
-		{
-			return _currentCard;	
-		}
-	}
+            // Load actor data
+            var actorJson = Resources.Load<TextAsset>("Actors/manifest");
+            var actors = JsonConvert.DeserializeObject<List<DialogueActor>>(actorJson.text);
+            foreach (var actor in actors)
+            {
+                _actors[actor.name] = actor;
+            }
 
-	public Card GetNextCard()
-	{
-		_currentCard = _generator.YieldCard();
-		return _currentCard;
-	}
+            _backgrounds = new Dictionary<string, string>();
+            // Load background data
+            var backgroundsJson = Resources.Load<TextAsset>("Backgrounds/manifest");
+            var backgrounds = JsonConvert.DeserializeObject<List<DialogueBackground>>(backgroundsJson.text);
+            foreach (var background in backgrounds)
+            {
+                _backgrounds[background.name] = background.image;
+            }
 
-	public int GetCardsRemaining()
-	{
-		return _generator.GetNumCardsRemaining();
-	}
+        }
 
-	public float GetCurrentRelations(Relation faction)
-	{
-		return _relations[(int) faction];
-	}
+        private CardOld _currentCard;
 
-	public float GetMaxRelations(Relation faction)
-	{
-		return MAX_RELATIONS;
-	}
+        public CardOld CurrentCard
+        {
+            get
+            {
+                return _currentCard;
+            }
+        }
 
-	public float[] GetRelationsChange(int answer)
-	{
-		var result = new float[4];
-		Card.Outcome[] outcomes;
-		if (answer == 0) // left answer
-		{
-			outcomes = _currentCard.LeftOutcomes;
-		}
-		else
-		{
-			outcomes = _currentCard.RightOutcomes;
-		}
+        public CardOld GetNextCard()
+        {
+            _currentCard = _generator.YieldCard();
+            return _currentCard;
+        }
 
-		foreach (var outcome in outcomes)
-		{
-			var idx = -1;
-			switch (outcome.Faction)
-			{
-				case "Семья":
-					idx = (int) Relation.FAMILY;
-					break;
-				case "Класс":
-					idx = (int) Relation.CLASS;
-					break;
-				case "Друзья":
-					idx = (int) Relation.FRIENDS;
-					break;
-				case "Пара":
-					idx = (int) Relation.COUPLE;
-					break;
-				default:
-					Debug.LogWarning("Unknown faction: " + outcome.Faction);
-					break;
-			}
+        public int GetCardsRemaining()
+        {
+            return _generator.GetNumCardsRemaining();
+        }
 
-			if (idx >= 0)
-			{
-				result[idx] = outcome.Change;
-			}
-		}
+        public float GetCurrentRelations(FactionType faction)
+        {
+            return _relations[(int) faction];
+        }
 
-		return result;
-	}
+        public float GetMaxRelations(FactionType faction)
+        {
+            return MAX_RELATIONS;
+        }
 
-	public void ApplyChange(int answer)
-	{
-		var change = GetRelationsChange(answer);
-		for (int i = 0; i < 4; ++i)
-		{
-			_relations[i] += change[i];
-		}
-	}
+        public float[] GetRelationsChange(int answer)
+        {
+            var result = new float[4];
 
-	/**
-	 * Check if the game is over
-	 */
-	public bool IsGameOverState()
-	{
-		bool result = false;
-		foreach(var relation in _relations)
-		{
-			if ((relation <= 0) || (relation >= MAX_RELATIONS))
-			{
-				result = true;
-			}
-		}
+            CardOld.Outcome[] outcomes;
+            if (answer == 0) // left answer
+            {
+                outcomes = _currentCard.LeftOutcomes;
+            }
+            else
+            {
+                outcomes = _currentCard.RightOutcomes;
+            }
 
-		return result;
-	}
-	
-	/**
-	 * Finish the game
-	 */
-	public void OnCardGameFinish()
-	{
-		// Disable progress by setting next card game ID to -1
-		if (IsGameOverState())
-		{
-			_gameState.NextCardGameId = -1;
-		}
-		else
-		{
-			// Apply completion reward
-			_gameState.currentExperience += _generator.CompletionReward;
-		}
-		SceneManager.LoadScene("Scenes/HubScene");
-	}
+            foreach (var outcome in outcomes)
+            {
+                var idx = -1;
+                switch (outcome.Faction)
+                {
+                    case "Семья":
+                        idx = (int) FactionType.Family;
+                        break;
+                    case "Класс":
+                        idx = (int) FactionType.Class;
+                        break;
+                    case "Друзья":
+                        idx = (int) FactionType.Friends;
+                        break;
+                    case "Пара":
+                        idx = (int) FactionType.Couple;
+                        break;
+                    default:
+                        Debug.LogWarning("Unknown faction: " + outcome.Faction);
+                        break;
+                }
 
-	public string[] GetUsedBackgrounds()
-	{
-		var backgroundResources = new HashSet<string>();
-		var backgroundNames = _generator.GetCardBackgroundsNames();
-		foreach (var bgName in backgroundNames)
-		{
-			backgroundResources.Add(_backgrounds[bgName]);
-		}
+                if (idx >= 0)
+                {
+                    result[idx] = outcome.Change;
+                }
+            }
 
-		return backgroundResources.ToArray();
-	}
+            return result;
+        }
 
-	public string[] GetUsedActors()
-	{
-		var actorResources = new HashSet<string>();
-		var actorNames = _generator.GetCardActorsNames();
-		foreach (var actorName in actorNames)
-		{
-			foreach (var res in _actors[actorName].emotions.Values)
-			{
-				actorResources.Add(res);
-			}
-		}
+        public void ApplyChange(int answer)
+        {
+            var change = GetRelationsChange(answer);
+            for (int i = 0; i < 4; ++i)
+            {
+                _relations[i] += change[i];
+            }
+        }
 
-		return actorResources.ToArray();
-	}
+        /**
+         * Check if the game is over
+         */
+        public bool IsGameOverState()
+        {
+            bool result = false;
+            foreach (var relation in _relations)
+            {
+                if ((relation <= 0) || (relation >= MAX_RELATIONS))
+                {
+                    result = true;
+                }
+            }
 
-	public string GetBackgroundForCard(Card card)
-	{
-		return _backgrounds[card.Background];
-	}
+            return result;
+        }
 
-	public string GetActorForCard(Card card)
-	{
-		// TODO: emotions?
-		return _actors[card.Actor].emotions["default"];
-	}
-	
+        /**
+         * Finish the game
+         */
+        public void OnCardGameFinish()
+        {
+            // Disable progress by setting next card game ID to -1
+            if (IsGameOverState())
+            {
+                _gameState.NextCardGameId = -1;
+            }
+            else
+            {
+                // Apply completion reward
+                _gameState.currentExperience += _generator.CompletionReward;
+            }
+            SceneManager.LoadScene("Scenes/HubScene");
+        }
+
+        public string[] GetUsedBackgrounds()
+        {
+            var backgroundResources = new HashSet<string>();
+            var backgroundNames = _generator.GetCardBackgroundsNames();
+            foreach (var bgName in backgroundNames)
+            {
+                backgroundResources.Add(_backgrounds[bgName]);
+            }
+
+            return backgroundResources.ToArray();
+        }
+
+        public string[] GetUsedActors()
+        {
+            var actorResources = new HashSet<string>();
+            var actorNames = _generator.GetCardActorsNames();
+            foreach (var actorName in actorNames)
+            {
+                foreach (var res in _actors[actorName].emotions.Values)
+                {
+                    actorResources.Add(res);
+                }
+            }
+
+            return actorResources.ToArray();
+        }
+
+        public string GetBackgroundForCard(CardOld card)
+        {
+            return _backgrounds[card.Background];
+        }
+
+        public string GetActorForCard(CardOld card)
+        {
+            // TODO: emotions?
+            return _actors[card.Actor].emotions["default"];
+        }
+
+    }
 }

@@ -98,7 +98,6 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
             var rvec = ped.position - PivotWorld2D;
             var angle = Mathf.Rad2Deg * Mathf.Atan2(rvec.y, rvec.x) - 90.0f;
             _angSpeed = (angle - _angle) / Time.deltaTime;
-            Debug.Log("RVec: " + rvec + ", Angle: " + angle);
             SetAngle(angle);
         }
     }

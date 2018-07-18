@@ -48,6 +48,8 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     private float _targetAngle;
 
     private bool _gravitates;
+    private bool _didSwipeLeft;
+    private bool _didSwipeRight;
 
     // Set this to true to ignore user input
     [HideInInspector]
@@ -89,6 +91,17 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     public void OnPointerUp(PointerEventData ped)
     {
         _gravitates = true;
+        // Late-trigger swipe handlers
+        if (_didSwipeLeft)
+        {
+            onSwipeLeft.Invoke();
+        }
+
+        if (_didSwipeRight)
+        {
+            onSwipeRight.Invoke();
+        }
+        
     }
 
     public void OnDrag(PointerEventData ped)
@@ -106,6 +119,8 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     {
         _angle = 0.0f;
         _prevAngle = 0.0f;
+        _didSwipeLeft = false;
+        _didSwipeRight = false;
         SetAngle(_angle);
     }
 
@@ -142,13 +157,11 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
             // because of case overlapping issues
             if (_angle > 0)
             {
-                // If card is rotated by [-ShiftAngle / 2; AcceptAngle)
-                // (so it's closer to ShiftAngle than to AcceptAngle), make it snap to
-                // ShiftAngle degrees
                 if (_angle < AcceptAngle)
                 {
-                    _targetAngle = ShiftAngle;
-                    // Additionally, if previous angle was outside this range,
+                    // Allow user to undo his action
+                    _didSwipeLeft = false;
+                    // If previous angle was outside this range,
                     // fire onShiftRight event handlers
                     if (_prevAngle < ShiftAngle / 2)
                     {
@@ -157,7 +170,7 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
                         onShiftLeft.Invoke();
                     }
                 }
-                // If card is rotated by no less than AcceptAngle, it triggers OnSwipeRight
+                // If card is rotated by no less than AcceptAngle, it triggers OnSwipeLeft
                 // event handlers. It will be shifted to AcceptAngle * 2, and it's a good
                 // idea to gradually fade it out while it's moving and reset it.
                 else if (_angle >= AcceptAngle)
@@ -165,16 +178,17 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
                     _targetAngle = 3 * AcceptAngle;
                     if (_prevAngle < AcceptAngle)
                     {
-                        onSwipeLeft.Invoke();
+                        // We register swipe only after the user lifts his pointer (finger)
+                        _didSwipeLeft = true;
                     }
                 }
             }
             else
             {
-                // More of the same, but for left swipes
+                // More of the same, but for right swipes
                 if (_angle > -AcceptAngle)
                 {
-                    _targetAngle = -ShiftAngle;
+                    _didSwipeRight = false;
                     if (_prevAngle > -ShiftAngle / 2)
                     {
                         onShiftRight.Invoke();
@@ -185,7 +199,7 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
                     _targetAngle = -3 * AcceptAngle;
                     if (_prevAngle > -AcceptAngle)
                     {
-                        onSwipeRight.Invoke();
+                        _didSwipeRight = true;
                     }
                 }
             }

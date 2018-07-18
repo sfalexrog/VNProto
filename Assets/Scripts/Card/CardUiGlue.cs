@@ -35,6 +35,7 @@ namespace OneDayProto.Card
         private CanvasGroup _swipeCG;
         private CanvasGroup _popupCG;
         public Text AnswerText;
+        public CanvasGroup AnswerTextShadow;
 
         private string _leftButtonStoredText;
         private string _rightButtonStoredText;
@@ -271,6 +272,12 @@ namespace OneDayProto.Card
                     }
                 }
             }
+            // Show answer text depending on the angle
+            var angle = Mathf.Abs(SwipeCard.Angle);
+            var minAngle = SwipeCard.ShiftAngle / 2.0f;
+            var maxAngle = SwipeCard.ShiftAngle;
+            var alpha = Mathf.Clamp01((angle - minAngle) / (maxAngle - minAngle));
+            AnswerTextShadow.alpha = alpha;
         }
 
         void DisplayGameOverState()

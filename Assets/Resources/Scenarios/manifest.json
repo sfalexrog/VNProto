@@ -10,14 +10,14 @@
     "Id": 2,
     "ChapterName": "Школа",
     "ScenarioFilename": "Scenarios/Ink/Chapter_02",
-    "MinXpRequired": 2,
+    "MinXpRequired": 1,
     "NextChapterId": 3
   },
   {
     "Id": 3,
     "ChapterName": "Лаборатория",
     "ScenarioFilename": "Scenarios/Ink/Chapter_03",
-    "MinXpRequired": 4,
+    "MinXpRequired": 2,
     "NextChapterId": -1
   }
 ]

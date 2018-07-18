@@ -3,96 +3,115 @@
     "name": "Вика",
     "emotions":
     {
-      "default": "Actors/ActorImages/1"
-    }
-  },
-  {
-    "name": "Витя",
-    "emotions":
-    {
-      "default": "Actors/ActorImages/2"
+      "default": "Actors/ActorImages/love_girl",
+	  "грусть": "Actors/ActorImages/love_girl",
+	  "радость": "Actors/ActorImages/love_girl",
+	  "злость": "Actors/ActorImages/love_girl",
+	  "удивление": "Actors/ActorImages/love_girl"
     }
   },
   {
     "name": "Денис",
     "emotions":
     {
-      "default": "Actors/ActorImages/3",
-      "злость": "Actors/ActorImages/3",
-      "радость": "Actors/ActorImages/3"
+      "default": "Actors/ActorImages/leader_boy",
+      "грусть": "Actors/ActorImages/leader_boy",
+	  "радость": "Actors/ActorImages/leader_boy",
+	  "злость": "Actors/ActorImages/leader_boy",
+	  "удивление": "Actors/ActorImages/leader_boy"
     }
   },
   {
     "name": "Стас",
     "emotions":
     {
-      "default": "Actors/ActorImages/boy_2",
-	    "грусть": "Actors/ActorImages/boy_2"
+      "default": "Actors/ActorImages/pig",
+      "грусть": "Actors/ActorImages/pig",
+	  "радость": "Actors/ActorImages/pig",
+	  "злость": "Actors/ActorImages/pig",
+	  "удивление": "Actors/ActorImages/pig"
     }
   },
   {
     "name": "Мама",
     "emotions":
     {
-      "default": "Actors/ActorImages/mother"
-    }
-  },
-  {
-    "name": "Я",
-    "emotions":
-    {
-      "default": "Actors/ActorImages/boy"
+      "default": "Actors/ActorImages/mother",
+      "грусть": "Actors/ActorImages/mother",
+	  "радость": "Actors/ActorImages/mother",
+	  "злость": "Actors/ActorImages/mother",
+	  "удивление": "Actors/ActorImages/mother"
     }
   },
   {
     "name": "Player Boy",
     "emotions": {
-      "default": "Actors/ActorImages/boy",
-      "грусть": "Actors/ActorImages/boy"
+      "default": "Actors/ActorImages/player_boy",
+      "грусть": "Actors/ActorImages/player_boy",
+	  "радость": "Actors/ActorImages/player_boy",
+	  "злость": "Actors/ActorImages/player_boy",
+	  "удивление": "Actors/ActorImages/player_boy"
+
     }
   },
   {
     "name": "Player Girl",
     "emotions": {
-      "default": "Actors/ActorImages/hero_girl"
-    }
-  },
-  {
-    "name": "Неизвестный",
-    "emotions": {
-      "default": "Actors/ActorImages/silhouette"
+      "default": "Actors/ActorImages/hero_girl",
+	  "грусть": "Actors/ActorImages/hero_girl",
+	  "радость": "Actors/ActorImages/hero_girl",
+	  "злость": "Actors/ActorImages/hero_girl",
+	  "удивление": "Actors/ActorImages/hero_girl"
     }
   },
   {
     "name": "Панда",
     "emotions": {
-      "default": "Actors/ActorImages/teacher"
+      "default": "Actors/ActorImages/panda",
+	  "грусть": "Actors/ActorImages/panda",
+	  "радость": "Actors/ActorImages/panda",
+	  "злость": "Actors/ActorImages/panda",
+	  "удивление": "Actors/ActorImages/panda"
     }
   },
   {
     "name": "Учитель",
     "emotions": {
-      "default": "Actors/ActorImages/teacher"
-    }
-  },{
-    "name": "Саша",
-    "emotions":
-    {
-      "default": "Actors/ActorImages/leader"
-    }
-  }
-  ,{
-    "name": "Вася",
-    "emotions":
-    {
-      "default": "Actors/ActorImages/coder"
+      "default": "Actors/ActorImages/panda",
+	  "грусть": "Actors/ActorImages/panda",
+	  "радость": "Actors/ActorImages/panda",
+	  "злость": "Actors/ActorImages/panda",
+	  "удивление": "Actors/ActorImages/panda"
     }
   },
   {
-    "name": "Робот",
-    "emotions":
-    {
-      "default": "Actors/ActorImages/bamblebee"
+    "name": "Профессор",
+    "emotions": {
+      "default": "Actors/ActorImages/professor",
+	  "грусть": "Actors/ActorImages/professor",
+	  "радость": "Actors/ActorImages/professor",
+	  "злость": "Actors/ActorImages/professor",
+	  "удивление": "Actors/ActorImages/professor"
+    }
+  },
+  {
+    "name": "Мэй",
+    "emotions": {
+      "default": "Actors/ActorImages/unique",
+	  "грусть": "Actors/ActorImages/unique",
+	  "радость": "Actors/ActorImages/unique",
+	  "злость": "Actors/ActorImages/unique",
+	  "удивление": "Actors/ActorImages/unique"
+    }
+  },
+  {
+    "name": "Дин",
+    "emotions": {
+      "default": "Actors/ActorImages/coder",
+	  "грусть": "Actors/ActorImages/coder",
+	  "радость": "Actors/ActorImages/coder",
+	  "злость": "Actors/ActorImages/coder",
+	  "удивление": "Actors/ActorImages/coder"
     }
   }
 ]

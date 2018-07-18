@@ -3,7 +3,7 @@
     "Id": 1,
     "CardGameName": "ScriptedTest",
     "CardScriptFilename": "Cards/Scripts/Mission1",
-    "MinXpRequired": 1,
+    "MinXpRequired": 0,
     "NextCardGameId": 2
   },
   {

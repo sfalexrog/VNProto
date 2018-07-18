@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
-  m_Name: TestCard
+  m_Name: TestCard 1
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 71bb50573e80f4b4a992a852563ff8e4, type: 2}
+  character: {fileID: 0}
   question: "\u0427\u0442\u043E \u0442\u044B \u0432\u044B\u0431\u0435\u0440\u0435\u0448\u044C?"
   leftButton: "\u041B\u0435\u0432\u044B\u0439 \u0432\u044B\u0431\u043E\u0440"
   leftOutcomes:
@@ -26,3 +26,4 @@ MonoBehaviour:
   - faction: 2
     change: -2
   background: 0
+  girlVersionCard: {fileID: 0}

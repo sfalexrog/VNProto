@@ -9,7 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad531d787e205f54db9625c0f4959add, type: 3}
-  m_Name: CardPack
+  m_Name: TestPack
   m_EditorClassIdentifier: 
   cards:
   - {fileID: 11400000, guid: 087f6fe776ea27641a0b6b6bc4c7359b, type: 2}
+  - {fileID: 11400000, guid: 5e488f5083bd7f94abcabd0f7d8d4327, type: 2}
+  - {fileID: 11400000, guid: c86d289e433a71f46bc37ae761ae196c, type: 2}
+  - {fileID: 11400000, guid: 63d4eeac000a17f4bb2181a2817cc879, type: 2}

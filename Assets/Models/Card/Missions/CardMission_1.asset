@@ -15,3 +15,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0ed8283787fb916458b955b1d5d80fb0, type: 2}
   - {fileID: 11400000, guid: 1843fea59ede5d04fac52dc4b2181bdc, type: 2}
   isRandom: 0
+  needFinishCount: 0

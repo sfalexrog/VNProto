@@ -9,6 +9,7 @@ using Utils.Collections.Generic;
     public class CardMissionOrder : CardMissionBase 
 	{
         public bool isRandom = true;
+        public int needFinishCount;
 
         public int cardIndex { get; private set; }
         protected List<Card> allCards;
@@ -42,15 +43,21 @@ using Utils.Collections.Generic;
             return allCards[cardIndex];
         }
 
-        protected override bool IsFinished()
+        public override bool IsFinished()
+        {
+            return GetRestCount() <= 0;
+        }
+
+        public override int GetRestCount()
         {
             if (isRandom)
             {
-                return (cardIndex >= needFinishCount - 1);
+                return (needFinishCount - (cardIndex + 1));
             }
             else
             {
-                return (cardIndex >= allCards.Count - 1);
+                return (allCards.Count - (cardIndex + 1));
+
             }
         }
     }

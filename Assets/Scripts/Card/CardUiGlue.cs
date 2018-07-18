@@ -8,7 +8,7 @@ namespace OneDayProto.Card
 
     public class CardUiGlue : MonoBehaviour
     {
-        public CardController Model;
+        public CardController cardController;
 
         private GameObject _purposePanel;
         private GameObject _answerPanel;
@@ -56,10 +56,6 @@ namespace OneDayProto.Card
 
         // Background image
         private Image _backgroundImage;
-
-        // Sprite cache for actors and backgrounds
-        private Dictionary<string, Sprite> _actorSprites;
-        private Dictionary<string, Sprite> _backgroundSprites;
 
         // Bind to scene objects
         void Awake()
@@ -117,44 +113,31 @@ namespace OneDayProto.Card
         // Load a card and display it
         private void Start()
         {
-            var actorResources = Model.GetUsedActors();
-            var backgroundResources = Model.GetUsedBackgrounds();
-
-            _actorSprites = new Dictionary<string, Sprite>();
-            _backgroundSprites = new Dictionary<string, Sprite>();
-
-            foreach (var actorResource in actorResources)
-            {
-                _actorSprites[actorResource] = Resources.Load<Sprite>(actorResource);
-            }
-
-            foreach (var backgroundResource in backgroundResources)
-            {
-                _backgroundSprites[backgroundResource] = Resources.Load<Sprite>(backgroundResource);
-            }
             Advance();
         }
 
         private void Advance()
         {
-            if (Model.IsGameOverState())
+            if (cardController.IsGameOverState())
             {
                 DisplayGameOverState();
             }
             else
             {
-                var cardsRemaining = Model.GetCardsRemaining();
+                int cardsRemaining = cardController.mission.GetRestCount();
                 _goalText.text = cardsRemaining.ToString();
-                if (cardsRemaining == 0)
+
+
+                if (cardController.mission.IsFinished())
                 {
                     DisplayWinState();
                 }
                 else
                 {
-                    CardOld card = Model.GetNextCard();
+                    Card card = cardController.mission.GetNext();
 
-                    _leftResults = Model.GetRelationsChange(0);
-                    _rightResults = Model.GetRelationsChange(1);
+                    _leftResults = cardController.GetRelationsChange(0);
+                    _rightResults = cardController.GetRelationsChange(1);
                     DisplayRelations();
                     DisplayCard(card);
                 }
@@ -163,32 +146,33 @@ namespace OneDayProto.Card
 
         private void DisplayCurrentCard()
         {
-            DisplayCard(Model.CurrentCard);
+            DisplayCard(cardController.mission.currentCard);
         }
 
-        private void DisplayCard(CardOld card)
+        private void DisplayCard(Card c)
         {
+            Card card = c.GetInfoByGender(PlayerGender.Boy);
 
-            _leftAnswerText.text = card.LeftButtonText;
-            _rightAnswerText.text = card.RightButtonText;
+            _leftAnswerText.text = card.leftButton;
+            _rightAnswerText.text = card.rightButton;
 
-            _questionText.text = card.Question;
-            _actorImage.sprite = _actorSprites[Model.GetActorForCard(card)];
-            _backgroundImage.sprite = _backgroundSprites[Model.GetBackgroundForCard(card)];
-            _nameText.text = card.Actor;
+            _questionText.text = card.question;
+            _actorImage.sprite = card.actor.sprite;
+            //_backgroundImage.sprite = _backgroundSprites[cardController.GetBackgroundForCard(card)];
+            _nameText.text = card.actor.name;
 
             // Store button text, just in case
-            _leftButtonStoredText = card.LeftButtonText;
-            _rightButtonStoredText = card.RightButtonText;
+            _leftButtonStoredText = card.leftButton;
+            _rightButtonStoredText = card.rightButton;
         }
 
         private void DisplayRelations()
         {
             // TODO: convert to animations
-            _animations[0] = new CardSliderAnimator(_familySlider, Model.GetCurrentRelations(FactionType.Family), 1.0f);
-            _animations[1] = new CardSliderAnimator(_friendSlider, Model.GetCurrentRelations(FactionType.Friends), 1.0f);
-            _animations[2] = new CardSliderAnimator(_coupleSlider, Model.GetCurrentRelations(FactionType.Couple), 1.0f);
-            _animations[3] = new CardSliderAnimator(_classSlider, Model.GetCurrentRelations(FactionType.Class), 1.0f);
+            _animations[0] = new CardSliderAnimator(_familySlider, cardController.GetCurrentRelations(FactionType.Family), 1.0f);
+            _animations[1] = new CardSliderAnimator(_friendSlider, cardController.GetCurrentRelations(FactionType.Friends), 1.0f);
+            _animations[2] = new CardSliderAnimator(_coupleSlider, cardController.GetCurrentRelations(FactionType.Couple), 1.0f);
+            _animations[3] = new CardSliderAnimator(_classSlider, cardController.GetCurrentRelations(FactionType.Class), 1.0f);
         }
 
         private void ResetUi()
@@ -283,11 +267,11 @@ namespace OneDayProto.Card
         {
             if (outcomeButton == _leftAnswerButton)
             {
-                Model.ApplyChange(0);
+                cardController.ApplyChange(0);
             }
             else if (outcomeButton == _rightAnswerButton)
             {
-                Model.ApplyChange(1);
+                cardController.ApplyChange(1);
             }
             ResetUi();
             Advance();
@@ -330,7 +314,7 @@ namespace OneDayProto.Card
 
         public void OnPopupDismiss()
         {
-            Model.OnCardGameFinish();
+            cardController.OnCardGameFinish();
         }
     }
 }

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
   m_Name: Card 2
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
+  actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
   question: "\u0422\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u0435\u0448\u044C
     \u0435\u0441\u043B\u0438 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F
     \u0434\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0438\u043D\u0438\u043C\u0443\u043C\u0430

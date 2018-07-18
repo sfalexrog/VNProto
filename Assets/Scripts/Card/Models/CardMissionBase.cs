@@ -9,15 +9,23 @@ namespace OneDayProto.Card
 	{
         [Reorderable]
         public CardPack[] cardPacks;
-        public int needFinishCount;
+
+        public Card currentCard { get; private set; }
         
         protected abstract void OnInitialize();
         protected abstract Card OnGetNext();
-        protected abstract bool IsFinished();
+        public abstract bool IsFinished();
+        public abstract int GetRestCount();
         
         public void Initialize()
         {
             OnInitialize();
+        }
+
+        public Card GetNext()
+        {
+            currentCard = OnGetNext();
+            return currentCard;
         }
     }
 }

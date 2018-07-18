@@ -9445,11 +9445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ea895fcf1b8de48965ca8c2da7d89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards: []
-  familyFutureCircle: {fileID: 1794087865}
-  friendFutureCircle: {fileID: 1784277390}
-  girlFutureCircle: {fileID: 1571399319}
-  classFutureCircle: {fileID: 279397057}
 --- !u!1 &401359139
 GameObject:
   m_ObjectHideFlags: 0
@@ -13551,7 +13546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b73144330e9b40e89ca7bf197cf77ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Model: {fileID: 2142225990}
+  cardController: {fileID: 2142225990}
 --- !u!4 &554191932
 Transform:
   m_ObjectHideFlags: 0
@@ -13559,7 +13554,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 554191930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 180.51608, y: 321.12186, z: 0.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49934,7 +49929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142225988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 180.51608, y: 321.12186, z: 0.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49951,6 +49946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de3fa24d83794438aadc8e7aa223633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mission: {fileID: 11400000, guid: f8966d457491dce40a8147a945cc465a, type: 2}
 --- !u!1 &2147235022
 GameObject:
   m_ObjectHideFlags: 0

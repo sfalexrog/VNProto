@@ -6,6 +6,9 @@ using UnityEngine;
 {
     public abstract class CardActorBase : ScriptableObject 
 	{
+        public new string name;
+        public Sprite sprite;
+
         public abstract CardActorBase GetActor(PlayerGender gender);
 	}
 }

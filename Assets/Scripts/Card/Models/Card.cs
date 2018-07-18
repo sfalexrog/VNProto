@@ -8,7 +8,7 @@ namespace OneDayProto.Card
     [CreateAssetMenu(fileName = "Card", menuName = "OneDay/Card/Card", order = 1)]
     public class Card : ScriptableObject 
 	{
-        public CardActorBase character;
+        public CardActorBase actor;
         [TextArea]
         public string question;
 

@@ -11,17 +11,8 @@ namespace OneDayProto.Card
         public CardController cardController;
 
         public GameObject _purposePanel;
-        public GameObject _answerPanel;
         public GameObject _parametersPanel;
-        public GameObject _leftAnswer;
-        public GameObject _rightAnswer;
 
-        public Button _leftAnswerButton;
-        public Button _rightAnswerButton;
-        public Button _cancelAnswerButton;
-
-        public Text _leftAnswerText;
-        public Text _rightAnswerText;
 
         public Text _nameText;
         public Text _questionText;
@@ -40,6 +31,11 @@ namespace OneDayProto.Card
         public Slider _coupleSlider;
         public Slider _classSlider;
 
+        public SwipableCard SwipeCard;
+        private CanvasGroup _swipeCG;
+        private CanvasGroup _popupCG;
+        public Text AnswerText;
+
         private string _leftButtonStoredText;
         private string _rightButtonStoredText;
 
@@ -57,24 +53,37 @@ namespace OneDayProto.Card
         // Background image
         public Image _backgroundImage;
 
-        // Bind to scene objects
+        [Header("Animation controls")]
+        public AnimationCurve FadeOutCurve;
+        public float FadeOutDuration;
+        public AnimationCurve FadeInCurve;
+        public float FadeInDuration;
+
+        private enum Side
+        {
+            Left,
+            Right
+        };
+
         void Awake()
         {
-
-            _cancelAnswerButton.onClick.AddListener(delegate { CancelOutcome(); });
-
-            _leftAnswerText.text = "Left answer";
-            _rightAnswerText.text = "Right answer";
+            _swipeCG = SwipeCard.GetComponent<CanvasGroup>();
+            _popupCG = _popupPanel.GetComponent<CanvasGroup>();
+            SwipeCard.onCenter.AddListener(delegate { CancelOutcome(); });
+            SwipeCard.onShiftLeft.AddListener(delegate { PreviewOutcome(Side.Left); });
+            SwipeCard.onShiftRight.AddListener(delegate { PreviewOutcome(Side.Right); });
+            SwipeCard.onSwipeLeft.AddListener(delegate { ApplyOutcome(Side.Left); });
+            SwipeCard.onSwipeRight.AddListener(delegate { ApplyOutcome(Side.Right); });
 
             _animations = new CardSliderAnimator[4];
-
-            ResetUi();
-            ResetListeners();
+            _leftButtonStoredText = "";
+            _rightButtonStoredText = "";
         }
 
         // Load a card and display it
         private void Start()
         {
+            ResetUi();
             Advance();
         }
 
@@ -82,7 +91,7 @@ namespace OneDayProto.Card
         {
             if (cardController.IsGameOverState())
             {
-                DisplayGameOverState();
+                StartCoroutine(ShowFinalScreen(false));
             }
             else
             {
@@ -92,7 +101,7 @@ namespace OneDayProto.Card
 
                 if (cardController.mission.IsFinished())
                 {
-                    DisplayWinState();
+                    StartCoroutine(ShowFinalScreen(true));
                 }
                 else
                 {
@@ -106,6 +115,55 @@ namespace OneDayProto.Card
             }
         }
 
+        // Animation coroutines
+        IEnumerator FadeCG(CanvasGroup cg, float duration, float start, float end, AnimationCurve curve)
+        {
+            var timeStart = Time.time;
+            var timeEnd = timeStart + duration;
+            while (Time.time < timeEnd)
+            {
+                var t = (Time.time - timeStart) / (timeEnd - timeStart);
+                var c = curve.Evaluate(t);
+                cg.alpha = start * (1.0f - c) + end * c;
+                yield return null;
+            }
+            cg.alpha = end;
+            yield return null;
+        }
+        
+        IEnumerator ShowNextCard()
+        {
+            SwipeCard.IgnoreInput = true;
+            yield return StartCoroutine(FadeCG(_swipeCG, FadeOutDuration, 1.0f, 0.0f, FadeOutCurve));
+            SwipeCard.Reset();
+            AnswerText.text = "";
+            Advance();
+            yield return StartCoroutine(FadeCG(_swipeCG, FadeInDuration, 0.0f, 1.0f, FadeInCurve));
+            SwipeCard.IgnoreInput = false;
+        }
+
+        IEnumerator ShowFinalScreen(bool win)
+        {
+            SwipeCard.IgnoreInput = true;
+            yield return StartCoroutine(FadeCG(_swipeCG, FadeOutDuration, 1.0f, 0.0f, FadeOutCurve));
+            // Let changing animations play out
+            // FIXME: Don't forget to unhardcode this value
+            // when animations will be changed
+            yield return new WaitForSeconds(0.8f - FadeOutDuration);
+            if (win)
+            {
+                DisplayWinState();
+            }
+            else
+            {
+                DisplayGameOverState();
+            }
+            _popupCG.interactable = false;
+            _popupCG.alpha = 0.0f;
+            yield return StartCoroutine(FadeCG(_popupCG, FadeInDuration, 0.0f, 1.0f, FadeInCurve));
+            _popupCG.interactable = true;
+        }
+
         private void DisplayCurrentCard()
         {
             DisplayCard(cardController.mission.currentCard);
@@ -114,9 +172,6 @@ namespace OneDayProto.Card
         private void DisplayCard(Card c)
         {
             Card card = c.GetInfoByGender(PlayerGender.Boy);
-
-            _leftAnswerText.text = card.leftButton;
-            _rightAnswerText.text = card.rightButton;
 
             _questionText.text = card.question;
             _actorImage.sprite = card.actor.sprite;
@@ -139,75 +194,36 @@ namespace OneDayProto.Card
 
         private void ResetUi()
         {
-            _leftAnswerButton.image.color = Color.white;
-            _rightAnswerButton.image.color = Color.white;
-            _cancelAnswerButton.gameObject.SetActive(false);
-
             _familyImage.gameObject.SetActive(false);
             _friendImage.gameObject.SetActive(false);
             _coupleImage.gameObject.SetActive(false);
             _classImage.gameObject.SetActive(false);
 
-            if (_leftButtonStoredText != null)
-            {
-                _leftAnswerText.text = _leftButtonStoredText;
-            }
-
-            if (_rightButtonStoredText != null)
-            {
-                _rightAnswerText.text = _rightButtonStoredText;
-            }
-
             _popupPanel.SetActive(false);
-        }
 
-        private void ResetListeners()
-        {
-            _leftAnswerButton.onClick.RemoveAllListeners();
-            _rightAnswerButton.onClick.RemoveAllListeners();
-
-            _leftAnswerButton.onClick.AddListener(delegate { PreviewOutcome(_leftAnswerButton, _rightAnswerButton); });
-            _rightAnswerButton.onClick.AddListener(delegate { PreviewOutcome(_rightAnswerButton, _leftAnswerButton); });
+            AnswerText.text = "";
         }
 
 
-        private void PreviewOutcome(Button outcomeButton, Button otherButton)
+        private void PreviewOutcome(Side side)
         {
-            outcomeButton.image.color = Color.yellow;
-            outcomeButton.onClick.RemoveAllListeners();
-            outcomeButton.onClick.AddListener(delegate { ApplyOutcome(outcomeButton); });
-
-            _leftButtonStoredText = _leftAnswerText.text;
-            _rightButtonStoredText = _rightAnswerText.text;
-
-            outcomeButton.GetComponentInChildren<Text>().text = "Ответить";
-
-            otherButton.onClick.RemoveAllListeners();
-            otherButton.onClick.AddListener(delegate {
-                ResetUi();
-                PreviewOutcome(otherButton, outcomeButton);
-            });
-
-            _cancelAnswerButton.gameObject.SetActive(true);
 
             _familyImage.gameObject.SetActive(true);
             _friendImage.gameObject.SetActive(true);
             _coupleImage.gameObject.SetActive(true);
             _classImage.gameObject.SetActive(true);
-            // TODO: add predictions from model
             float[] relationChange = null;
-            if (outcomeButton == _leftAnswerButton)
+            if (side == Side.Left)
             {
+                AnswerText.text = _leftButtonStoredText;
                 relationChange = _leftResults;
-            }
-            else if (outcomeButton == _rightAnswerButton)
-            {
-                relationChange = _rightResults;
             }
             else
             {
-                Debug.LogError("Unexpected outcome button");
+                AnswerText.text = _rightButtonStoredText;
+                relationChange = _rightResults;
             }
+            
 
             var familyScale = Mathf.Abs(relationChange[(int) FactionType.Family]);
             _familyImage.gameObject.transform.localScale = new Vector3(familyScale, familyScale, familyScale);
@@ -222,22 +238,20 @@ namespace OneDayProto.Card
         private void CancelOutcome()
         {
             ResetUi();
-            ResetListeners();
         }
 
-        private void ApplyOutcome(Button outcomeButton)
+        private void ApplyOutcome(Side side)
         {
-            if (outcomeButton == _leftAnswerButton)
+            if (side == Side.Left)
             {
                 cardController.ApplyChange(0);
             }
-            else if (outcomeButton == _rightAnswerButton)
+            else if (side == Side.Right)
             {
                 cardController.ApplyChange(1);
             }
-            ResetUi();
-            Advance();
-            ResetListeners();
+            // Set card as not interactable
+            StartCoroutine(ShowNextCard());
         }
 
 

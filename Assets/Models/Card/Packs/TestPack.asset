@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4b3bce074ba1f4796c078dc5255cc7, type: 3}
-  m_Name: Mom
+  m_Script: {fileID: 11500000, guid: ad531d787e205f54db9625c0f4959add, type: 3}
+  m_Name: CardPack
   m_EditorClassIdentifier: 
-  name: "\u041C\u0430\u043C\u0430"
-  Image: {fileID: 21300000, guid: efe5e8213c77bd2478874ce75cc125e7, type: 3}
+  cards:
+  - {fileID: 11400000, guid: 087f6fe776ea27641a0b6b6bc4c7359b, type: 2}

@@ -1,25 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SubjectNerd.Utilities;
 
-﻿namespace OneDayProto.Card
+namespace OneDayProto.Card
 {
     [CreateAssetMenu(fileName = "Card", menuName = "OneDay/Card/Card", order = 1)]
     public class Card : ScriptableObject 
 	{
+        public CardActorBase character;
         [TextArea]
         public string question;
-        public CardCharacter character;
 
         [Header("Left Choice")]
         public string leftButton;
-        public List<Outcome> leftOutcomes;
+        [Reorderable]
+        public Outcome[] leftOutcomes;
         
         [Header("Right Choice")]
         public string rightButton;
-        public List<Outcome> rightOutcomes;
+        [Reorderable]
+        public Outcome[] rightOutcomes;
 
+        [Space(10)]
         public BackgroundType background;
+
+        [Header("For girl")]
+        public Card girlVersionCard;
+
+        //functions
+        public Card GetInfoByGender(PlayerGender gender)
+        {
+            if (gender == PlayerGender.Girl && girlVersionCard != null)
+            {
+                return girlVersionCard;
+            }
+            return this;
+        }
 	}
 
     public enum BackgroundType

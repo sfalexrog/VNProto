@@ -145,7 +145,7 @@ namespace OneDayProto.Card
             InteractionBlocker.gameObject.SetActive(true);
             yield return StartCoroutine(FadeCG(_swipeCG, FadeOutDuration, 1.0f, 0.0f, FadeOutCurve));
             SwipeCard.Reset();
-            AnswerText.text = "";
+            ResetUi();
             Advance();
             yield return StartCoroutine(FadeCG(_swipeCG, FadeInDuration, 0.0f, 1.0f, FadeInCurve));
             SwipeCard.IgnoreInput = false;

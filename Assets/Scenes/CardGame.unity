@@ -13563,7 +13563,7 @@ MonoBehaviour:
   _popupDescriptionText: {fileID: 462508069}
   _dismissPopupButton: {fileID: 1695661564}
   _backgroundImage: {fileID: 237655398}
-  InteractionBlocker: {fileID: 0}
+  InteractionBlocker: {fileID: 577487739}
   FadeOutCurve:
     serializedVersion: 2
     m_Curve:

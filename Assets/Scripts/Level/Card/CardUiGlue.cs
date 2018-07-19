@@ -53,6 +53,9 @@ namespace OneDayProto.Card
 
         // Background image
         public Image _backgroundImage;
+        
+        // Interaction blocker - should be active during transitions
+        public Image InteractionBlocker;
 
         [Header("Animation controls")]
         public AnimationCurve FadeOutCurve;
@@ -79,6 +82,7 @@ namespace OneDayProto.Card
             _animations = new CardSliderAnimator[4];
             _leftButtonStoredText = "";
             _rightButtonStoredText = "";
+            InteractionBlocker.gameObject.SetActive(false);
         }
 
         // Load a card and display it
@@ -135,17 +139,21 @@ namespace OneDayProto.Card
         IEnumerator ShowNextCard()
         {
             SwipeCard.IgnoreInput = true;
+            InteractionBlocker.gameObject.SetActive(true);
             yield return StartCoroutine(FadeCG(_swipeCG, FadeOutDuration, 1.0f, 0.0f, FadeOutCurve));
             SwipeCard.Reset();
             AnswerText.text = "";
             Advance();
             yield return StartCoroutine(FadeCG(_swipeCG, FadeInDuration, 0.0f, 1.0f, FadeInCurve));
             SwipeCard.IgnoreInput = false;
+            InteractionBlocker.gameObject.SetActive(false);
         }
 
         IEnumerator ShowFinalScreen(bool win)
         {
+            // Disable all input
             SwipeCard.IgnoreInput = true;
+            InteractionBlocker.gameObject.SetActive(true);
             yield return StartCoroutine(FadeCG(_swipeCG, FadeOutDuration, 1.0f, 0.0f, FadeOutCurve));
             // Let changing animations play out
             // FIXME: Don't forget to unhardcode this value

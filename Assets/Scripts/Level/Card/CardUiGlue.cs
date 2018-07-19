@@ -90,7 +90,7 @@ namespace OneDayProto.Card
 
         private void Advance()
         {
-            if (cardController.IsGameOver())
+            if (cardController.IsFailRelations())
             {
                 StartCoroutine(ShowFinalScreen(false));
             }

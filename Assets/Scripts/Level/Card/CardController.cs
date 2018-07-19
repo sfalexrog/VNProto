@@ -70,7 +70,7 @@ namespace OneDayProto.Card
         /**
          * Check if the game is over
          */
-        public bool IsGameOver()
+        public bool IsFailRelations()
         {
             bool result = false;
             foreach (var relation in _relations)
@@ -89,7 +89,10 @@ namespace OneDayProto.Card
          */
         public void OnCardGameFinish()
         {
-            _gameState.NextLevel();
+            if (!IsFailRelations())
+            {
+                _gameState.NextLevel();
+            }
             SceneManager.LoadScene("Scenes/HubScene");
         }
     }

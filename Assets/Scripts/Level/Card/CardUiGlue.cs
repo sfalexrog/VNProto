@@ -85,6 +85,9 @@ namespace OneDayProto.Card
             _leftButtonStoredText = "";
             _rightButtonStoredText = "";
             InteractionBlocker.gameObject.SetActive(false);
+            // FIXME: Store original colors during animations
+            var fillBar = _familySlider.fillRect.GetComponentInChildren<Image>();
+            CardSliderAnimator.OriginalColor = fillBar.color;
         }
 
         // Load a card and display it
@@ -144,7 +147,7 @@ namespace OneDayProto.Card
             InteractionBlocker.gameObject.SetActive(true);
             yield return StartCoroutine(FadeCG(_swipeCG, FadeOutDuration, 1.0f, 0.0f, FadeOutCurve));
             SwipeCard.Reset();
-            AnswerText.text = "";
+            ResetUi();
             Advance();
             yield return StartCoroutine(FadeCG(_swipeCG, FadeInDuration, 0.0f, 1.0f, FadeInCurve));
             SwipeCard.IgnoreInput = false;

@@ -11,6 +11,8 @@ public class CardSliderAnimator
     private float _targetValue;
     private Color _deltaColor;
 
+    public static Color OriginalColor;
+    
     public CardSliderAnimator(Slider animSlider, float targetValue, float duration)
     {
         _slider = animSlider;
@@ -30,7 +32,7 @@ public class CardSliderAnimator
         else
         {
             // No changes required
-            _deltaColor = Color.white;
+            _deltaColor = OriginalColor;
         }
     }
 
@@ -55,7 +57,7 @@ public class CardSliderAnimator
         float hTime = timeDelta / (_endTime - _startTime);
         float t = Mathf.Clamp01(funcEaseIn(hTime));
         _slider.value = _startValue * (1 - t) + _targetValue * t;
-        _sliderFill.color = Color.Lerp(_deltaColor, Color.white, t);
+        _sliderFill.color = Color.Lerp(_deltaColor, OriginalColor, t);
     }
 
     public bool IsEnded()

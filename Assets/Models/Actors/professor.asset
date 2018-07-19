@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: professor
   m_EditorClassIdentifier: 
   name: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440"
-  Image: {fileID: 21300000, guid: ce5fdb699937ada48896206251da210a, type: 3}
+  sprite: {fileID: 21300000, guid: ce5fdb699937ada48896206251da210a, type: 3}

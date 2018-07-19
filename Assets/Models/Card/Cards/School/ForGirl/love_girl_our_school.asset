@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
-  m_Name: love_boy_our_school
+  m_Name: love_girl_our_school
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: aaafc41375a1f714fbcde9e83579bb16, type: 2}
   question: "\u041A\u0430\u043A \u0442\u0435\u0431\u0435 \u043D\u0430\u0448\u0430
@@ -23,4 +23,4 @@ MonoBehaviour:
   - faction: 2
     change: 2
   background: 0
-  girlVersionCard: {fileID: 11400000, guid: 3fd5adfe872e5d843a6125a3b5e66961, type: 2}
+  girlVersionCard: {fileID: 0}

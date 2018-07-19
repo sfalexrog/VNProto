@@ -38,7 +38,8 @@ namespace OneDayProto.Model
             currentNovelChapter = null;
             currentCardMission = null;
 
-            LevelModelBase level = _levelSequence.levels[currentLevelIndex];
+            LevelModelBase level = GetCurrentLevel();
+
             if (level is NovelChapter)
             {
                 currentNovelChapter = level as NovelChapter;
@@ -47,6 +48,23 @@ namespace OneDayProto.Model
             {
                 currentCardMission = level as CardMissionBase;
             }
+        }
+
+        private LevelModelBase GetCurrentLevel()
+        {
+            if (_levelSequence.IsUseDebug())
+            {
+                if (_levelSequence.debugLevelIndex != -1)
+                {
+                    return _levelSequence.levels[_levelSequence.debugLevelIndex];
+                }
+                else if (_levelSequence.debugLevel != null)
+                {
+                    return _levelSequence.debugLevel;
+                }
+            }
+
+            return _levelSequence.levels[currentLevelIndex];
         }
 
         public void NextLevel()

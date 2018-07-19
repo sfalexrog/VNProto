@@ -83,6 +83,9 @@ namespace OneDayProto.Card
             _leftButtonStoredText = "";
             _rightButtonStoredText = "";
             InteractionBlocker.gameObject.SetActive(false);
+            // FIXME: Store original colors during animations
+            var fillBar = _familySlider.fillRect.GetComponentInChildren<Image>();
+            CardSliderAnimator.OriginalColor = fillBar.color;
         }
 
         // Load a card and display it

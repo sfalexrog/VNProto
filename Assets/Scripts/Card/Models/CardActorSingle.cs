@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using OneDayProto.Model;
 using UnityEngine;
 
-﻿namespace OneDayProto.Card
+namespace OneDayProto.Card
 {
     [CreateAssetMenu(fileName = "Actor", menuName = "OneDay/Card/Actor", order = 2)]
     public class CardActorSingle : CardActorBase

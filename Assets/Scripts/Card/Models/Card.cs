@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SubjectNerd.Utilities;
+using OneDayProto.Model;
 
 namespace OneDayProto.Card
 {

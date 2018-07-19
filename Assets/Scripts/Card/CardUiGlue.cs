@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using OneDayProto.Model;
 
 namespace OneDayProto.Card
 {
-
     public class CardUiGlue : MonoBehaviour
     {
         public CardController cardController;
@@ -90,7 +90,7 @@ namespace OneDayProto.Card
 
         private void Advance()
         {
-            if (cardController.IsGameOverState())
+            if (cardController.IsGameOver())
             {
                 StartCoroutine(ShowFinalScreen(false));
             }

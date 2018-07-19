@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using OneDayProto.Model;
 
 namespace OneDayProto.Card
 {
     public class CardController : MonoBehaviour
     {
         private GameState _gameState;
-
         public CardMissionBase mission;
 
         // Relation values
@@ -17,8 +17,6 @@ namespace OneDayProto.Card
         {
             _gameState = Toolbox.RegisterComponent<GameState>();
             mission.Initialize();
-
-            // TODO: Load relations from GameState
 
             _relations = new float[4];
             for (int i = 0; i < 4; ++i)
@@ -71,7 +69,7 @@ namespace OneDayProto.Card
         /**
          * Check if the game is over
          */
-        public bool IsGameOverState()
+        public bool IsGameOver()
         {
             bool result = false;
             foreach (var relation in _relations)
@@ -90,15 +88,13 @@ namespace OneDayProto.Card
          */
         public void OnCardGameFinish()
         {
-            // Disable progress by setting next card game ID to -1
-            if (IsGameOverState())
+            if (IsGameOver())
             {
-                _gameState.NextCardGameId = -1;
+
             }
             else
             {
-                // Apply completion reward
-                _gameState.currentExperience += 1;
+
             }
             SceneManager.LoadScene("Scenes/HubScene");
         }

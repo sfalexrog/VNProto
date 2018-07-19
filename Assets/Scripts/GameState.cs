@@ -29,6 +29,7 @@ namespace OneDayProto.Model
         }
 
         public void Initialize(LevelSequence levelSequence) {
+            PlayerGender = levelSequence.gender;
             _levelSequence = levelSequence;
             UpdateLevels();
         }

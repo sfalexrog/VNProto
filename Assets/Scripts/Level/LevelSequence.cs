@@ -14,6 +14,9 @@ namespace OneDayProto.Model
         public int debugLevelIndex = -1;
         public LevelModelBase debugLevel;
 
+        [Header("Gender")]
+        public PlayerGender gender;
+
         public bool IsUseDebug()
         {
             if (Debug.isDebugBuild)

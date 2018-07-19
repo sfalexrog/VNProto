@@ -190,7 +190,7 @@ namespace OneDayProto.Card
             _questionText.text = card.question;
             _actorImage.sprite = card.actor.GetSprite(_gameState.PlayerGender);
             //_backgroundImage.sprite = _backgroundSprites[cardController.GetBackgroundForCard(card)];
-            _nameText.text = card.actor.name;
+            _nameText.text = card.actor.GetName(_gameState.PlayerGender);
 
             // Store button text, just in case
             _leftButtonStoredText = card.leftButton;

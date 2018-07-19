@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4b3bce074ba1f4796c078dc5255cc7, type: 3}
   m_Name: leader_girl
   m_EditorClassIdentifier: 
-  name: "\u0414\u0435\u043D\u0438\u0441"
-  sprite: {fileID: 0}
+  name: "\u0412\u0438\u043A\u0430"
+  sprite: {fileID: 21300000, guid: 32416ac806f163343aec9c114692e10e, type: 3}

@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4b3bce074ba1f4796c078dc5255cc7, type: 3}
   m_Name: love_boy
   m_EditorClassIdentifier: 
-  name: "\u0412\u0438\u043A\u0430"
-  sprite: {fileID: 0}
+  name: "\u041C\u043E\u0439 \u0441\u0430\u043C\u0435\u0446"
+  sprite: {fileID: 21300000, guid: 7ffb4ca9ef7b8f54993b6cb464dd498e, type: 3}

@@ -1,16 +1,11 @@
-﻿using System.CodeDom.Compiler;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using GraphicsPools;
-using Ink.Runtime;
+﻿using Ink.Runtime;
 using InkleVN;
+using OneDayProto.Novel;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace OneDayProto.Model
 {
@@ -18,6 +13,7 @@ namespace OneDayProto.Model
     public class StoryPlayer : MonoBehaviour
     {
         private GameState _gameState;
+        private NovelChapter _novelChapter;
 
         public class StoryChoice
         {
@@ -36,7 +32,6 @@ namespace OneDayProto.Model
         public Button ProceedButton;
 
         public StoryUIController UI;
-
         private Story _story;
 
         // Valid actor names; actor names from scripts will be compared against this set
@@ -54,9 +49,12 @@ namespace OneDayProto.Model
         void Start()
         {
             _gameState = Toolbox.RegisterComponent<GameState>();
+            _novelChapter = _gameState.currentNovelChapter;
+
             _registeredActors = UI.GetActorNames();
             ProceedButton.onClick.AddListener(delegate { OnProceed(); });
 
+            _story = new Story(_novelChapter.inkJsonAsset.text);
             _story.BindExternalFunction("isGenderBoy", () => IsGenderBoy());
 
             UI.SetOnChoiceHandler(OnChoice);
@@ -293,7 +291,7 @@ namespace OneDayProto.Model
             }
             else
             {
-                //To next Level
+                _gameState.NextLevel();
                 SceneManager.LoadScene("Scenes/HubScene");
             }
         }

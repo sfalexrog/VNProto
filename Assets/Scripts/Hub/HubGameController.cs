@@ -1,23 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using UnityEngine;
-using OneDayProto.Model;
+﻿using OneDayProto.Model;
 using OneDayProto.UI;
+using UnityEngine;
 
 namespace OneDayProto.Controllers
 {
     public class HubGameController : MonoBehaviour
     {
         public HubUiGlue UiGlue;
+        public LevelSequence levelSequence;
         public bool RestoreDefenderOnRestart;
 
         private GameState _gameState;
-
-
+        
         void Awake()
         {
             _gameState = Toolbox.RegisterComponent<GameState>();
+            _gameState.Initialize(levelSequence);
         }
 
         // Use this for initialization
@@ -34,7 +32,7 @@ namespace OneDayProto.Controllers
             if (CurrentLevelIsNovel())
             {
                 UiGlue.SetStoryButtonEnabled();
-                //UiGlue.SetStoryModeText(_chapters[_gameState.currentScene].ChapterName);
+                UiGlue.SetStoryModeText(_gameState.currentNovelChapter.name);
             }
             else
             {
@@ -53,12 +51,12 @@ namespace OneDayProto.Controllers
 
         private bool CurrentLevelIsNovel()
         {
-            return false;
+            return _gameState.currentNovelChapter != null;
         }
 
         private bool CurrentLevelIsCard()
         {
-            return false;
+            return _gameState.currentCardMission != null;
         }
     }
 }

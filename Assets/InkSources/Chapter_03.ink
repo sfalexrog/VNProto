@@ -1,6 +1,4 @@
 INCLUDE GameData.ink
-VAR didCompleteChapter = false
-VAR expGain = 0
 
 -> start
 
@@ -135,5 +133,4 @@ Location: Лаборатория
 Мэй: Увы, нет. Если увидишь кого-то подобного, берегись. 
 Мэй: Больше ничего не скажу, я и так показала тебе секретную фотографию. 
 Я: До свидания. И ещё раз спасибо за «Защитника»!
-~ didCompleteChapter = true
 ->END

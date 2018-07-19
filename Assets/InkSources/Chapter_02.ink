@@ -1,6 +1,4 @@
 INCLUDE GameData.ink
-VAR didCompleteChapter = false
-VAR expGain = 0
 
 -> start
 
@@ -168,6 +166,5 @@ Location: У_школы
 	{isGenderBoy(): Денис| Настя}: Хочешь жить, не высовывайся! # злость
 	Ты спешно уходишь, но видишь, как одноклассники смотрят на тебя. 
 	{isGenderBoy(): Одноклассники оценили, что ты вёл себя смело с лидером класса. | Одноклассники оценили, что ты вела себя смело с лидером класса.}
-	~didCompleteChapter = true
-    ~expGain = 0
+	
 	->END

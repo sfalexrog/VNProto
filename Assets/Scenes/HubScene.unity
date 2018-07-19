@@ -716,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiGlue: {fileID: 1715675654}
+  levelSequence: {fileID: 11400000, guid: 90e9b584234e2c743b804bd38321bb0a, type: 2}
   RestoreDefenderOnRestart: 1
 --- !u!4 &622841401
 Transform:

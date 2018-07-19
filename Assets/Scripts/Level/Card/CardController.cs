@@ -16,6 +16,7 @@ namespace OneDayProto.Card
         void Awake()
         {
             _gameState = Toolbox.RegisterComponent<GameState>();
+            mission = _gameState.currentCardMission;
             mission.Initialize();
 
             _relations = new float[4];
@@ -88,14 +89,7 @@ namespace OneDayProto.Card
          */
         public void OnCardGameFinish()
         {
-            if (IsGameOver())
-            {
-
-            }
-            else
-            {
-
-            }
+            _gameState.NextLevel();
             SceneManager.LoadScene("Scenes/HubScene");
         }
     }

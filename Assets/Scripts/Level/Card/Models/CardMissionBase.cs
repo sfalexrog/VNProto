@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using OneDayProto.Model;
 using SubjectNerd.Utilities;
 
 namespace OneDayProto.Card
 {
-    public abstract class CardMissionBase : ScriptableObject 
+    public abstract class CardMissionBase : LevelModelBase 
 	{
         [Reorderable]
         public CardPack[] cardPacks;

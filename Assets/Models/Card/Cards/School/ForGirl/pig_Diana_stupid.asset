@@ -9,20 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
-  m_Name: pig_new_phone
+  m_Name: pig_Diana_stupid
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: ca2a7ff4ead4643488080324dea26df0, type: 2}
-  question: "\u0425\u043E\u0447\u0443 \u0441\u0435\u0431\u0435 \u043A\u0443\u043F\u0438\u0442\u044C
-    \u043D\u043E\u0432\u044B\u0439 \u0442\u0435\u043B\u0435\u0444\u043E\u043D"
-  leftButton: "\u041D\u0435 \u0442\u0440\u0430\u0442\u044C \u0437\u0440\u044F \u0434\u0435\u043D\u044C\u0433\u0438"
+  question: "\u042D\u0442\u0430 \u0414\u0438\u0430\u043D\u0430 \u043F\u0440\u043E\u0441\u0442\u043E
+    \u0434\u0443\u0440\u0430!"
+  leftButton: "\u041D\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u0435\u043D"
   leftOutcomes:
   - faction: 1
     change: -1
-  - faction: 2
-    change: 1
-  rightButton: "\u0425\u043E\u0440\u043E\u0448\u0430\u044F \u0438\u0434\u0435\u044F"
+  rightButton: "\u041F\u043B\u044E\u0441\u0443\u044E"
   rightOutcomes:
-  - faction: 1
-    change: 2
+  - faction: 3
+    change: -1
   background: 0
   girlVersionCard: {fileID: 0}

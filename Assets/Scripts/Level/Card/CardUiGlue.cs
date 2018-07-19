@@ -9,11 +9,11 @@ namespace OneDayProto.Card
     public class CardUiGlue : MonoBehaviour
     {
         public CardController cardController;
+        private GameState _gameState;
 
         public GameObject _purposePanel;
         public GameObject _parametersPanel;
-
-
+        
         public Text _nameText;
         public Text _questionText;
 
@@ -71,6 +71,8 @@ namespace OneDayProto.Card
 
         void Awake()
         {
+            _gameState = Toolbox.RegisterComponent<GameState>();
+
             _swipeCG = SwipeCard.GetComponent<CanvasGroup>();
             _popupCG = _popupPanel.GetComponent<CanvasGroup>();
             SwipeCard.onCenter.AddListener(delegate { CancelOutcome(); });
@@ -180,10 +182,10 @@ namespace OneDayProto.Card
 
         private void DisplayCard(Card c)
         {
-            Card card = c.GetInfoByGender(PlayerGender.Boy);
+            Card card = c.GetInfoByGender(_gameState.PlayerGender);
 
             _questionText.text = card.question;
-            _actorImage.sprite = card.actor.sprite;
+            _actorImage.sprite = card.actor.GetSprite(_gameState.PlayerGender);
             //_backgroundImage.sprite = _backgroundSprites[cardController.GetBackgroundForCard(card)];
             _nameText.text = card.actor.name;
 

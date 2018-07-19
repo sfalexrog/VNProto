@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using SubjectNerd.Utilities;
 using OneDayProto.Model;
+using OneDayProto.Actor;
 
 namespace OneDayProto.Card
 {
     [CreateAssetMenu(fileName = "Card", menuName = "OneDay/Card/Card", order = 1)]
     public class Card : ScriptableObject 
 	{
-        public CardActorBase actor;
+        public ActorModelBase actor;
         [TextArea]
         public string question;
 

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
-  m_Name: mother_new_books
+  m_Name: leader_boy_after_school_years
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
   question: "\u041F\u0440\u043E\u0432\u0435\u0440\u044C, \u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u0430

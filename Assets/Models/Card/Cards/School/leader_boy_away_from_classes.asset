@@ -9,18 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
-  m_Name: Card 1
+  m_Name: leader_boy_away_from_classes
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
-  question: "\u0418\u0434\u0438 \u0433\u043E\u0442\u043E\u0432\u044C\u0441\u044F \u043A
-    \u0448\u043A\u043E\u043B\u0435"
-  leftButton: "\u042F \u0438 \u0442\u0430\u043A \u0432\u0441\u0435 \u0437\u043D\u0430\u044E"
+  question: "\u041F\u0440\u043E\u0432\u0435\u0440\u044C, \u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u0430
+    \u043B\u0438 \u043F\u043E\u0447\u0442\u0430"
+  leftButton: "\u0422\u0430\u043C \u0432\u0441\u0435 \u0440\u0430\u0432\u043D\u043E
+    \u043D\u0438\u0447\u0435\u0433\u043E \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0433\u043E"
   leftOutcomes:
   - faction: 0
     change: -1
-  rightButton: "\u0423\u0436\u0435 \u0434\u0435\u043B\u0430\u044E"
+  rightButton: "\u0427\u0435\u0440\u0435\u0437 5 \u043C\u0438\u043D\u0443\u0442 \u0441\u0445\u043E\u0436\u0443"
   rightOutcomes:
   - faction: 0
-    change: 2
+    change: 1
   background: 0
   girlVersionCard: {fileID: 0}

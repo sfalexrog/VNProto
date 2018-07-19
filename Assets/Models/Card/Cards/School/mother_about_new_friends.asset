@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
-  m_Name: Card 4
+  m_Name: mother_about_new_friends
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
   question: "\u041D\u0435 \u0431\u043E\u0439\u0441\u044F \u0434\u0430\u0442\u044C

@@ -11,17 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f898af2c635339748a2d2502691d304a, type: 3}
   m_Name: pig_go_away_classes
   m_EditorClassIdentifier: 
-  actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
-  question: "\u041F\u0440\u043E\u0432\u0435\u0440\u044C, \u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u0430
-    \u043B\u0438 \u043F\u043E\u0447\u0442\u0430"
-  leftButton: "\u0422\u0430\u043C \u0432\u0441\u0435 \u0440\u0430\u0432\u043D\u043E
-    \u043D\u0438\u0447\u0435\u0433\u043E \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0433\u043E"
+  actor: {fileID: 11400000, guid: ca2a7ff4ead4643488080324dea26df0, type: 2}
+  question: "\u0414\u0430\u0432\u0430\u0439 \u0443\u0440\u043E\u043A\u0438 \u0437\u0430\u0432\u0442\u0440\u0430
+    \u043F\u0440\u043E\u0433\u0443\u043B\u044F\u0435\u043C"
+  leftButton: "\u041D\u0435 \u0432 \u044D\u0442\u043E\u0442 \u0440\u0430\u0437"
   leftOutcomes:
   - faction: 0
-    change: -1
-  rightButton: "\u0427\u0435\u0440\u0435\u0437 5 \u043C\u0438\u043D\u0443\u0442 \u0441\u0445\u043E\u0436\u0443"
+    change: 1
+  rightButton: "\u042F \u0437\u0430"
   rightOutcomes:
   - faction: 0
+    change: -1
+  - faction: 1
     change: 1
   background: 0
   girlVersionCard: {fileID: 0}

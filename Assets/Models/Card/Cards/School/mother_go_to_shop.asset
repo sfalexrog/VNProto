@@ -12,17 +12,13 @@ MonoBehaviour:
   m_Name: mother_go_to_shop
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
-  question: "\u0422\u044B \u0440\u0430\u0434 \u0447\u0442\u043E \u043C\u044B \u043F\u0435\u0440\u0435\u0435\u0445\u0430\u043B\u0438?"
-  leftButton: "\u042F \u043D\u0435 \u0437\u043D\u0430\u044E"
+  question: "\u0421\u0445\u043E\u0434\u0438 \u0432 \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  leftButton: "\u042F \u0443\u0436\u0435 \u0432\u0447\u0435\u0440\u0430 \u0445\u043E\u0434\u0438\u043B!"
   leftOutcomes:
-  - faction: 3
-    change: -1
-  rightButton: "\u0414\u0443\u043C\u0430\u044E \u0434\u0430"
-  rightOutcomes:
   - faction: 0
-    change: 1
-  - faction: 1
-    change: 1
+    change: -1
+  rightButton: "\u0425\u043E\u0440\u043E\u0448\u043E"
+  rightOutcomes:
   - faction: 2
     change: 1
   background: 0

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Name: mother_PC_evil
   m_EditorClassIdentifier: 
   actor: {fileID: 11400000, guid: ac066826665b6c945ba5d09a94c6aa40, type: 2}
-  question: "\u041F\u0440\u043E\u0432\u0435\u0440\u044C, \u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u0430
-    \u043B\u0438 \u043F\u043E\u0447\u0442\u0430"
-  leftButton: "\u0422\u0430\u043C \u0432\u0441\u0435 \u0440\u0430\u0432\u043D\u043E
-    \u043D\u0438\u0447\u0435\u0433\u043E \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0433\u043E"
+  question: "\u041D\u0435 \u0441\u0438\u0434\u0438 \u043C\u043D\u043E\u0433\u043E
+    \u0437\u0430 \u043A\u043E\u043C\u043F\u043E\u043C, \u0438\u0434\u0438 \u043B\u0443\u0447\u0448\u0435
+    \u0433\u0443\u043B\u044F\u0442\u044C!"
+  leftButton: "\u041D\u0435 \u043B\u044E\u0431\u043B\u044E \u0433\u0443\u043B\u044F\u0442\u044C"
   leftOutcomes:
   - faction: 0
     change: -1
-  rightButton: "\u0427\u0435\u0440\u0435\u0437 5 \u043C\u0438\u043D\u0443\u0442 \u0441\u0445\u043E\u0436\u0443"
+  rightButton: "\u041F\u043E\u0439\u0434\u0443 \u043F\u0440\u043E\u0439\u0434\u0443\u0441\u044C"
   rightOutcomes:
-  - faction: 0
-    change: 1
+  - faction: 1
+    change: -1
   background: 0
   girlVersionCard: {fileID: 0}

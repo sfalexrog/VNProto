@@ -27,6 +27,8 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     public float ShiftAngle;
     [Tooltip("Second snapping angle (for accepting outcomes)")]
     public float AcceptAngle;
+    [Tooltip("Maximum allowed angle")]
+    public float MaxAngle;
 
     [Header("Event Handlers")]
     // Fired when player shifts the card by ShiftAngle degrees to the left
@@ -43,7 +45,6 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     private float _radius;
     private float _angle;
     private float _prevAngle;
-    private float _angSpeed;
 
     private float _targetAngle;
 
@@ -110,7 +111,6 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
         {
             var rvec = ped.position - PivotWorld2D;
             var angle = Mathf.Rad2Deg * Mathf.Atan2(rvec.y, rvec.x) - 90.0f;
-            _angSpeed = (angle - _angle) / Time.deltaTime;
             SetAngle(angle);
         }
     }
@@ -126,6 +126,7 @@ public class SwipableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
 
     public void SetAngle(float angle)
     {
+        angle = Mathf.Clamp(angle, -MaxAngle, MaxAngle);
         var angRad = Mathf.Deg2Rad * (angle + 90.0f);
         var direction = new Vector2(Mathf.Cos(angRad), Mathf.Sin(angRad));
         var newPos = PivotPoint + Radius * direction;

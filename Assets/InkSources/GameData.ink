@@ -10,8 +10,8 @@ VAR Mother_RelPoints = 0
 
 ////Functions
 
-EXTERNAL isGenderBoy()
-=== function isGenderBoy() ===
+EXTERNAL isBoy()
+=== function isBoy() ===
     ~ return false
     
 === function ChangeRelPoints(ref relPoints, value) ===

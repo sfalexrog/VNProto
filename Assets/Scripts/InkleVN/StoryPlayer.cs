@@ -55,7 +55,7 @@ namespace OneDayProto.Model
             ProceedButton.onClick.AddListener(delegate { OnProceed(); });
 
             _story = new Story(_novelChapter.inkJsonAsset.text);
-            _story.BindExternalFunction("isGenderBoy", () => IsGenderBoy());
+            _story.BindExternalFunction("isBoy", () => IsBoy());
 
             UI.SetOnChoiceHandler(OnChoice);
             UI.SetOnDefenderHandler(OnDefender);
@@ -66,7 +66,7 @@ namespace OneDayProto.Model
             OnProceed();
         }
 
-        private bool IsGenderBoy()
+        private bool IsBoy()
         {
             return _gameState.PlayerGender == PlayerGender.Boy;
         }
@@ -88,7 +88,7 @@ namespace OneDayProto.Model
                 // Check against player actor name
                 if (splitPhrase[0].Equals(_playerActorName))
                 {
-                    parsedPhrase.ActorName = IsGenderBoy() ? _playerBoyName : _playerGirlName;
+                    parsedPhrase.ActorName = IsBoy() ? _playerBoyName : _playerGirlName;
                     StringBuilder sb = new StringBuilder();
 
                     for (int i = 1; i < splitPhrase.Length; ++i)
@@ -240,7 +240,7 @@ namespace OneDayProto.Model
                 {
                     if (splitText[0].Equals(_playerActorName))
                     {
-                        var speaker = IsGenderBoy() ? _playerBoyName : _playerGirlName;
+                        var speaker = IsBoy() ? _playerBoyName : _playerGirlName;
                         transitionBuilder.SetSpeaker(speaker, actorEmotion);
                         transitionBuilder.SetPhrase(RebuildString(splitText, 1).Trim());
                     }

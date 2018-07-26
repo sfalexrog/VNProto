@@ -49169,7 +49169,7 @@ MonoBehaviour:
   Snappiness: 10
   ShiftAngle: 5
   AcceptAngle: 15
-  MaxAngle: 45
+  MaxAngle: 15
   onShiftLeft:
     m_PersistentCalls:
       m_Calls: []

@@ -1,6 +1,6 @@
 [
   {
-    "name": "класс",
+    "name": "classroom",
     "image": "Backgrounds/BackgroundImages/Class"
   },
   {
@@ -20,7 +20,7 @@
     "image": "Backgrounds/BackgroundImages/4"
   },
   {
-    "name": "Комната м",
+    "name": "room_main",
     "image": "Backgrounds/BackgroundImages/room_boy4"
   },
   {
@@ -28,7 +28,7 @@
     "image": "Backgrounds/BackgroundImages/room_girl"
   },
   {
-    "name": "Кухня",
+    "name": "kitchen",
     "image": "Backgrounds/BackgroundImages/kitchen"
   },
   {
@@ -44,11 +44,11 @@
     "image": "Backgrounds/BackgroundImages/dark_blue"
   },
   {
-    "name": "У_школы",
+    "name": "school_yard",
     "image": "Backgrounds/BackgroundImages/Near_school"
   },
   {
-    "name": "Лаборатория",
+    "name": "lab",
     "image": "Backgrounds/BackgroundImages/Laboratory"
   }
 ]

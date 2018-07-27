@@ -199,22 +199,19 @@ namespace OneDayProto.Model
             var storyTags = _story.currentTags;
             // Parse tags first, they will come in handy later
             var actorEmotion = "default";
-            var canUseDefender = false;
-            var defenderCost = 0;
+
             foreach (var tag in storyTags)
             {
-                var tagComponents = tag.Split(':');
+                string[] tagComponents = tag.Split(' ');
+
                 if (tagComponents.Length > 1)
                 {
-                    if (tagComponents[0].Equals("defenderAvailable"))
+                    if (tagComponents[0].Equals("Location"))
                     {
-                        canUseDefender = tagComponents[1].Trim().Equals("true");
-                        transitionBuilder.SetCanUseDefender(canUseDefender);
-                    }
-                    else if (tagComponents[0].Equals("defenderCost"))
-                    {
-                        defenderCost = int.Parse(tagComponents[1]);
-                        _currentDefenderCost = defenderCost;
+                        // Location change. We should probably read the next line and re-run our function.
+                        transitionBuilder.SetBackground(tagComponents[1].Trim());
+                        _story.Continue();
+                        return CreateSceneTransition(transitionBuilder.Build());
                     }
                 }
                 else
@@ -224,37 +221,26 @@ namespace OneDayProto.Model
                 }
             }
 
-
             // Parse story text, possibly handling edge cases like location changes
             var splitText = storyText.Split(':');
             if (splitText.Length > 1)
             {
-                if (splitText[0].Equals("Location"))
+                if (splitText[0].Equals(_playerActorName))
                 {
-                    // Location change. We should probably read the next line and re-run our function.
-                    transitionBuilder.SetBackground(splitText[1].Trim());
-                    _story.Continue();
-                    return CreateSceneTransition(transitionBuilder.Build());
+                    var speaker = IsBoy() ? _playerBoyName : _playerGirlName;
+                    transitionBuilder.SetSpeaker(speaker, actorEmotion);
+                    transitionBuilder.SetPhrase(RebuildString(splitText, 1).Trim());
+                }
+                else if (_registeredActors.Contains(splitText[0]))
+                {
+                    var speaker = splitText[0];
+                    transitionBuilder.SetSpeaker(speaker, actorEmotion);
+                    transitionBuilder.SetPhrase(RebuildString(splitText, 1).Trim());
                 }
                 else
                 {
-                    if (splitText[0].Equals(_playerActorName))
-                    {
-                        var speaker = IsBoy() ? _playerBoyName : _playerGirlName;
-                        transitionBuilder.SetSpeaker(speaker, actorEmotion);
-                        transitionBuilder.SetPhrase(RebuildString(splitText, 1).Trim());
-                    }
-                    else if (_registeredActors.Contains(splitText[0]))
-                    {
-                        var speaker = splitText[0];
-                        transitionBuilder.SetSpeaker(speaker, actorEmotion);
-                        transitionBuilder.SetPhrase(RebuildString(splitText, 1).Trim());
-                    }
-                    else
-                    {
-                        // No one is actually speaking, the colon is just part of the text
-                        transitionBuilder.SetPhrase(storyText.Trim());
-                    }
+                    // No one is actually speaking, the colon is just part of the text
+                    transitionBuilder.SetPhrase(storyText.Trim());
                 }
             }
             else
@@ -275,6 +261,7 @@ namespace OneDayProto.Model
                 var storyChoice = new StoryChoice(choice.index, splitChoice[0], choiceType);
                 transitionBuilder.AddChoice(storyChoice);
             }
+            transitionBuilder.SetCanUseDefender(true);
 
             return transitionBuilder.Build();
         }

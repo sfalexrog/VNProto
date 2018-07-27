@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455d01c1f7e79e2499331a7ca72cf900, type: 3}
   m_Name: Chapter_3_Laboratory
   m_EditorClassIdentifier: 
-  name: "\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u0438\u044F"
+  name: "\u0413\u043B\u0430\u0432\u0430 3. \u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u0438\u044F"
   description: 
   inkJsonAsset: {fileID: 4900000, guid: 113a5be3f746cfd4c9b59e8ef547a709, type: 3}

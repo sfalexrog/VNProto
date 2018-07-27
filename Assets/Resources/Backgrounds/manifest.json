@@ -46,5 +46,9 @@
   {
     "name": "У_школы",
     "image": "Backgrounds/BackgroundImages/Near_school"
+  },
+  {
+    "name": "Лаборатория",
+    "image": "Backgrounds/BackgroundImages/Laboratory"
   }
 ]

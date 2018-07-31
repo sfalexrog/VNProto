@@ -112,6 +112,24 @@
 	  "радость": "Actors/ActorImages/coder",
 	  "злость": "Actors/ActorImages/coder",
 	  "удивление": "Actors/ActorImages/coder"
+    },
+  {
+    "name": "Алексей",
+    "emotions": {
+      "default": "Actors/ActorImages/hunter",
+	  "грусть": "Actors/ActorImages/hunter",
+	  "радость": "Actors/ActorImages/hunter",
+	  "злость": "Actors/ActorImages/hunter",
+	  "удивление": "Actors/ActorImages/hunter"
+    },
+  {
+    "name": "Бамблби",
+    "emotions": {
+      "default": "Actors/ActorImages/bamblby",
+	  "грусть": "Actors/ActorImages/bamblby",
+	  "радость": "Actors/ActorImages/bamblby",
+	  "злость": "Actors/ActorImages/bamblby",
+	  "удивление": "Actors/ActorImages/bamblby"
     }
   }
 ]

@@ -50,5 +50,17 @@
   {
     "name": "lab",
     "image": "Backgrounds/BackgroundImages/Laboratory"
+  },
+  {
+    "name": "hangar",
+    "image": "Backgrounds/BackgroundImages/hangar"
+  },
+  {
+    "name": "meteor",
+    "image": "Backgrounds/BackgroundImages/meteor"
+  },
+  {
+    "name": "street_default",
+    "image": "Backgrounds/BackgroundImages/street_default"
   }
 ]

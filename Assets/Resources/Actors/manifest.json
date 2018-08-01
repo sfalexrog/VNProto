@@ -98,38 +98,40 @@
     "name": "Мэй",
     "emotions": {
       "default": "Actors/ActorImages/unique",
-	  "грусть": "Actors/ActorImages/unique",
-	  "радость": "Actors/ActorImages/unique",
-	  "злость": "Actors/ActorImages/unique",
-	  "удивление": "Actors/ActorImages/unique"
+	    "грусть": "Actors/ActorImages/unique",
+	    "радость": "Actors/ActorImages/unique",
+	    "злость": "Actors/ActorImages/unique",
+	    "удивление": "Actors/ActorImages/unique"
     }
   },
   {
     "name": "Дин",
     "emotions": {
       "default": "Actors/ActorImages/coder",
-	  "грусть": "Actors/ActorImages/coder",
-	  "радость": "Actors/ActorImages/coder",
-	  "злость": "Actors/ActorImages/coder",
-	  "удивление": "Actors/ActorImages/coder"
-    },
+      "грусть": "Actors/ActorImages/coder",
+      "радость": "Actors/ActorImages/coder",
+      "злость": "Actors/ActorImages/coder",
+      "удивление": "Actors/ActorImages/coder"
+    }
+  },
   {
     "name": "Алексей",
     "emotions": {
       "default": "Actors/ActorImages/hunter",
-	  "грусть": "Actors/ActorImages/hunter",
-	  "радость": "Actors/ActorImages/hunter",
-	  "злость": "Actors/ActorImages/hunter",
-	  "удивление": "Actors/ActorImages/hunter"
-    },
+      "грусть": "Actors/ActorImages/hunter",
+      "радость": "Actors/ActorImages/hunter",
+      "злость": "Actors/ActorImages/hunter",
+      "удивление": "Actors/ActorImages/hunter"
+    }
+  },
   {
     "name": "Бамблби",
     "emotions": {
       "default": "Actors/ActorImages/bamblby",
-	  "грусть": "Actors/ActorImages/bamblby",
-	  "радость": "Actors/ActorImages/bamblby",
-	  "злость": "Actors/ActorImages/bamblby",
-	  "удивление": "Actors/ActorImages/bamblby"
+	    "грусть": "Actors/ActorImages/bamblby",
+	    "радость": "Actors/ActorImages/bamblby",
+	    "злость": "Actors/ActorImages/bamblby",
+	    "удивление": "Actors/ActorImages/bamblby"
     }
   }
 ]

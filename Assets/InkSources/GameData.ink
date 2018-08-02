@@ -7,6 +7,7 @@ VAR Stas_RelPoints = 0
 VAR Leader_RelPoints = 0
 VAR Love_RelPoints = 0
 VAR Mother_RelPoints = 0
+VAR Parents_RelPoints = 0
 
 ////Functions
 

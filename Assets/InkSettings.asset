@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Name: InkSettings
   m_EditorClassIdentifier: 
   templateFile: {fileID: 0}
-  defaultJsonAssetPath: {fileID: 102900000, guid: a1634d1e3c51b864eaf4d98daf5adb6e,
-    type: 3}
+  defaultJsonAssetPath: {fileID: 0}
   compileAutomatically: 1
   delayInPlayMode: 1
   handleJSONFilesAutomatically: 1
   compileTimeout: 6
   customInklecateOptions:
-    runInklecateWithMono: 1
+    runInklecateWithMono: 0
     monoPaths:
     - /usr/bin/mono
     - /usr/local/bin/mono

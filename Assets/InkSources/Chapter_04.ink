@@ -256,13 +256,13 @@ INCLUDE GameData.ink
 ->Conflict09
 
 +[Как какой-то гороскоп.]
-~ ChangeRelPoints(Laboratory_RelPoints, -2)
+~ ChangeRelPoints(Lab_RelPoints, -2)
 Дин: Если он выдаст еще что-то в таком духе, #З
 Дин: я вырублю связь. #З
 ->Conflict09
 
 +[Круто!]
-~ ChangeRelPoints(Laboratory_RelPoints, 2)
+~ ChangeRelPoints(Lab_RelPoints, 2)
 Дин: Ага, я тоже самое сказал профессору,  #С
 Дин: когда он первым рассказал мне свою идею! #С
 Мэй: Вообще-то, он рассказал ее нам. #З

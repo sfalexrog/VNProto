@@ -4,9 +4,9 @@ CONST MAX_REL_POINTS = 15
 CONST MIN_REL_POINTS = -15
 
 VAR Stas_RelPoints = 0
-VAR Class_RelPoints = 0
+VAR Leader_RelPoints = 0
 VAR Love_RelPoints = 0
-VAR Family_RelPoints = 0
+VAR Parents_RelPoints = 0
 VAR Bumblebee_RelPoints = 0
 VAR Lab_RelPoints = 0
 

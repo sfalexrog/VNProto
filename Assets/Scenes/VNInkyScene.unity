@@ -1133,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 154, y: 107}
+  m_AnchoredPosition: {x: 148.80002, y: 164.99998}
   m_SizeDelta: {x: 297.6, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669040894
@@ -1981,7 +1981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 164.75, y: 107}
+  m_AnchoredPosition: {x: 164.75, y: 165}
   m_SizeDelta: {x: 329.5, y: 329.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260272566
@@ -2309,7 +2309,7 @@ MonoBehaviour:
   UIContainer: {fileID: 1602247321}
   ChoiceButtonPrototype: {fileID: 245179456}
   ChoiceButtonDistance: 15
-  FadeOutDuration: 0.1
+  FadeOutDuration: 0.01
   FadeOutCurve:
     serializedVersion: 2
     m_Curve:
@@ -2334,7 +2334,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  FadeInDuration: 0.1
+  FadeInDuration: 0.01
   FadeInCurve:
     serializedVersion: 2
     m_Curve:
@@ -2359,7 +2359,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  TransitionDuration: 0.2
+  TransitionDuration: 0.02
   TransitionCurve:
     serializedVersion: 2
     m_Curve:

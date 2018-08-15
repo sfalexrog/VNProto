@@ -1,66 +1,74 @@
 [
   {
-    "name": "classroom",
-    "image": "Backgrounds/BackgroundImages/Class"
-  },
-  {
-    "name": "Замок",
-    "image": "Backgrounds/BackgroundImages/2"
-  },
-  {
-    "name": "Усадьба",
-    "image": "Backgrounds/BackgroundImages/5"
-  },
-  {
-    "name": "Лес",
-    "image": "Backgrounds/BackgroundImages/3"
-  },
-  {
-    "name": "Руины",
-    "image": "Backgrounds/BackgroundImages/4"
-  },
-  {
-    "name": "room_main",
-    "image": "Backgrounds/BackgroundImages/room_boy3"
-  },
-  {
-    "name": "Комната д",
-    "image": "Backgrounds/BackgroundImages/room_girl"
-  },
-  {
-    "name": "kitchen",
-    "image": "Backgrounds/BackgroundImages/kitchen"
-  },
-  {
-    "name": "Подъезд",
-    "image": "Backgrounds/BackgroundImages/entrance"
-  },
-  {
-    "name": "Телефон",
-    "image": "Backgrounds/BackgroundImages/phone2"
-  },
-  {
-    "name": "Синий",
-    "image": "Backgrounds/BackgroundImages/dark_blue"
-  },
-  {
-    "name": "school_yard",
-    "image": "Backgrounds/BackgroundImages/Near_school"
-  },
-  {
-    "name": "lab",
-    "image": "Backgrounds/BackgroundImages/Laboratory"
-  },
-  {
     "name": "hangar",
     "image": "Backgrounds/BackgroundImages/hangar"
+  },
+  {
+    "name": "room_love_boy",
+    "image": "Backgrounds/BackgroundImages/room_love_boy"
+  },
+  {
+    "name": "room_love",
+    "image": "Backgrounds/BackgroundImages/room_love_girl"
+  },
+  {
+    "name": "cafe",
+    "image": "Backgrounds/BackgroundImages/cafe"
+  },
+  {
+    "name": "sport_parking",
+    "image": "Backgrounds/BackgroundImages/sport_parking"
+  },
+  {
+    "name": "street_default",
+    "image": "Backgrounds/BackgroundImages/street_default"
+  },
+  {
+    "name": "sport_club",
+    "image": "Backgrounds/BackgroundImages/sport_club"
+  },
+  {
+    "name": "bus_parking",
+    "image": "Backgrounds/BackgroundImages/bus_parking"
+  },
+  {
+    "name": "under_parking",
+    "image": "Backgrounds/BackgroundImages/under_parking"
+  },
+  {
+    "name": "game_room",
+    "image": "Backgrounds/BackgroundImages/game_room"
+  },
+  {
+    "name": "bcar",
+    "image": "Backgrounds/BackgroundImages/bcar"
   },
   {
     "name": "meteor",
     "image": "Backgrounds/BackgroundImages/meteor"
   },
   {
-    "name": "street_default",
-    "image": "Backgrounds/BackgroundImages/street_default"
+    "name": "lab",
+    "image": "Backgrounds/BackgroundImages/lab"
+  },
+  {
+    "name": "school_yard",
+    "image": "Backgrounds/BackgroundImages/school_yard"
+  },
+  {
+    "name": "classroom",
+    "image": "Backgrounds/BackgroundImages/classroom"
+  },
+  {
+    "name": "kitchen",
+    "image": "Backgrounds/BackgroundImages/kitchen"
+  },
+  {
+    "name": "room_main_girl",
+    "image": "Backgrounds/BackgroundImages/room_main_girl"
+  },
+  {
+    "name": "room_main",
+    "image": "Backgrounds/BackgroundImages/room_main_boy"
   }
 ]

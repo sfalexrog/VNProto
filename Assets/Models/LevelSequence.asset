@@ -13,10 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: 967a2e6494dfe40478e57a2c6f8a6f22, type: 2}
-  - {fileID: 11400000, guid: f8966d457491dce40a8147a945cc465a, type: 2}
   - {fileID: 11400000, guid: dc0e19eb7dc96a2419a37f04f78f3e84, type: 2}
   - {fileID: 11400000, guid: d7d2e25c8bddfb14b803327053024b40, type: 2}
   - {fileID: 11400000, guid: 54ecbad5aae3c0f43a1090d907f08515, type: 2}
+  - {fileID: 11400000, guid: bd05167b59dfff34db5f5276f4890abd, type: 2}
+  - {fileID: 11400000, guid: 0bafbc86297821840ac8f1a21b16f9bc, type: 2}
+  - {fileID: 11400000, guid: f9d15ee5c7adb4b4ea8eae91f545bddc, type: 2}
+  - {fileID: 11400000, guid: e9ff36661ab00074f839c0c86836a545, type: 2}
+  - {fileID: 11400000, guid: e11fc63b49bf06d488ddf97704ec519f, type: 2}
+  - {fileID: 11400000, guid: f8966d457491dce40a8147a945cc465a, type: 2}
   debugLevelIndex: -1
-  debugLevel: {fileID: 11400000, guid: b78347c0cd7ce584e8ce27ab34136b88, type: 2}
+  debugLevel: {fileID: 0}
   gender: 0
